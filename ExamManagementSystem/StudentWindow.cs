@@ -29,7 +29,18 @@ namespace ExamManagementSystem
 
         private void buttonExitStudent_Click(object sender, EventArgs e)
         {
+            //do not forget to terminate the database connection
+            #region TerminationOfDataBase Connection
+            //Termination code goes Here
+            #endregion
 
+            #region CloseAndOpen
+            //this has to be the last code in this method
+            //open the signIn window and close the admin window
+            var m = new SigninWindow();
+            m.Show();
+            this.Close();
+            #endregion
         }
     }
 }

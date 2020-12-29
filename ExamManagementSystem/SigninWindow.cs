@@ -19,17 +19,17 @@ namespace ExamManagementSystem
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
 
         private void buttonMaximize_Click(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Maximized;
         }
 
         private void buttonMinimize_Click(object sender, EventArgs e)
         {
-
+            WindowState = FormWindowState.Minimized;
         }
 
         private void buttonInstructorSignIn_Click(object sender, EventArgs e)
@@ -40,6 +40,11 @@ namespace ExamManagementSystem
         private void buttonStudentSignIn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonAdmin_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -21,10 +21,19 @@ namespace ExamManagementSystem
         {
             paneltimer.Width += 3;
             if (paneltimer.Width >= panel1.Width)
+            {
                 timer1.Stop();
+
+            }
+                
         }
 
         private void paneltimer_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SplashScreenWindow_Load(object sender, EventArgs e)
         {
 
         }
