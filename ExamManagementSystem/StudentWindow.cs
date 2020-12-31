@@ -42,5 +42,10 @@ namespace ExamManagementSystem
             this.Close();
             #endregion
         }
+
+        private void buttonAvailableExams_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

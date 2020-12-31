@@ -38,6 +38,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelForButton = new System.Windows.Forms.Panel();
             this.buttonExitStudent = new System.Windows.Forms.Button();
+            this.buttonAvailableExams = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
@@ -46,6 +48,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.buttonAvailableExams);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -125,12 +128,32 @@
             this.buttonExitStudent.FlatAppearance.BorderSize = 0;
             this.buttonExitStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonExitStudent.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitStudent.Image")));
-            this.buttonExitStudent.Location = new System.Drawing.Point(1208, 9);
+            this.buttonExitStudent.Location = new System.Drawing.Point(1238, 0);
             this.buttonExitStudent.Name = "buttonExitStudent";
-            this.buttonExitStudent.Size = new System.Drawing.Size(75, 57);
+            this.buttonExitStudent.Size = new System.Drawing.Size(57, 57);
             this.buttonExitStudent.TabIndex = 3;
             this.buttonExitStudent.UseVisualStyleBackColor = true;
             this.buttonExitStudent.Click += new System.EventHandler(this.buttonExitStudent_Click);
+            // 
+            // buttonAvailableExams
+            // 
+            this.buttonAvailableExams.FlatAppearance.BorderSize = 0;
+            this.buttonAvailableExams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAvailableExams.Location = new System.Drawing.Point(0, 106);
+            this.buttonAvailableExams.Name = "buttonAvailableExams";
+            this.buttonAvailableExams.Size = new System.Drawing.Size(200, 110);
+            this.buttonAvailableExams.TabIndex = 4;
+            this.buttonAvailableExams.Text = "Available exams";
+            this.buttonAvailableExams.UseVisualStyleBackColor = true;
+            this.buttonAvailableExams.Click += new System.EventHandler(this.buttonAvailableExams_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(200, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1095, 486);
+            this.panel4.TabIndex = 4;
             // 
             // Form1
             // 
@@ -140,6 +163,7 @@
             this.ClientSize = new System.Drawing.Size(1295, 551);
             this.Controls.Add(this.buttonExitStudent);
             this.Controls.Add(this.panelForButton);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -170,6 +194,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonExitStudent;
+        private System.Windows.Forms.Button buttonAvailableExams;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 
