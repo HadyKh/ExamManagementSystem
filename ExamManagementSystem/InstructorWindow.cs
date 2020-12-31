@@ -67,5 +67,10 @@ namespace ExamManagementSystem
             this.Close();
             #endregion
         }
+
+        private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

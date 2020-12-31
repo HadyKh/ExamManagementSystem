@@ -153,6 +153,7 @@
             this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.circularPictureBox1.TabIndex = 2;
             this.circularPictureBox1.TabStop = false;
+            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
             // 
             // label1
             // 
