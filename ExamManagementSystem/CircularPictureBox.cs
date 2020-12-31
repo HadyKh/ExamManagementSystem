@@ -8,7 +8,7 @@ using System.Drawing.Drawing2D;
 
 namespace ExamManagementSystem
 {
-    class CircularPictureBox : PictureBox
+    public class CircularPictureBox : PictureBox
     {
         protected override void OnPaint(PaintEventArgs pe)
         {
