@@ -47,5 +47,10 @@ namespace ExamManagementSystem
         {
 
         }
+
+        private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -10,22 +10,18 @@ using System.Windows.Forms;
 
 namespace ExamManagementSystem
 {
-    public partial class ListItemAvailableExam : Form
+    public partial class StartExamBtnMsgBox : Form
     {
-        public ListItemAvailableExam()
+        public StartExamBtnMsgBox()
         {
             InitializeComponent();
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var m = new StartExamBtnMsgBox();
+            var m = new ExamWindow();
             m.Show();
+            this.Close();
         }
     }
 }

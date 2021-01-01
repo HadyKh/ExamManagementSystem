@@ -55,6 +55,12 @@
     <Compile Include="CircularPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ExamWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamWindow.Designer.cs">
+      <DependentUpon>ExamWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListItemAvailableExam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,12 @@
     </Compile>
     <Compile Include="SplashScreenWindow.Designer.cs">
       <DependentUpon>SplashScreenWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartExamBtnMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartExamBtnMsgBox.Designer.cs">
+      <DependentUpon>StartExamBtnMsgBox.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentWindow.cs">
       <SubType>Form</SubType>
@@ -96,6 +108,9 @@
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExamWindow.resx">
+      <DependentUpon>ExamWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListItemAvailableExam.resx">
       <DependentUpon>ListItemAvailableExam.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreenWindow.resx">
       <DependentUpon>SplashScreenWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartExamBtnMsgBox.resx">
+      <DependentUpon>StartExamBtnMsgBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentWindow.resx">
       <DependentUpon>StudentWindow.cs</DependentUpon>

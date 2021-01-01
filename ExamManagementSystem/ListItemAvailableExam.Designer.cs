@@ -32,6 +32,9 @@
             this.lblExamType = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTopicName
@@ -78,6 +81,38 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Start Exam";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(407, 54);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(50, 20);
+            this.lblTime.TabIndex = 4;
+            this.lblTime.Text = "Time";
+            this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
+            // 
+            // lbl1
+            // 
+            this.lbl1.AutoSize = true;
+            this.lbl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl1.Location = new System.Drawing.Point(351, 54);
+            this.lbl1.Name = "lbl1";
+            this.lbl1.Size = new System.Drawing.Size(62, 20);
+            this.lbl1.TabIndex = 5;
+            this.lbl1.Text = "Time: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(464, 54);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 20);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "MInutes";
             // 
             // ListItemAvailableExam
             // 
@@ -85,6 +120,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(787, 122);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl1);
+            this.Controls.Add(this.lblTime);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblExamType);
@@ -104,5 +142,8 @@
         private System.Windows.Forms.Label lblExamType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lbl1;
+        private System.Windows.Forms.Label label2;
     }
 }
