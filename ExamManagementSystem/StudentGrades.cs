@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace ExamManagementSystem
 {
-    public partial class ListItemStudentGrade : UserControl
+    public partial class StudentGrades : Form
     {
-        public ListItemStudentGrade()
+        public StudentGrades()
         {
             InitializeComponent();
-        }
-
-        private void lblTopicName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
