@@ -29,13 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblExamType = new System.Windows.Forms.Label();
             this.lblTopicName = new System.Windows.Forms.Label();
+            this.lblExamType = new System.Windows.Forms.Label();
+            this.lblExamTimer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblExamTimer);
             this.panel1.Controls.Add(this.lblTopicName);
             this.panel1.Controls.Add(this.lblExamType);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -43,6 +45,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1095, 100);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblTopicName
+            // 
+            this.lblTopicName.AutoSize = true;
+            this.lblTopicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicName.Location = new System.Drawing.Point(485, 29);
+            this.lblTopicName.Name = "lblTopicName";
+            this.lblTopicName.Size = new System.Drawing.Size(205, 39);
+            this.lblTopicName.TabIndex = 0;
+            this.lblTopicName.Text = "Topic name";
             // 
             // lblExamType
             // 
@@ -54,15 +67,15 @@
             this.lblExamType.TabIndex = 0;
             this.lblExamType.Text = "Exam Type";
             // 
-            // lblTopicName
+            // lblExamTimer
             // 
-            this.lblTopicName.AutoSize = true;
-            this.lblTopicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTopicName.Location = new System.Drawing.Point(485, 29);
-            this.lblTopicName.Name = "lblTopicName";
-            this.lblTopicName.Size = new System.Drawing.Size(205, 39);
-            this.lblTopicName.TabIndex = 0;
-            this.lblTopicName.Text = "Topic name";
+            this.lblExamTimer.AutoSize = true;
+            this.lblExamTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExamTimer.Location = new System.Drawing.Point(950, 40);
+            this.lblExamTimer.Name = "lblExamTimer";
+            this.lblExamTimer.Size = new System.Drawing.Size(90, 25);
+            this.lblExamTimer.TabIndex = 1;
+            this.lblExamTimer.Text = "00:00:00";
             // 
             // ExamWindow
             // 
@@ -89,5 +102,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTopicName;
         private System.Windows.Forms.Label lblExamType;
+        private System.Windows.Forms.Label lblExamTimer;
     }
 }

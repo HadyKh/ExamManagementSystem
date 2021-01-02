@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelForButton = new System.Windows.Forms.Panel();
             this.buttonExitInstructor = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
@@ -213,12 +214,21 @@
             this.buttonExitInstructor.UseVisualStyleBackColor = true;
             this.buttonExitInstructor.Click += new System.EventHandler(this.buttonExitInstructor_Click);
             // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(200, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1095, 486);
+            this.panel4.TabIndex = 4;
+            // 
             // InstructorWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1295, 551);
             this.Controls.Add(this.buttonExitInstructor);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panelForButton);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -254,6 +264,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonExitInstructor;
+        private System.Windows.Forms.Panel panel4;
     }
 }
 
