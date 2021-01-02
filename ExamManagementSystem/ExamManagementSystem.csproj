@@ -62,7 +62,7 @@
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="ListItemAvailableExam.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ListItemAvailableExam.Designer.cs">
       <DependentUpon>ListItemAvailableExam.cs</DependentUpon>
@@ -78,6 +78,12 @@
     </Compile>
     <Compile Include="ListItemStudentGrade.Designer.cs">
       <DependentUpon>ListItemStudentGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SigninAsStudentMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SigninAsStudentMsgBox.Designer.cs">
+      <DependentUpon>SigninAsStudentMsgBox.cs</DependentUpon>
     </Compile>
     <Compile Include="SigninWindow.cs">
       <SubType>Form</SubType>
@@ -137,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListItemStudentGrade.resx">
       <DependentUpon>ListItemStudentGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SigninAsStudentMsgBox.resx">
+      <DependentUpon>SigninAsStudentMsgBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SigninWindow.resx">
       <DependentUpon>SigninWindow.cs</DependentUpon>
