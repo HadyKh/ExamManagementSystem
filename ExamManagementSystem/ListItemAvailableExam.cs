@@ -27,5 +27,25 @@ namespace ExamManagementSystem
             var m = new StartExamBtnMsgBox();
             m.Show();
         }
+
+        private void lblTopicName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblExamType_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblExamTime_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
