@@ -61,23 +61,17 @@
     <Compile Include="ExamWindow.Designer.cs">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="Grades.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Grades.Designer.cs">
-      <DependentUpon>Grades.cs</DependentUpon>
-    </Compile>
     <Compile Include="ListItemAvailableExam.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="ListItemAvailableExam.Designer.cs">
       <DependentUpon>ListItemAvailableExam.cs</DependentUpon>
     </Compile>
-    <Compile Include="ListItemStudentGrade.cs">
+    <Compile Include="ListItemExamQuestion.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ListItemStudentGrade.Designer.cs">
-      <DependentUpon>ListItemStudentGrade.cs</DependentUpon>
+    <Compile Include="ListItemExamQuestion.Designer.cs">
+      <DependentUpon>ListItemExamQuestion.cs</DependentUpon>
     </Compile>
     <Compile Include="SigninWindow.cs">
       <SubType>Form</SubType>
@@ -123,14 +117,11 @@
     <EmbeddedResource Include="ExamWindow.resx">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Grades.resx">
-      <DependentUpon>Grades.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ListItemAvailableExam.resx">
       <DependentUpon>ListItemAvailableExam.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListItemStudentGrade.resx">
-      <DependentUpon>ListItemStudentGrade.cs</DependentUpon>
+    <EmbeddedResource Include="ListItemExamQuestion.resx">
+      <DependentUpon>ListItemExamQuestion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SigninWindow.resx">
       <DependentUpon>SigninWindow.cs</DependentUpon>
