@@ -33,6 +33,7 @@
             this.lblCourseName = new System.Windows.Forms.Label();
             this.lblGradeFixed = new System.Windows.Forms.Label();
             this.lblGrade = new System.Windows.Forms.Label();
+            this.buttonDetail = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblExamType
@@ -96,11 +97,28 @@
             this.lblGrade.Text = "Grade";
             this.lblGrade.Click += new System.EventHandler(this.label2_Click);
             // 
+            // buttonDetail
+            // 
+            this.buttonDetail.BackColor = System.Drawing.Color.Green;
+            this.buttonDetail.FlatAppearance.BorderSize = 0;
+            this.buttonDetail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDetail.ForeColor = System.Drawing.Color.White;
+            this.buttonDetail.Location = new System.Drawing.Point(616, 27);
+            this.buttonDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDetail.Name = "buttonDetail";
+            this.buttonDetail.Size = new System.Drawing.Size(98, 68);
+            this.buttonDetail.TabIndex = 9;
+            this.buttonDetail.Text = "Details";
+            this.buttonDetail.UseVisualStyleBackColor = false;
+            this.buttonDetail.Click += new System.EventHandler(this.buttonDetail_Click);
+            // 
             // ListItemStudentGrade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.buttonDetail);
             this.Controls.Add(this.lblGrade);
             this.Controls.Add(this.lblGradeFixed);
             this.Controls.Add(this.lblCourseName);
@@ -120,5 +138,6 @@
         private System.Windows.Forms.Label lblCourseName;
         private System.Windows.Forms.Label lblGradeFixed;
         private System.Windows.Forms.Label lblGrade;
+        private System.Windows.Forms.Button buttonDetail;
     }
 }

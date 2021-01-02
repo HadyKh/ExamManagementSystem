@@ -26,5 +26,10 @@ namespace ExamManagementSystem
         {
 
         }
+
+        private void buttonDetail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
