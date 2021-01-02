@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace ExamManagementSystem
 {
-    public partial class ListItemAvailableExam : UserControl
+    public partial class ListItemExamQuestion : UserControl
     {
-        public ListItemAvailableExam()
+        public ListItemExamQuestion()
         {
             InitializeComponent();
-        }
-
-        private void buttonStartExam_Click(object sender, EventArgs e)
-        {
-            var m = new StartExamBtnMsgBox();
-            m.Show();
         }
     }
 }

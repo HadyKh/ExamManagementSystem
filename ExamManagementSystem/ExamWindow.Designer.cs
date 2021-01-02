@@ -28,7 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblExamType = new System.Windows.Forms.Label();
+            this.lblTopicName = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblTopicName);
+            this.panel1.Controls.Add(this.lblExamType);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1095, 100);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblExamType
+            // 
+            this.lblExamType.AutoSize = true;
+            this.lblExamType.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExamType.Location = new System.Drawing.Point(36, 29);
+            this.lblExamType.Name = "lblExamType";
+            this.lblExamType.Size = new System.Drawing.Size(198, 39);
+            this.lblExamType.TabIndex = 0;
+            this.lblExamType.Text = "Exam Type";
+            // 
+            // lblTopicName
+            // 
+            this.lblTopicName.AutoSize = true;
+            this.lblTopicName.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTopicName.Location = new System.Drawing.Point(485, 29);
+            this.lblTopicName.Name = "lblTopicName";
+            this.lblTopicName.Size = new System.Drawing.Size(205, 39);
+            this.lblTopicName.TabIndex = 0;
+            this.lblTopicName.Text = "Topic name";
             // 
             // ExamWindow
             // 
@@ -36,17 +70,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.ClientSize = new System.Drawing.Size(1263, 535);
+            this.ClientSize = new System.Drawing.Size(1095, 486);
+            this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ExamWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExamWindow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblTopicName;
+        private System.Windows.Forms.Label lblExamType;
     }
 }

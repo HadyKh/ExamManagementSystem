@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonGrades = new System.Windows.Forms.Button();
             this.buttonAvailableExams = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.circularPictureBox1 = new ExamManagementSystem.CircularPictureBox();
@@ -40,8 +42,6 @@
             this.panelForButton = new System.Windows.Forms.Panel();
             this.buttonExitStudent = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.buttonGrades = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
@@ -59,6 +59,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 551);
             this.panel1.TabIndex = 0;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.FlatAppearance.BorderSize = 0;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Location = new System.Drawing.Point(0, 338);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(200, 110);
+            this.buttonEdit.TabIndex = 4;
+            this.buttonEdit.Text = "Edit";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonAvailableExams_Click);
+            // 
+            // buttonGrades
+            // 
+            this.buttonGrades.FlatAppearance.BorderSize = 0;
+            this.buttonGrades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGrades.Location = new System.Drawing.Point(0, 222);
+            this.buttonGrades.Name = "buttonGrades";
+            this.buttonGrades.Size = new System.Drawing.Size(200, 110);
+            this.buttonGrades.TabIndex = 4;
+            this.buttonGrades.Text = "Grades";
+            this.buttonGrades.UseVisualStyleBackColor = true;
+            this.buttonGrades.Click += new System.EventHandler(this.buttonAvailableExams_Click);
             // 
             // buttonAvailableExams
             // 
@@ -159,30 +183,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1095, 486);
             this.panel4.TabIndex = 4;
-            // 
-            // buttonGrades
-            // 
-            this.buttonGrades.FlatAppearance.BorderSize = 0;
-            this.buttonGrades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGrades.Location = new System.Drawing.Point(0, 222);
-            this.buttonGrades.Name = "buttonGrades";
-            this.buttonGrades.Size = new System.Drawing.Size(200, 110);
-            this.buttonGrades.TabIndex = 4;
-            this.buttonGrades.Text = "Grades";
-            this.buttonGrades.UseVisualStyleBackColor = true;
-            this.buttonGrades.Click += new System.EventHandler(this.buttonAvailableExams_Click);
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.FlatAppearance.BorderSize = 0;
-            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEdit.Location = new System.Drawing.Point(0, 338);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(200, 110);
-            this.buttonEdit.TabIndex = 4;
-            this.buttonEdit.Text = "Edit";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonAvailableExams_Click);
             // 
             // Form1
             // 
