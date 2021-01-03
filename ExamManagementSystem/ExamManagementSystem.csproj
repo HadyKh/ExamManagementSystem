@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRemoveInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRemoveInstructor.Designer.cs">
+      <DependentUpon>AddRemoveInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddRemoveStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRemoveStudent.Designer.cs">
+      <DependentUpon>AddRemoveStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +153,12 @@
     <Compile Include="StudentWindowAvailableExams.Designer.cs">
       <DependentUpon>StudentWindowAvailableExams.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddRemoveInstructor.resx">
+      <DependentUpon>AddRemoveInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddRemoveStudent.resx">
+      <DependentUpon>AddRemoveStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
     </EmbeddedResource>

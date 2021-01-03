@@ -43,12 +43,12 @@ namespace ExamManagementSystem
             // 
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.UserName.Location = new System.Drawing.Point(84, 89);
+            this.UserName.Location = new System.Drawing.Point(81, 89);
             this.UserName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(108, 23);
+            this.UserName.Size = new System.Drawing.Size(113, 23);
             this.UserName.TabIndex = 1;
-            this.UserName.Text = "Username";
+            this.UserName.Text = "Username:";
             this.UserName.Click += new System.EventHandler(this.label1_Click);
             // 
             // Password
@@ -58,9 +58,9 @@ namespace ExamManagementSystem
             this.Password.Location = new System.Drawing.Point(96, 168);
             this.Password.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(103, 23);
+            this.Password.Size = new System.Drawing.Size(108, 23);
             this.Password.TabIndex = 2;
-            this.Password.Text = "Password";
+            this.Password.Text = "Password:";
             // 
             // textBox1
             // 
