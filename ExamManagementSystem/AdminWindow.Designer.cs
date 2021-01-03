@@ -58,6 +58,7 @@
             this.Courses.TabIndex = 2;
             this.Courses.Text = "Courses";
             this.Courses.UseVisualStyleBackColor = true;
+            this.Courses.Click += new System.EventHandler(this.Courses_Click);
             // 
             // Student
             // 
