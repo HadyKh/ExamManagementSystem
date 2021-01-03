@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblExamTimer = new System.Windows.Forms.Label();
             this.lblTopicName = new System.Windows.Forms.Label();
             this.lblExamType = new System.Windows.Forms.Label();
-            this.lblExamTimer = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,6 +46,16 @@
             this.panel1.Size = new System.Drawing.Size(1095, 100);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblExamTimer
+            // 
+            this.lblExamTimer.AutoSize = true;
+            this.lblExamTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExamTimer.Location = new System.Drawing.Point(950, 40);
+            this.lblExamTimer.Name = "lblExamTimer";
+            this.lblExamTimer.Size = new System.Drawing.Size(90, 25);
+            this.lblExamTimer.TabIndex = 1;
+            this.lblExamTimer.Text = "00:00:00";
             // 
             // lblTopicName
             // 
@@ -66,16 +76,6 @@
             this.lblExamType.Size = new System.Drawing.Size(198, 39);
             this.lblExamType.TabIndex = 0;
             this.lblExamType.Text = "Exam Type";
-            // 
-            // lblExamTimer
-            // 
-            this.lblExamTimer.AutoSize = true;
-            this.lblExamTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExamTimer.Location = new System.Drawing.Point(950, 40);
-            this.lblExamTimer.Name = "lblExamTimer";
-            this.lblExamTimer.Size = new System.Drawing.Size(90, 25);
-            this.lblExamTimer.TabIndex = 1;
-            this.lblExamTimer.Text = "00:00:00";
             // 
             // ExamWindow
             // 
