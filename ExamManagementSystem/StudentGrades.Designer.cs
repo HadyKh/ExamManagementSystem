@@ -29,7 +29,17 @@ namespace ExamManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            this.listItemStudentGrade1 = new ExamManagementSystem.ListItemStudentGrade();
             this.SuspendLayout();
+            // 
+            // listItemStudentGrade1
+            // 
+            this.listItemStudentGrade1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.listItemStudentGrade1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.listItemStudentGrade1.Location = new System.Drawing.Point(95, 24);
+            this.listItemStudentGrade1.Name = "listItemStudentGrade1";
+            this.listItemStudentGrade1.Size = new System.Drawing.Size(803, 131);
+            this.listItemStudentGrade1.TabIndex = 0;
             // 
             // StudentGrades
             // 
@@ -39,6 +49,7 @@ namespace ExamManagementSystem
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(1095, 486);
+            this.Controls.Add(this.listItemStudentGrade1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "StudentGrades";
@@ -48,5 +59,7 @@ namespace ExamManagementSystem
         }
 
         #endregion
+
+        private ListItemStudentGrade listItemStudentGrade1;
     }
 }
