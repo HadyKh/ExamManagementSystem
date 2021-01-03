@@ -22,6 +22,7 @@ namespace ExamManagementSystem
         {
             String cs = "data source =DESKTOP-HI3M44K\\DEVSQL ; database = ExamManagmentSystem : integrated security = SSPI";
             SqlConnection con = new SqlConnection(cs);
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -45,9 +46,32 @@ namespace ExamManagementSystem
             #endregion
         }
 
+        private void populateItems()
+        {
+            listItemAvailableExam[] listItems = new listItemAvailableExam[10];
+            for (int i = 0; i < listItems.Length; i++)
+            {
+                listItems[i] = new listItemAvailableExam();
+                listItems[i].At = "10:00 PM";
+                listItems[i].TopicName = "C#";
+                listItems[i].CrsName = "Programming";
+                listItems[i].Time = "1 hour";
+                listItems[i].ExamType = "First chance";
+
+                if (flowLayoutPanelwindowshow.Controls.Count < 0)
+                {
+                    flowLayoutPanelwindowshow.Controls.Clear();
+                }
+                else
+                    flowLayoutPanelwindowshow.Controls.Add(listItems[i]);
+            }
+
+        }
+
         private void buttonAvailableExams_Click(object sender, EventArgs e)
         {
-
+            flowLayoutPanelwindowshow.Controls.Clear();
+            populateItems();
         }
 
         private void circularPictureBox1_Click(object sender, EventArgs e)
@@ -68,6 +92,12 @@ namespace ExamManagementSystem
         private void buttonMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+
+        private void buttonGrades_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

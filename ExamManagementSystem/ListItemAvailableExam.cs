@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,42 +10,83 @@ using System.Windows.Forms;
 
 namespace ExamManagementSystem
 {
-    public partial class ListItemAvailableExam : Form
+    public partial class listItemAvailableExam : UserControl
     {
-        public ListItemAvailableExam()
+        public listItemAvailableExam()
         {
             InitializeComponent();
         }
 
-        private void lblTime_Click(object sender, EventArgs e)
-        {
+        private string _topicName;
+        private string _time;
+        private string _examType;
+        private string _crsName;
+        private string _at;
 
+        public string TopicName
+        {
+            get { return _topicName; }
+            set
+            { 
+                _topicName = value;
+                lblTopicName.Text = value;
+            }
+        }
+
+        public string ExamType
+        {
+            get { return _examType; }
+            set 
+            {
+                _examType = value;
+                lblExamType.Text = value;
+            }
+        }
+
+        public string CrsName
+        {
+            get { return _crsName; }
+            set 
+            {
+                _crsName = value;
+                lblCrsName.Text = value;
+            }
+        }
+
+        public string At
+        {
+            get { return _at; }
+            set 
+            {
+                _at = value;
+                lblAtTime.Text = value;
+            }
+        }
+
+        public string Time
+        {
+            get { return _time; }
+            set 
+            {
+                _time = value;
+                lblExamTime.Text = value;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var m = new StartExamBtnMsgBox();
+            var m = new ExamWindow();
             m.Show();
         }
 
-        private void lblTopicName_Click(object sender, EventArgs e)
+        private void mouseHover(object sender, EventArgs e)
         {
-
+            this.BackColor = Color.FromArgb(19, 13, 0, 64);
         }
 
-        private void lblExamType_Click(object sender, EventArgs e)
+        private void mouseEnter(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblExamTime_Click(object sender, EventArgs e)
-        {
-
+            this.BackColor = Color.FromArgb(41, 44, 51);
         }
     }
 }

@@ -12,6 +12,75 @@ namespace ExamManagementSystem
 {
     public partial class ListItemExamQuestion : UserControl
     {
+
+        #region fields
+        private string _qNum;
+        private string _question;
+        private string _answer1;
+        private string _answer2;
+        private string _answer3;
+        private string _answer4;
+        public string QNum
+        {
+            get { return _qNum; }
+            set 
+            {
+                _qNum = value;
+                lblQNumber.Text = value;
+            }
+        }
+
+        public string Question
+        {
+            get { return _question; }
+            set 
+            {
+                _question = value;
+                lblQuestion.Text = value;
+            }
+        }
+
+        public string Answer1
+        {
+            get { return _answer1; }
+            set 
+            {
+                _answer1 = value;
+                radioBtnAns1.Text = value;
+            }
+        }
+
+        public string Answer2
+        {
+            get { return _answer2; }
+            set
+            {
+                _answer2 = value;
+                radioBtnAns2.Text = value;
+            }
+        }
+
+        public string Answer3
+        {
+            get { return _answer3; }
+            set
+            { 
+                _answer3 = value;
+                radioBtnAns3.Text = value;
+            }
+        }
+
+        public string Answer4
+        {
+            get { return _answer4; }
+            set 
+            {
+                _answer4 = value;
+                radioBtnAns4.Text = value;
+            }
+        }
+        #endregion
+
         public ListItemExamQuestion()
         {
             InitializeComponent();
