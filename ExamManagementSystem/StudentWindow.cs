@@ -70,7 +70,7 @@ namespace ExamManagementSystem
 
         private void buttonAvailableExams_Click(object sender, EventArgs e)
         {
-            
+            flowLayoutPanelwindowshow.Controls.Clear();
             populateItems();
         }
 
