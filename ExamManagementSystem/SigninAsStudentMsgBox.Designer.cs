@@ -54,7 +54,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(220, 89);
+            this.textBox1.Location = new System.Drawing.Point(220, 94);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(291, 20);
             this.textBox1.TabIndex = 5;
@@ -83,7 +83,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(91, 89);
+            this.label1.Location = new System.Drawing.Point(84, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 23);
             this.label1.TabIndex = 8;
