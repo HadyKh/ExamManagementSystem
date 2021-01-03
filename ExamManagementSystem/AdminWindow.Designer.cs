@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminWindow));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Instructor = new System.Windows.Forms.Button();
-            this.Student = new System.Windows.Forms.Button();
             this.Courses = new System.Windows.Forms.Button();
+            this.Student = new System.Windows.Forms.Button();
+            this.Instructor = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonExitAdmin = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -48,16 +48,16 @@
             this.panel1.Size = new System.Drawing.Size(591, 101);
             this.panel1.TabIndex = 5;
             // 
-            // Instructor
+            // Courses
             // 
-            this.Instructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Instructor.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.Instructor.Location = new System.Drawing.Point(235, 23);
-            this.Instructor.Name = "Instructor";
-            this.Instructor.Size = new System.Drawing.Size(121, 62);
-            this.Instructor.TabIndex = 0;
-            this.Instructor.Text = "Instructor";
-            this.Instructor.UseVisualStyleBackColor = true;
+            this.Courses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Courses.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.Courses.Location = new System.Drawing.Point(426, 23);
+            this.Courses.Name = "Courses";
+            this.Courses.Size = new System.Drawing.Size(124, 62);
+            this.Courses.TabIndex = 2;
+            this.Courses.Text = "Courses";
+            this.Courses.UseVisualStyleBackColor = true;
             // 
             // Student
             // 
@@ -70,17 +70,19 @@
             this.Student.TabIndex = 1;
             this.Student.Text = "Student";
             this.Student.UseVisualStyleBackColor = true;
+            this.Student.Click += new System.EventHandler(this.Student_Click);
             // 
-            // Courses
+            // Instructor
             // 
-            this.Courses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Courses.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.Courses.Location = new System.Drawing.Point(426, 23);
-            this.Courses.Name = "Courses";
-            this.Courses.Size = new System.Drawing.Size(124, 62);
-            this.Courses.TabIndex = 2;
-            this.Courses.Text = "Courses";
-            this.Courses.UseVisualStyleBackColor = true;
+            this.Instructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Instructor.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.Instructor.Location = new System.Drawing.Point(235, 23);
+            this.Instructor.Name = "Instructor";
+            this.Instructor.Size = new System.Drawing.Size(121, 62);
+            this.Instructor.TabIndex = 0;
+            this.Instructor.Text = "Instructor";
+            this.Instructor.UseVisualStyleBackColor = true;
+            this.Instructor.Click += new System.EventHandler(this.Instructor_Click);
             // 
             // panel2
             // 

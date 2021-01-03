@@ -37,5 +37,17 @@ namespace ExamManagementSystem
             this.Close();
             #endregion
         }
+
+        private void Student_Click(object sender, EventArgs e)
+        {
+            var m = new AddRemoveStudent();
+            m.Show();
+        }
+
+        private void Instructor_Click(object sender, EventArgs e)
+        {
+            var m = new AddRemoveInstructor();
+            m.Show();
+        }
     }
 }

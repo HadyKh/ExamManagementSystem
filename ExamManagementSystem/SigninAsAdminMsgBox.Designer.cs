@@ -43,7 +43,7 @@ namespace ExamManagementSystem
             // 
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.UserName.Location = new System.Drawing.Point(84, 89);
+            this.UserName.Location = new System.Drawing.Point(81, 89);
             this.UserName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(113, 23);
