@@ -70,7 +70,7 @@
             this.buttonEdit.TabIndex = 4;
             this.buttonEdit.Text = "Edit";
             this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonAvailableExams_Click);
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // buttonGrades
             // 
@@ -82,7 +82,7 @@
             this.buttonGrades.TabIndex = 4;
             this.buttonGrades.Text = "Grades";
             this.buttonGrades.UseVisualStyleBackColor = true;
-            this.buttonGrades.Click += new System.EventHandler(this.buttonAvailableExams_Click);
+            this.buttonGrades.Click += new System.EventHandler(this.buttonGrades_Click);
             // 
             // buttonAvailableExams
             // 
