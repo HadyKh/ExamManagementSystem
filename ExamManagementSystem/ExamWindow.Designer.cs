@@ -30,14 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblss = new System.Windows.Forms.Label();
+            this.lblmm = new System.Windows.Forms.Label();
             this.lblhh = new System.Windows.Forms.Label();
             this.lblTopicName = new System.Windows.Forms.Label();
             this.lblExamType = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblmm = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblss = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,46 @@
             this.panel1.Size = new System.Drawing.Size(1095, 100);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(994, 43);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = ":";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(922, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = ":";
+            // 
+            // lblss
+            // 
+            this.lblss.AutoSize = true;
+            this.lblss.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblss.Location = new System.Drawing.Point(1018, 43);
+            this.lblss.Name = "lblss";
+            this.lblss.Size = new System.Drawing.Size(32, 25);
+            this.lblss.TabIndex = 1;
+            this.lblss.Text = "ss";
+            // 
+            // lblmm
+            // 
+            this.lblmm.AutoSize = true;
+            this.lblmm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmm.Location = new System.Drawing.Point(946, 43);
+            this.lblmm.Name = "lblmm";
+            this.lblmm.Size = new System.Drawing.Size(44, 25);
+            this.lblmm.TabIndex = 1;
+            this.lblmm.Text = "mm";
             // 
             // lblhh
             // 
@@ -91,46 +131,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(922, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 25);
-            this.label1.TabIndex = 1;
-            this.label1.Text = ":";
-            // 
-            // lblmm
-            // 
-            this.lblmm.AutoSize = true;
-            this.lblmm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmm.Location = new System.Drawing.Point(946, 43);
-            this.lblmm.Name = "lblmm";
-            this.lblmm.Size = new System.Drawing.Size(44, 25);
-            this.lblmm.TabIndex = 1;
-            this.lblmm.Text = "mm";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(994, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = ":";
-            // 
-            // lblss
-            // 
-            this.lblss.AutoSize = true;
-            this.lblss.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblss.Location = new System.Drawing.Point(1018, 43);
-            this.lblss.Name = "lblss";
-            this.lblss.Size = new System.Drawing.Size(32, 25);
-            this.lblss.TabIndex = 1;
-            this.lblss.Text = "ss";
-            // 
             // ExamWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -145,6 +145,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExamWindow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ExamWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
