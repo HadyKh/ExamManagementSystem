@@ -73,17 +73,17 @@
     <Compile Include="ExamWindow.Designer.cs">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="listItemAvailableExam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="listItemAvailableExam.Designer.cs">
+      <DependentUpon>listItemAvailableExam.cs</DependentUpon>
+    </Compile>
     <Compile Include="SigninAsAdminMsgBox.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SigninAsAdminMsgBox.Designer.cs">
       <DependentUpon>SigninAsAdminMsgBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ListItemAvailableExam.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ListItemAvailableExam.Designer.cs">
-      <DependentUpon>ListItemAvailableExam.cs</DependentUpon>
     </Compile>
     <Compile Include="ListItemExamQuestion.cs">
       <SubType>UserControl</SubType>
@@ -165,8 +165,8 @@
     <EmbeddedResource Include="ExamWindow.resx">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListItemAvailableExam.resx">
-      <DependentUpon>ListItemAvailableExam.cs</DependentUpon>
+    <EmbeddedResource Include="listItemAvailableExam.resx">
+      <DependentUpon>listItemAvailableExam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListItemExamQuestion.resx">
       <DependentUpon>ListItemExamQuestion.cs</DependentUpon>
