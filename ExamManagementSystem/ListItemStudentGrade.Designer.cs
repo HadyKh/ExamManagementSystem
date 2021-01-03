@@ -38,7 +38,7 @@
             // 
             // lblExamType
             // 
-            this.lblExamType.AutoSize = true;
+            this.lblExamType.AutoEllipsis = true;
             this.lblExamType.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblExamType.Location = new System.Drawing.Point(49, 81);
             this.lblExamType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -49,7 +49,7 @@
             // 
             // lblTopicName
             // 
-            this.lblTopicName.AutoSize = true;
+            this.lblTopicName.AutoEllipsis = true;
             this.lblTopicName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblTopicName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.lblTopicName.Location = new System.Drawing.Point(49, 53);
@@ -62,7 +62,7 @@
             // 
             // lblCourseName
             // 
-            this.lblCourseName.AutoSize = true;
+            this.lblCourseName.AutoEllipsis = true;
             this.lblCourseName.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.lblCourseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.lblCourseName.Location = new System.Drawing.Point(48, 15);
@@ -74,10 +74,10 @@
             // 
             // lblGradeFixed
             // 
-            this.lblGradeFixed.AutoSize = true;
+            this.lblGradeFixed.AutoEllipsis = true;
             this.lblGradeFixed.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.lblGradeFixed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblGradeFixed.Location = new System.Drawing.Point(300, 42);
+            this.lblGradeFixed.Location = new System.Drawing.Point(276, 42);
             this.lblGradeFixed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGradeFixed.Name = "lblGradeFixed";
             this.lblGradeFixed.Size = new System.Drawing.Size(114, 33);
@@ -86,10 +86,10 @@
             // 
             // lblGrade
             // 
-            this.lblGrade.AutoSize = true;
+            this.lblGrade.AutoEllipsis = true;
             this.lblGrade.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.lblGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblGrade.Location = new System.Drawing.Point(407, 42);
+            this.lblGrade.Location = new System.Drawing.Point(383, 42);
             this.lblGrade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGrade.Name = "lblGrade";
             this.lblGrade.Size = new System.Drawing.Size(96, 33);
@@ -99,12 +99,13 @@
             // 
             // buttonDetail
             // 
+            this.buttonDetail.AutoEllipsis = true;
             this.buttonDetail.BackColor = System.Drawing.Color.Green;
             this.buttonDetail.FlatAppearance.BorderSize = 0;
             this.buttonDetail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDetail.ForeColor = System.Drawing.Color.White;
-            this.buttonDetail.Location = new System.Drawing.Point(616, 27);
+            this.buttonDetail.Location = new System.Drawing.Point(581, 30);
             this.buttonDetail.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDetail.Name = "buttonDetail";
             this.buttonDetail.Size = new System.Drawing.Size(98, 68);
@@ -126,9 +127,9 @@
             this.Controls.Add(this.lblTopicName);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.Name = "ListItemStudentGrade";
-            this.Size = new System.Drawing.Size(803, 131);
+            this.Size = new System.Drawing.Size(746, 131);
+            this.Load += new System.EventHandler(this.ListItemStudentGrade_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

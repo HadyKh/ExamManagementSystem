@@ -94,10 +94,6 @@ namespace ExamManagementSystem
             WindowState = FormWindowState.Minimized;
         }
 
-        private void buttonEdit_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void buttonGrades_Click(object sender, EventArgs e)
         {
