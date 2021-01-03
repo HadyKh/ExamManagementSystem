@@ -31,12 +31,13 @@
             this.lblExamTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.lblTime = new System.Windows.Forms.Label();
+            this.lblAtTime = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCrsName = new System.Windows.Forms.Label();
             this.lblExamType = new System.Windows.Forms.Label();
             this.lblTopicName = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblExamTime
@@ -72,16 +73,16 @@
             this.lbl1.TabIndex = 12;
             this.lbl1.Text = "At: ";
             // 
-            // lblTime
+            // lblAtTime
             // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(473, 78);
-            this.lblTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(65, 20);
-            this.lblTime.TabIndex = 11;
-            this.lblTime.Text = "hh:mm";
+            this.lblAtTime.AutoSize = true;
+            this.lblAtTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtTime.Location = new System.Drawing.Point(473, 78);
+            this.lblAtTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAtTime.Name = "lblAtTime";
+            this.lblAtTime.Size = new System.Drawing.Size(65, 20);
+            this.lblAtTime.TabIndex = 11;
+            this.lblAtTime.Text = "hh:mm";
             // 
             // button1
             // 
@@ -97,17 +98,18 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Start Exam";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // lblCrsName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.label1.Location = new System.Drawing.Point(114, 115);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 24);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "CrsName";
+            this.lblCrsName.AutoSize = true;
+            this.lblCrsName.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblCrsName.Location = new System.Drawing.Point(114, 115);
+            this.lblCrsName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCrsName.Name = "lblCrsName";
+            this.lblCrsName.Size = new System.Drawing.Size(90, 24);
+            this.lblCrsName.TabIndex = 9;
+            this.lblCrsName.Text = "CrsName";
             // 
             // lblExamType
             // 
@@ -141,25 +143,37 @@
             this.panel1.Size = new System.Drawing.Size(68, 183);
             this.panel1.TabIndex = 15;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(68, 182);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1027, 1);
+            this.panel2.TabIndex = 16;
+            // 
             // listItemAvailableExam
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblExamTime);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl1);
-            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblAtTime);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCrsName);
             this.Controls.Add(this.lblExamType);
             this.Controls.Add(this.lblTopicName);
             this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "listItemAvailableExam";
             this.Size = new System.Drawing.Size(1095, 183);
+            this.MouseEnter += new System.EventHandler(this.mouseEnter);
+            this.MouseHover += new System.EventHandler(this.mouseHover);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,11 +184,12 @@
         private System.Windows.Forms.Label lblExamTime;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblAtTime;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCrsName;
         private System.Windows.Forms.Label lblExamType;
         private System.Windows.Forms.Label lblTopicName;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
