@@ -61,6 +61,12 @@
     <Compile Include="ExamWindow.Designer.cs">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="SigninAsAdminMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SigninAsAdminMsgBox.Designer.cs">
+      <DependentUpon>SigninAsAdminMsgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListItemAvailableExam.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,12 @@
     </Compile>
     <Compile Include="ListItemStudentGrade.Designer.cs">
       <DependentUpon>ListItemStudentGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SigninAsInstructorMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SigninAsInstructorMsgBox.Designer.cs">
+      <DependentUpon>SigninAsInstructorMsgBox.cs</DependentUpon>
     </Compile>
     <Compile Include="SigninAsStudentMsgBox.cs">
       <SubType>Form</SubType>
@@ -144,6 +156,12 @@
     <EmbeddedResource Include="ListItemStudentGrade.resx">
       <DependentUpon>ListItemStudentGrade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SigninAsAdminMsgBox.resx">
+      <DependentUpon>SigninAsAdminMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SigninAsInstructorMsgBox.resx">
+      <DependentUpon>SigninAsInstructorMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SigninAsStudentMsgBox.resx">
       <DependentUpon>SigninAsStudentMsgBox.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +191,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="StudentWindowAvailableExams.resx">
       <DependentUpon>StudentWindowAvailableExams.cs</DependentUpon>
@@ -189,6 +208,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login_3.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -34,7 +34,8 @@ namespace ExamManagementSystem
 
         private void buttonInstructorSignIn_Click(object sender, EventArgs e)
         {
-
+            var m = new SigninAsInstructorMsgBox();
+            m.Show();
         }
 
         private void buttonStudentSignIn_Click(object sender, EventArgs e)
@@ -45,7 +46,8 @@ namespace ExamManagementSystem
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
-            
+            var m = new SigninAsAdminMsgBox();
+            m.Show();
         }
     }
 }
