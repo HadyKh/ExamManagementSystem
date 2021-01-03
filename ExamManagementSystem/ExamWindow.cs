@@ -13,8 +13,7 @@ namespace ExamManagementSystem
 {
     public partial class ExamWindow : Form
     {
-        System.Timers.Timer t;
-        private int h, m, s;
+        private int h=1, m=00, s=00;
         public ExamWindow()
         {
             InitializeComponent();
@@ -22,22 +21,8 @@ namespace ExamManagementSystem
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            t = new System.Timers.Timer();
-            t.Interval = 1000;
-            t.Elapsed -= OnTimeEvent;
+            
         }
 
-        private void OnTimeEvent(object sender, System.Timers.ElapsedEventArgs e)
-        {
-            Invoke(new Action(() =>
-            {
-                if (s == 60)
-                {
-                    s = 0;
-                    m -= 1;
-                }
-            }
-            ));
-        }
     }
 }
