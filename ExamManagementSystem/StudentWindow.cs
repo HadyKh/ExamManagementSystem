@@ -46,7 +46,7 @@ namespace ExamManagementSystem
             #endregion
         }
 
-        private void populateItems()
+        private void populateExamItems()
         {
             listItemAvailableExam[] listItems = new listItemAvailableExam[10];
             for (int i = 0; i < listItems.Length; i++)
@@ -68,10 +68,40 @@ namespace ExamManagementSystem
 
         }
 
+        private void populateGradeItems()
+        {
+            ListItemStudentGrade[] GradeItems = new ListItemStudentGrade[10]; //<= number of exams that the student took
+
+            for (int i = 0; i < GradeItems.Length; i++)
+            {
+                GradeItems[i] = new ListItemStudentGrade();
+                GradeItems[i].CourseName = "Web";
+                GradeItems[i].TopicName = "HTML";
+                GradeItems[i].ExamType = "First Chance";
+                GradeItems[i].Grade = 80.76M;
+
+                if (flowLayoutPanelwindowshow.Controls.Count < 0)
+                {
+                    flowLayoutPanelwindowshow.Controls.Clear();
+                }
+                else
+                    flowLayoutPanelwindowshow.Controls.Add(GradeItems[i]);
+            }
+        }
         private void buttonAvailableExams_Click(object sender, EventArgs e)
         {
-            
-            populateItems();
+            flowLayoutPanelwindowshow.Controls.Clear();
+            populateExamItems();
+            panelForButton.Height = buttonAvailableExams.Height;
+            panelForButton.Top = buttonAvailableExams.Top;
+        }
+
+        private void buttonGrades_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanelwindowshow.Controls.Clear();
+            populateGradeItems();
+            panelForButton.Height = buttonGrades.Height;
+            panelForButton.Top = buttonGrades.Top;
         }
 
         private void circularPictureBox1_Click(object sender, EventArgs e)
@@ -95,9 +125,5 @@ namespace ExamManagementSystem
         }
 
 
-        private void buttonGrades_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

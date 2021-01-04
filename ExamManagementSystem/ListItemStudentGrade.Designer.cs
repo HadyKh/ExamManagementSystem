@@ -34,16 +34,17 @@
             this.lblGradeFixed = new System.Windows.Forms.Label();
             this.lblGrade = new System.Windows.Forms.Label();
             this.buttonDetail = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lblExamType
             // 
             this.lblExamType.AutoEllipsis = true;
             this.lblExamType.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.lblExamType.Location = new System.Drawing.Point(49, 81);
-            this.lblExamType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblExamType.Location = new System.Drawing.Point(114, 115);
             this.lblExamType.Name = "lblExamType";
-            this.lblExamType.Size = new System.Drawing.Size(83, 19);
+            this.lblExamType.Size = new System.Drawing.Size(138, 31);
             this.lblExamType.TabIndex = 4;
             this.lblExamType.Text = "ExamType";
             // 
@@ -52,10 +53,9 @@
             this.lblTopicName.AutoEllipsis = true;
             this.lblTopicName.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.lblTopicName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblTopicName.Location = new System.Drawing.Point(49, 53);
-            this.lblTopicName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTopicName.Location = new System.Drawing.Point(114, 73);
             this.lblTopicName.Name = "lblTopicName";
-            this.lblTopicName.Size = new System.Drawing.Size(100, 19);
+            this.lblTopicName.Size = new System.Drawing.Size(167, 31);
             this.lblTopicName.TabIndex = 3;
             this.lblTopicName.Text = "TopicName";
             this.lblTopicName.Click += new System.EventHandler(this.lblTopicName_Click);
@@ -65,10 +65,9 @@
             this.lblCourseName.AutoEllipsis = true;
             this.lblCourseName.Font = new System.Drawing.Font("Tahoma", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)), true);
             this.lblCourseName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblCourseName.Location = new System.Drawing.Point(48, 15);
-            this.lblCourseName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCourseName.Location = new System.Drawing.Point(112, 25);
             this.lblCourseName.Name = "lblCourseName";
-            this.lblCourseName.Size = new System.Drawing.Size(153, 27);
+            this.lblCourseName.Size = new System.Drawing.Size(255, 44);
             this.lblCourseName.TabIndex = 6;
             this.lblCourseName.Text = "CourseName";
             // 
@@ -77,10 +76,9 @@
             this.lblGradeFixed.AutoEllipsis = true;
             this.lblGradeFixed.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.lblGradeFixed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblGradeFixed.Location = new System.Drawing.Point(276, 42);
-            this.lblGradeFixed.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGradeFixed.Location = new System.Drawing.Point(406, 78);
             this.lblGradeFixed.Name = "lblGradeFixed";
-            this.lblGradeFixed.Size = new System.Drawing.Size(114, 33);
+            this.lblGradeFixed.Size = new System.Drawing.Size(190, 53);
             this.lblGradeFixed.TabIndex = 7;
             this.lblGradeFixed.Text = "Grade: ";
             // 
@@ -89,10 +87,9 @@
             this.lblGrade.AutoEllipsis = true;
             this.lblGrade.Font = new System.Drawing.Font("Tahoma", 20F, System.Drawing.FontStyle.Bold);
             this.lblGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblGrade.Location = new System.Drawing.Point(383, 42);
-            this.lblGrade.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGrade.Location = new System.Drawing.Point(546, 78);
             this.lblGrade.Name = "lblGrade";
-            this.lblGrade.Size = new System.Drawing.Size(96, 33);
+            this.lblGrade.Size = new System.Drawing.Size(160, 53);
             this.lblGrade.TabIndex = 8;
             this.lblGrade.Text = "Grade";
             this.lblGrade.Click += new System.EventHandler(this.label2_Click);
@@ -105,30 +102,53 @@
             this.buttonDetail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonDetail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDetail.ForeColor = System.Drawing.Color.White;
-            this.buttonDetail.Location = new System.Drawing.Point(581, 30);
-            this.buttonDetail.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonDetail.Location = new System.Drawing.Point(838, 33);
             this.buttonDetail.Name = "buttonDetail";
-            this.buttonDetail.Size = new System.Drawing.Size(98, 68);
-            this.buttonDetail.TabIndex = 9;
+            this.buttonDetail.Size = new System.Drawing.Size(196, 109);
+            this.buttonDetail.TabIndex = 10;
             this.buttonDetail.Text = "Details";
             this.buttonDetail.UseVisualStyleBackColor = false;
             this.buttonDetail.Click += new System.EventHandler(this.buttonDetail_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(0, 181);
+            this.panel2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1062, 2);
+            this.panel2.TabIndex = 17;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(68, 181);
+            this.panel1.TabIndex = 15;
+            // 
             // ListItemStudentGrade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.buttonDetail);
             this.Controls.Add(this.lblGrade);
             this.Controls.Add(this.lblGradeFixed);
             this.Controls.Add(this.lblCourseName);
             this.Controls.Add(this.lblExamType);
             this.Controls.Add(this.lblTopicName);
+            this.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.Name = "ListItemStudentGrade";
-            this.Size = new System.Drawing.Size(746, 131);
+            this.Size = new System.Drawing.Size(1062, 183);
             this.Load += new System.EventHandler(this.ListItemStudentGrade_Load);
+            this.MouseEnter += new System.EventHandler(this.ListItemStudentGrade_MouseEnter);
+            this.MouseHover += new System.EventHandler(this.ListItemStudentGrade_MouseHover);
             this.ResumeLayout(false);
 
         }
@@ -140,5 +160,7 @@
         private System.Windows.Forms.Label lblGradeFixed;
         private System.Windows.Forms.Label lblGrade;
         private System.Windows.Forms.Button buttonDetail;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

@@ -127,12 +127,6 @@
     <Compile Include="StartExamBtnMsgBox.Designer.cs">
       <DependentUpon>StartExamBtnMsgBox.cs</DependentUpon>
     </Compile>
-    <Compile Include="StudentGrades.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="StudentGrades.Designer.cs">
-      <DependentUpon>StudentGrades.cs</DependentUpon>
-    </Compile>
     <Compile Include="StudentWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -191,9 +185,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StartExamBtnMsgBox.resx">
       <DependentUpon>StartExamBtnMsgBox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="StudentGrades.resx">
-      <DependentUpon>StudentGrades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentWindow.resx">
       <DependentUpon>StudentWindow.cs</DependentUpon>

@@ -68,5 +68,15 @@ namespace ExamManagementSystem
         {
 
         }
+
+        private void ListItemStudentGrade_MouseEnter(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(41, 44, 51);
+        }
+
+        private void ListItemStudentGrade_MouseHover(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(19, 13, 0, 64);
+        }
     }
 }
