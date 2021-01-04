@@ -29,6 +29,7 @@ namespace ExamManagementSystem
 
         private void buttonExam_Click(object sender, EventArgs e)
         {
+            
             panelForButton.Height = buttonExam.Height;
             panelForButton.Top = buttonExam.Top;
         }
@@ -68,7 +69,13 @@ namespace ExamManagementSystem
             #endregion
         }
 
+       
         private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
         {
 
         }

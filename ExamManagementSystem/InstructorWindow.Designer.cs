@@ -161,7 +161,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 23);
+            this.label1.Size = new System.Drawing.Size(137, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Instructor Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -181,7 +181,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(849, 23);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(81, 23);
+            this.label3.Size = new System.Drawing.Size(67, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "hh/mm";
             // 
@@ -190,7 +190,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(945, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 23);
+            this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "dd/mm/yyyy";
             // 
@@ -221,6 +221,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1095, 486);
             this.panel4.TabIndex = 4;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // InstructorWindow
             // 
