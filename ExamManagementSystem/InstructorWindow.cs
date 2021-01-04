@@ -91,7 +91,9 @@ namespace ExamManagementSystem
             this.label2.Text = datetime.ToString();
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
+       
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

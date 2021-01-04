@@ -39,13 +39,13 @@
             this.circularPictureBox1 = new ExamManagementSystem.CircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelForButton = new System.Windows.Forms.Panel();
-            this.buttonExitInstructor = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonMaximize = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonExitInstructor = new System.Windows.Forms.Button();
+            this.panelForButton = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
@@ -181,43 +181,6 @@
             this.panel2.Size = new System.Drawing.Size(1095, 65);
             this.panel2.TabIndex = 1;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(53, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "dd/mm/yyyy";
-            // 
-            // panelForButton
-            // 
-            this.panelForButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panelForButton.Location = new System.Drawing.Point(200, 106);
-            this.panelForButton.Name = "panelForButton";
-            this.panelForButton.Size = new System.Drawing.Size(7, 110);
-            this.panelForButton.TabIndex = 2;
-            // 
-            // buttonExitInstructor
-            // 
-            this.buttonExitInstructor.FlatAppearance.BorderSize = 0;
-            this.buttonExitInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonExitInstructor.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitInstructor.Image")));
-            this.buttonExitInstructor.Location = new System.Drawing.Point(1037, 3);
-            this.buttonExitInstructor.Name = "buttonExitInstructor";
-            this.buttonExitInstructor.Size = new System.Drawing.Size(46, 57);
-            this.buttonExitInstructor.TabIndex = 3;
-            this.buttonExitInstructor.UseVisualStyleBackColor = true;
-            this.buttonExitInstructor.Click += new System.EventHandler(this.buttonExitInstructor_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(200, 65);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1095, 486);
-            this.panel4.TabIndex = 4;
-            // 
             // buttonMinimize
             // 
             this.buttonMinimize.FlatAppearance.BorderSize = 0;
@@ -242,9 +205,47 @@
             this.buttonMaximize.UseVisualStyleBackColor = true;
             this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(53, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "dd/mm/yyyy";
+            // 
+            // buttonExitInstructor
+            // 
+            this.buttonExitInstructor.FlatAppearance.BorderSize = 0;
+            this.buttonExitInstructor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonExitInstructor.Image = ((System.Drawing.Image)(resources.GetObject("buttonExitInstructor.Image")));
+            this.buttonExitInstructor.Location = new System.Drawing.Point(1037, 3);
+            this.buttonExitInstructor.Name = "buttonExitInstructor";
+            this.buttonExitInstructor.Size = new System.Drawing.Size(46, 57);
+            this.buttonExitInstructor.TabIndex = 3;
+            this.buttonExitInstructor.UseVisualStyleBackColor = true;
+            this.buttonExitInstructor.Click += new System.EventHandler(this.buttonExitInstructor_Click);
+            // 
+            // panelForButton
+            // 
+            this.panelForButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panelForButton.Location = new System.Drawing.Point(200, 106);
+            this.panelForButton.Name = "panelForButton";
+            this.panelForButton.Size = new System.Drawing.Size(7, 110);
+            this.panelForButton.TabIndex = 2;
+            // 
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 66);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1095, 485);
+            this.flowLayoutPanel1.TabIndex = 3;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // InstructorWindow
             // 
@@ -252,7 +253,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1295, 551);
             this.Controls.Add(this.panelForButton);
-            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -286,10 +287,10 @@
         private System.Windows.Forms.Panel panelForButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonExitInstructor;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button buttonMinimize;
         private System.Windows.Forms.Button buttonMaximize;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
 
