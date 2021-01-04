@@ -59,7 +59,7 @@ namespace ExamManagementSystem
             this.lblCrsName.AutoSize = true;
             this.lblCrsName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrsName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblCrsName.Location = new System.Drawing.Point(114, 40);
+            this.lblCrsName.Location = new System.Drawing.Point(82, 40);
             this.lblCrsName.Name = "lblCrsName";
             this.lblCrsName.Size = new System.Drawing.Size(119, 19);
             this.lblCrsName.TabIndex = 1;
@@ -67,7 +67,7 @@ namespace ExamManagementSystem
             // 
             // textBoxCrsName
             // 
-            this.textBoxCrsName.Location = new System.Drawing.Point(239, 39);
+            this.textBoxCrsName.Location = new System.Drawing.Point(207, 39);
             this.textBoxCrsName.Name = "textBoxCrsName";
             this.textBoxCrsName.Size = new System.Drawing.Size(175, 20);
             this.textBoxCrsName.TabIndex = 2;
@@ -77,7 +77,7 @@ namespace ExamManagementSystem
             this.lblTpName.AutoSize = true;
             this.lblTpName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTpName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblTpName.Location = new System.Drawing.Point(114, 91);
+            this.lblTpName.Location = new System.Drawing.Point(82, 91);
             this.lblTpName.Name = "lblTpName";
             this.lblTpName.Size = new System.Drawing.Size(108, 19);
             this.lblTpName.TabIndex = 3;
@@ -85,7 +85,7 @@ namespace ExamManagementSystem
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(239, 90);
+            this.textBox1.Location = new System.Drawing.Point(207, 90);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 20);
             this.textBox1.TabIndex = 4;
@@ -96,7 +96,7 @@ namespace ExamManagementSystem
             this.buttonCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCheck.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCheck.ForeColor = System.Drawing.Color.White;
-            this.buttonCheck.Location = new System.Drawing.Point(447, 77);
+            this.buttonCheck.Location = new System.Drawing.Point(415, 81);
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.Size = new System.Drawing.Size(85, 33);
             this.buttonCheck.TabIndex = 5;
@@ -173,7 +173,7 @@ namespace ExamManagementSystem
             this.buttonGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGenerate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGenerate.ForeColor = System.Drawing.Color.White;
-            this.buttonGenerate.Location = new System.Drawing.Point(955, 58);
+            this.buttonGenerate.Location = new System.Drawing.Point(908, 58);
             this.buttonGenerate.Name = "buttonGenerate";
             this.buttonGenerate.Size = new System.Drawing.Size(101, 70);
             this.buttonGenerate.TabIndex = 12;
@@ -182,8 +182,7 @@ namespace ExamManagementSystem
             // 
             // ListItemExamGeneration
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.Controls.Add(this.buttonGenerate);
             this.Controls.Add(this.comboBoxTrial);
@@ -198,7 +197,7 @@ namespace ExamManagementSystem
             this.Controls.Add(this.textBoxCrsName);
             this.Controls.Add(this.lblCrsName);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListItemExamGeneration";
             this.Size = new System.Drawing.Size(1095, 183);
             this.ResumeLayout(false);

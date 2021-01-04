@@ -17,6 +17,23 @@ namespace ExamManagementSystem
             InitializeComponent();
         }
 
+        #region Property
+        private string _CourseName;
+        private string _TopicName;
+
+        public string CourseName
+        {
+            get { return _CourseName; }
+            set { _CourseName = value; }
+        }
+
+        public string TopicName
+        {
+            get { return _TopicName; }
+            set { _TopicName = value; }
+        }
+        #endregion
+
         private void label1_Click(object sender, EventArgs e)
         {
 

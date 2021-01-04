@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ExamManagementSystem
 {
@@ -29,7 +30,9 @@ namespace ExamManagementSystem
 
         private void buttonExam_Click(object sender, EventArgs e)
         {
-            
+            ListItemExamGeneration listItems = new ListItemExamGeneration();
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(listItems);
             panelForButton.Height = buttonExam.Height;
             panelForButton.Top = buttonExam.Top;
         }
