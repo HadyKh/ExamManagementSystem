@@ -22,7 +22,9 @@ namespace ExamManagementSystem
         {
             String cs = "data source =DESKTOP-HI3M44K\\DEVSQL ; database = ExamManagmentSystem : integrated security = SSPI";
             SqlConnection con = new SqlConnection(cs);
-            
+
+            timer1.Start(); 
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -124,6 +126,25 @@ namespace ExamManagementSystem
             WindowState = FormWindowState.Minimized;
         }
 
+        private void label2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime datetime = DateTime.Now;
+            this.label2.Text = datetime.ToString();
+        }
+
+        private void buttonMaximize_Click_1(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
+
+        private void buttonMinimize_Click_1(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
     }
 }

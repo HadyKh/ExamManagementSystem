@@ -251,6 +251,20 @@
         ffXV/wPceY/ErHVpUwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="buttonMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAGRJREFUSEvt
+        lEEKgDAMBPM8i///QPUfMcjcSsC0iB52YA9ts5lbTZRw9z1yRmY5Io11Iwys0lk3woBzLEM97/MugQQ5
+        1CXIoV4TcJXC2A1XPxNUoP6t4PXvukVWJD2ysU48wewC6rM6Jgj3o4cAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="buttonMaximize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAGVJREFUSEvt
+        lcENACEIBCnP/kvQQjgumR/xDBo9H0zCg7A4P5EkhKoWq2Y1S7UqPOchsErlOQ8BpQ3Den+f+TkB7RDi
+        KehDfF5A62CcggOCEcQvFERh/V/B9u/6PTgrku+Dk3hEHs58KTuVlckiAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="buttonExitStudent.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAQJJREFUSEtj
@@ -261,4 +275,7 @@
         sYIB68LQBzAwAAAW6E5dHCSpcAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

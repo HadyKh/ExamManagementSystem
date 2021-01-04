@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonGrades = new System.Windows.Forms.Button();
@@ -36,11 +37,13 @@
             this.circularPictureBox1 = new ExamManagementSystem.CircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelForButton = new System.Windows.Forms.Panel();
             this.buttonExitStudent = new System.Windows.Forms.Button();
             this.flowLayoutPanelwindowshow = new System.Windows.Forms.FlowLayoutPanel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonMaximize = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
@@ -116,31 +119,24 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.buttonMinimize);
+            this.panel2.Controls.Add(this.buttonMaximize);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(200, 486);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1095, 65);
             this.panel2.TabIndex = 1;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(849, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 21);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "hh/mm";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(945, 23);
+            this.label2.Location = new System.Drawing.Point(53, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "dd/mm/yyyy";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panelForButton
             // 
@@ -166,10 +162,38 @@
             // 
             this.flowLayoutPanelwindowshow.AutoScroll = true;
             this.flowLayoutPanelwindowshow.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelwindowshow.Location = new System.Drawing.Point(200, 0);
+            this.flowLayoutPanelwindowshow.Location = new System.Drawing.Point(200, 65);
             this.flowLayoutPanelwindowshow.Name = "flowLayoutPanelwindowshow";
             this.flowLayoutPanelwindowshow.Size = new System.Drawing.Size(1095, 486);
             this.flowLayoutPanelwindowshow.TabIndex = 4;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.Image")));
+            this.buttonMinimize.Location = new System.Drawing.Point(945, 10);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(41, 37);
+            this.buttonMinimize.TabIndex = 7;
+            this.buttonMinimize.UseVisualStyleBackColor = true;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click_1);
+            // 
+            // buttonMaximize
+            // 
+            this.buttonMaximize.FlatAppearance.BorderSize = 0;
+            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaximize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.Image")));
+            this.buttonMaximize.Location = new System.Drawing.Point(992, 10);
+            this.buttonMaximize.Name = "buttonMaximize";
+            this.buttonMaximize.Size = new System.Drawing.Size(40, 37);
+            this.buttonMaximize.TabIndex = 5;
+            this.buttonMaximize.UseVisualStyleBackColor = true;
+            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click_1);
             // 
             // Form1
             // 
@@ -207,12 +231,14 @@
         private System.Windows.Forms.Panel panel2;
         private CircularPictureBox circularPictureBox1;
         private System.Windows.Forms.Panel panelForButton;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonExitStudent;
         private System.Windows.Forms.Button buttonAvailableExams;
         private System.Windows.Forms.Button buttonGrades;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelwindowshow;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button buttonMinimize;
+        private System.Windows.Forms.Button buttonMaximize;
     }
 }
 
