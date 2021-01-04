@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddRemoveCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddRemoveCourse.Designer.cs">
+      <DependentUpon>AddRemoveCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRemoveInstructor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     <Compile Include="StudentWindowAvailableExams.Designer.cs">
       <DependentUpon>StudentWindowAvailableExams.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddRemoveCourse.resx">
+      <DependentUpon>AddRemoveCourse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddRemoveInstructor.resx">
       <DependentUpon>AddRemoveInstructor.cs</DependentUpon>
     </EmbeddedResource>

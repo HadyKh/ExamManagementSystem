@@ -49,5 +49,11 @@ namespace ExamManagementSystem
             var m = new AddRemoveInstructor();
             m.Show();
         }
+
+        private void Courses_Click(object sender, EventArgs e)
+        {
+            var m = new AddRemoveCourse();
+            m.Show();
+        }
     }
 }

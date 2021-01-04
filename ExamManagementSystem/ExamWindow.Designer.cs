@@ -38,6 +38,7 @@
             this.lblTopicName = new System.Windows.Forms.Label();
             this.lblExamType = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.flowLayoutPanelExamQuestion = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,7 +130,17 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 10000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // flowLayoutPanelExamQuestion
+            // 
+            this.flowLayoutPanelExamQuestion.AutoScroll = true;
+            this.flowLayoutPanelExamQuestion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanelExamQuestion.Location = new System.Drawing.Point(0, 100);
+            this.flowLayoutPanelExamQuestion.Name = "flowLayoutPanelExamQuestion";
+            this.flowLayoutPanelExamQuestion.Size = new System.Drawing.Size(1095, 386);
+            this.flowLayoutPanelExamQuestion.TabIndex = 1;
             // 
             // ExamWindow
             // 
@@ -138,6 +149,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1095, 486);
+            this.Controls.Add(this.flowLayoutPanelExamQuestion);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -145,6 +157,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ExamWindow";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExamWindow_FormClosing);
             this.Load += new System.EventHandler(this.ExamWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -163,5 +176,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblss;
         private System.Windows.Forms.Label lblmm;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelExamQuestion;
     }
 }
