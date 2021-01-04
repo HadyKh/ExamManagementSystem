@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminWindow));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Courses = new System.Windows.Forms.Button();
@@ -35,6 +36,10 @@
             this.Instructor = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonExitAdmin = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonMaximize = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -104,11 +109,52 @@
             this.buttonExitAdmin.UseVisualStyleBackColor = true;
             this.buttonExitAdmin.Click += new System.EventHandler(this.buttonExitAdmin_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(960, 475);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "dd/mm/yyyy";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.Image")));
+            this.buttonMinimize.Location = new System.Drawing.Point(962, 539);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(41, 37);
+            this.buttonMinimize.TabIndex = 9;
+            this.buttonMinimize.UseVisualStyleBackColor = true;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click);
+            // 
+            // buttonMaximize
+            // 
+            this.buttonMaximize.FlatAppearance.BorderSize = 0;
+            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaximize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.Image")));
+            this.buttonMaximize.Location = new System.Drawing.Point(1009, 539);
+            this.buttonMaximize.Name = "buttonMaximize";
+            this.buttonMaximize.Size = new System.Drawing.Size(40, 37);
+            this.buttonMaximize.TabIndex = 8;
+            this.buttonMaximize.UseVisualStyleBackColor = true;
+            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click);
+            // 
             // AdminWindow
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1164, 688);
+            this.Controls.Add(this.buttonMinimize);
+            this.Controls.Add(this.buttonMaximize);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonExitAdmin);
@@ -120,6 +166,7 @@
             this.Load += new System.EventHandler(this.AdminWindow_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -131,5 +178,9 @@
         private System.Windows.Forms.Button Student;
         private System.Windows.Forms.Button Instructor;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button buttonMinimize;
+        private System.Windows.Forms.Button buttonMaximize;
     }
 }

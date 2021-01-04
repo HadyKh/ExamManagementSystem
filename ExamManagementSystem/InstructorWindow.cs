@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ExamManagementSystem
 {
@@ -19,7 +20,7 @@ namespace ExamManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            timer1.Start();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -29,6 +30,9 @@ namespace ExamManagementSystem
 
         private void buttonExam_Click(object sender, EventArgs e)
         {
+            ListItemExamGeneration listItems = new ListItemExamGeneration();
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(listItems);
             panelForButton.Height = buttonExam.Height;
             panelForButton.Top = buttonExam.Top;
         }
@@ -68,7 +72,31 @@ namespace ExamManagementSystem
             #endregion
         }
 
+       
         private void circularPictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMaximize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
+
+        private void buttonMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime datetime = DateTime.Now;
+            this.label2.Text = datetime.ToString();
+        }
+
+       
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

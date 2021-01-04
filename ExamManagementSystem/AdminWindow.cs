@@ -19,7 +19,7 @@ namespace ExamManagementSystem
 
         private void AdminWindow_Load(object sender, EventArgs e)
         {
-
+            timer1.Start(); 
         }
 
         private void buttonExitAdmin_Click(object sender, EventArgs e)
@@ -54,6 +54,22 @@ namespace ExamManagementSystem
         {
             var m = new AddRemoveCourse();
             m.Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            DateTime datetime = DateTime.Now;
+            this.label2.Text = datetime.ToString();
+        }
+
+        private void buttonMaximize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Maximized;
+        }
+
+        private void buttonMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
