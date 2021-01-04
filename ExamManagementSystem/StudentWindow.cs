@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ExamManagementSystem
 {
@@ -20,9 +21,8 @@ namespace ExamManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String cs = "data source =DESKTOP-HI3M44K\\DEVSQL ; database = ExamManagmentSystem : integrated security = SSPI";
-            SqlConnection con = new SqlConnection(cs);
-            
+            //string s = ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString;
+            SqlConnection con = new SqlConnection("Data Source=DESKTOP-HI3M44K\\DEVSQL;Initial Catalog=ExamManagementSystem;Integrated Security=True");           
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -36,6 +36,8 @@ namespace ExamManagementSystem
             #region TerminationOfDataBase Connection
             //Termination code goes Here
             #endregion
+
+
 
             #region CloseAndOpen
             //this has to be the last code in this method
@@ -70,7 +72,7 @@ namespace ExamManagementSystem
 
         private void populateGradeItems()
         {
-            ListItemStudentGrade[] GradeItems = new ListItemStudentGrade[10]; //<= number of exams that the student took
+            ListItemStudentGrade[] GradeItems = new ListItemStudentGrade[10]; // <= number of exams that the student took
 
             for (int i = 0; i < GradeItems.Length; i++)
             {
