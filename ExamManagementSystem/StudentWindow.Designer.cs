@@ -37,13 +37,13 @@
             this.circularPictureBox1 = new ExamManagementSystem.CircularPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonMinimize = new System.Windows.Forms.Button();
+            this.buttonMaximize = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panelForButton = new System.Windows.Forms.Panel();
             this.buttonExitStudent = new System.Windows.Forms.Button();
             this.flowLayoutPanelwindowshow = new System.Windows.Forms.FlowLayoutPanel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.buttonMinimize = new System.Windows.Forms.Button();
-            this.buttonMaximize = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
@@ -65,11 +65,14 @@
             // 
             this.buttonGrades.FlatAppearance.BorderSize = 0;
             this.buttonGrades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGrades.Image = ((System.Drawing.Image)(resources.GetObject("buttonGrades.Image")));
             this.buttonGrades.Location = new System.Drawing.Point(0, 222);
             this.buttonGrades.Name = "buttonGrades";
             this.buttonGrades.Size = new System.Drawing.Size(200, 110);
             this.buttonGrades.TabIndex = 4;
             this.buttonGrades.Text = "Grades";
+            this.buttonGrades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonGrades.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonGrades.UseVisualStyleBackColor = true;
             this.buttonGrades.Click += new System.EventHandler(this.buttonGrades_Click);
             // 
@@ -77,11 +80,14 @@
             // 
             this.buttonAvailableExams.FlatAppearance.BorderSize = 0;
             this.buttonAvailableExams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAvailableExams.Image = ((System.Drawing.Image)(resources.GetObject("buttonAvailableExams.Image")));
             this.buttonAvailableExams.Location = new System.Drawing.Point(0, 106);
             this.buttonAvailableExams.Name = "buttonAvailableExams";
             this.buttonAvailableExams.Size = new System.Drawing.Size(200, 110);
             this.buttonAvailableExams.TabIndex = 4;
             this.buttonAvailableExams.Text = "Available exams";
+            this.buttonAvailableExams.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonAvailableExams.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonAvailableExams.UseVisualStyleBackColor = true;
             this.buttonAvailableExams.Click += new System.EventHandler(this.buttonAvailableExams_Click);
             // 
@@ -112,7 +118,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(34, 69);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 21);
+            this.label1.Size = new System.Drawing.Size(152, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Student Name";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -128,12 +134,36 @@
             this.panel2.Size = new System.Drawing.Size(1095, 65);
             this.panel2.TabIndex = 1;
             // 
+            // buttonMinimize
+            // 
+            this.buttonMinimize.FlatAppearance.BorderSize = 0;
+            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.Image")));
+            this.buttonMinimize.Location = new System.Drawing.Point(945, 10);
+            this.buttonMinimize.Name = "buttonMinimize";
+            this.buttonMinimize.Size = new System.Drawing.Size(41, 37);
+            this.buttonMinimize.TabIndex = 7;
+            this.buttonMinimize.UseVisualStyleBackColor = true;
+            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click_1);
+            // 
+            // buttonMaximize
+            // 
+            this.buttonMaximize.FlatAppearance.BorderSize = 0;
+            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaximize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.Image")));
+            this.buttonMaximize.Location = new System.Drawing.Point(992, 10);
+            this.buttonMaximize.Name = "buttonMaximize";
+            this.buttonMaximize.Size = new System.Drawing.Size(40, 37);
+            this.buttonMaximize.TabIndex = 5;
+            this.buttonMaximize.UseVisualStyleBackColor = true;
+            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click_1);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(53, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 21);
+            this.label2.Size = new System.Drawing.Size(138, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "dd/mm/yyyy";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -170,30 +200,6 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // buttonMinimize
-            // 
-            this.buttonMinimize.FlatAppearance.BorderSize = 0;
-            this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.Image")));
-            this.buttonMinimize.Location = new System.Drawing.Point(945, 10);
-            this.buttonMinimize.Name = "buttonMinimize";
-            this.buttonMinimize.Size = new System.Drawing.Size(41, 37);
-            this.buttonMinimize.TabIndex = 7;
-            this.buttonMinimize.UseVisualStyleBackColor = true;
-            this.buttonMinimize.Click += new System.EventHandler(this.buttonMinimize_Click_1);
-            // 
-            // buttonMaximize
-            // 
-            this.buttonMaximize.FlatAppearance.BorderSize = 0;
-            this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMaximize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.Image")));
-            this.buttonMaximize.Location = new System.Drawing.Point(992, 10);
-            this.buttonMaximize.Name = "buttonMaximize";
-            this.buttonMaximize.Size = new System.Drawing.Size(40, 37);
-            this.buttonMaximize.TabIndex = 5;
-            this.buttonMaximize.UseVisualStyleBackColor = true;
-            this.buttonMaximize.Click += new System.EventHandler(this.buttonMaximize_Click_1);
             // 
             // Form1
             // 
