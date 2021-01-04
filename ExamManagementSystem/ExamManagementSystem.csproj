@@ -79,6 +79,12 @@
     <Compile Include="ExamWindow.Designer.cs">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="InstructorStudentButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InstructorStudentButton.Designer.cs">
+      <DependentUpon>InstructorStudentButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="listItemAvailableExam.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ExamWindow.resx">
       <DependentUpon>ExamWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructorStudentButton.resx">
+      <DependentUpon>InstructorStudentButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="listItemAvailableExam.resx">
       <DependentUpon>listItemAvailableExam.cs</DependentUpon>

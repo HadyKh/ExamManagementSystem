@@ -75,7 +75,7 @@ namespace ExamManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var m = new StartExamBtnMsgBox();
+            var m = new ExamWindow();
             m.Show();
         }
 
