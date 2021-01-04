@@ -20,6 +20,9 @@ namespace ExamManagementSystem
         #region Property
         private string _CourseName;
         private string _TopicName;
+        private int _MCQ;
+        private int _TF;
+        private string _Trial;
 
         public string CourseName
         {
@@ -32,6 +35,25 @@ namespace ExamManagementSystem
             get { return _TopicName; }
             set { _TopicName = value; }
         }
+
+        public int MCQ
+        {
+            get { return _MCQ; }
+            set { _MCQ = value; }
+        }
+
+        public int TF
+        {
+            get { return _TF; }
+            set { _TF = value; }
+        }
+
+        public string Trial
+        {
+            get { return _Trial; }
+            set { _Trial = value; }
+        }
+
         #endregion
 
         private void label1_Click(object sender, EventArgs e)
