@@ -23,7 +23,9 @@ namespace ExamManagementSystem
             if (paneltimer.Width >= panel1.Width)
             {
                 timer1.Stop();
-
+                var s = new SigninWindow();
+                s.Show();
+                this.Hide();
             }
                 
         }

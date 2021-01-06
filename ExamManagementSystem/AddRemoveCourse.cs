@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ExamManagementSystem
 {
@@ -70,7 +71,7 @@ namespace ExamManagementSystem
 
         private void buttonRemoveID_Click(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-HI3M44K\\DEVSQL;Initial Catalog=ExamManagementSystem;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
                 try
                 {
@@ -103,7 +104,7 @@ namespace ExamManagementSystem
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-HI3M44K\\DEVSQL;Initial Catalog=ExamManagementSystem;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
                 try
                 {
