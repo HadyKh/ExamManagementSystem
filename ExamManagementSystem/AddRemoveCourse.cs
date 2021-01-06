@@ -25,7 +25,7 @@ namespace ExamManagementSystem
         {
             comboBox1.Items.Clear();
             //load all IDs 
-            using (SqlConnection con = new SqlConnection("Data Source=DESKTOP-HI3M44K\\DEVSQL;Initial Catalog=ExamManagementSystem;Integrated Security=True"))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
                 try
                 {
