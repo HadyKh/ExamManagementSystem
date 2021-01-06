@@ -36,18 +36,21 @@ namespace ExamManagementSystem
         {
             var m = new SigninAsInstructorMsgBox();
             m.Show();
+            this.Hide();
         }
 
         private void buttonStudentSignIn_Click(object sender, EventArgs e)
         {
             var m = new SigninAsStudentMsgBox();
             m.Show();
+            this.Hide();
         }
 
         private void buttonAdmin_Click(object sender, EventArgs e)
         {
             var m = new SigninAsAdminMsgBox();
             m.Show();
+            this.Hide();
         }
     }
 }

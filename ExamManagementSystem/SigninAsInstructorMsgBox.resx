@@ -130,19 +130,19 @@
     <value>NoControl</value>
   </data>
   <data name="UserName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>81, 89</value>
+    <value>96, 90</value>
   </data>
   <data name="UserName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 0, 5, 0</value>
   </data>
   <data name="UserName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 23</value>
+    <value>67, 23</value>
   </data>
   <data name="UserName.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
   <data name="UserName.Text" xml:space="preserve">
-    <value>Username:</value>
+    <value>Email:</value>
   </data>
   <data name="&gt;&gt;UserName.Name" xml:space="preserve">
     <value>UserName</value>
@@ -154,31 +154,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;UserName.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>220, 89</value>
-  </data>
-  <data name="textBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>5, 5, 5, 5</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>291, 27</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
-    <value>textBox1</value>
+  <data name="txt_email.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 89</value>
   </data>
-  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+  <data name="txt_email.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>5, 5, 5, 5</value>
+  </data>
+  <data name="txt_email.Size" type="System.Drawing.Size, System.Drawing">
+    <value>291, 27</value>
+  </data>
+  <data name="txt_email.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="txt_email.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="&gt;&gt;txt_email.Name" xml:space="preserve">
+    <value>txt_email</value>
+  </data>
+  <data name="&gt;&gt;txt_email.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txt_email.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;txt_email.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="Password.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -214,31 +217,37 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Password.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="txt_password.Location" type="System.Drawing.Point, System.Drawing">
     <value>220, 168</value>
   </data>
-  <data name="textBox2.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="txt_password.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
   </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txt_password.PasswordChar" type="System.Char, mscorlib" xml:space="preserve">
+    <value>*</value>
+  </data>
+  <data name="txt_password.Size" type="System.Drawing.Size, System.Drawing">
     <value>291, 27</value>
   </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
+  <data name="txt_password.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;textBox2.Name" xml:space="preserve">
-    <value>textBox2</value>
+  <data name="txt_password.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="&gt;&gt;textBox2.Type" xml:space="preserve">
+  <data name="&gt;&gt;txt_password.Name" xml:space="preserve">
+    <value>txt_password</value>
+  </data>
+  <data name="&gt;&gt;txt_password.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;textBox2.Parent" xml:space="preserve">
+  <data name="&gt;&gt;txt_password.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;textBox2.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;txt_password.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="SignIn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -271,7 +280,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;SignIn.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="Instructor.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -304,7 +313,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;Instructor.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="buttonClose.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -343,7 +352,34 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;buttonClose.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
+  </data>
+  <data name="btnlogin_as.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnlogin_as.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 263</value>
+  </data>
+  <data name="btnlogin_as.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 34</value>
+  </data>
+  <data name="btnlogin_as.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnlogin_as.Text" xml:space="preserve">
+    <value>Login As</value>
+  </data>
+  <data name="&gt;&gt;btnlogin_as.Name" xml:space="preserve">
+    <value>btnlogin_as</value>
+  </data>
+  <data name="&gt;&gt;btnlogin_as.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnlogin_as.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnlogin_as.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -362,6 +398,9 @@
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>5, 5, 5, 5</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>SigninAsInstructorMsgBox</value>

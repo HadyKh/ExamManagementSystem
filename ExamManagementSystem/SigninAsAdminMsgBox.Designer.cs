@@ -32,18 +32,19 @@ namespace ExamManagementSystem
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SigninAsAdminMsgBox));
             this.UserName = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_username = new System.Windows.Forms.TextBox();
+            this.txt_password = new System.Windows.Forms.TextBox();
             this.Admin = new System.Windows.Forms.Label();
             this.buttonClose = new System.Windows.Forms.Button();
             this.SignIn = new System.Windows.Forms.Button();
+            this.btnlogin_as = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UserName
             // 
             this.UserName.AutoSize = true;
             this.UserName.Font = new System.Drawing.Font("Century Gothic", 15F);
-            this.UserName.Location = new System.Drawing.Point(81, 89);
+            this.UserName.Location = new System.Drawing.Point(91, 89);
             this.UserName.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(113, 23);
@@ -62,21 +63,24 @@ namespace ExamManagementSystem
             this.Password.TabIndex = 2;
             this.Password.Text = "Password:";
             // 
-            // textBox1
+            // txt_username
             // 
-            this.textBox1.Location = new System.Drawing.Point(220, 89);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(291, 27);
-            this.textBox1.TabIndex = 3;
+            this.txt_username.Location = new System.Drawing.Point(220, 89);
+            this.txt_username.Margin = new System.Windows.Forms.Padding(5);
+            this.txt_username.Name = "txt_username";
+            this.txt_username.Size = new System.Drawing.Size(291, 27);
+            this.txt_username.TabIndex = 3;
+            this.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox2
+            // txt_password
             // 
-            this.textBox2.Location = new System.Drawing.Point(220, 168);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(5);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(291, 27);
-            this.textBox2.TabIndex = 4;
+            this.txt_password.Location = new System.Drawing.Point(220, 168);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(5);
+            this.txt_password.Name = "txt_password";
+            this.txt_password.PasswordChar = '*';
+            this.txt_password.Size = new System.Drawing.Size(291, 27);
+            this.txt_password.TabIndex = 4;
+            this.txt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Admin
             // 
@@ -114,6 +118,18 @@ namespace ExamManagementSystem
             this.SignIn.Size = new System.Drawing.Size(55, 68);
             this.SignIn.TabIndex = 0;
             this.SignIn.UseVisualStyleBackColor = true;
+            this.SignIn.Click += new System.EventHandler(this.SignIn_Click);
+            // 
+            // btnlogin_as
+            // 
+            this.btnlogin_as.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnlogin_as.Location = new System.Drawing.Point(31, 263);
+            this.btnlogin_as.Name = "btnlogin_as";
+            this.btnlogin_as.Size = new System.Drawing.Size(106, 34);
+            this.btnlogin_as.TabIndex = 7;
+            this.btnlogin_as.Text = "Login As";
+            this.btnlogin_as.UseVisualStyleBackColor = true;
+            this.btnlogin_as.Click += new System.EventHandler(this.btnlogin_as_Click);
             // 
             // SigninAsAdminMsgBox
             // 
@@ -122,10 +138,11 @@ namespace ExamManagementSystem
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(691, 309);
+            this.Controls.Add(this.btnlogin_as);
             this.Controls.Add(this.Admin);
             this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_password);
+            this.Controls.Add(this.txt_username);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.UserName);
             this.Controls.Add(this.SignIn);
@@ -134,6 +151,7 @@ namespace ExamManagementSystem
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "SigninAsAdminMsgBox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -145,9 +163,10 @@ namespace ExamManagementSystem
         private System.Windows.Forms.Button SignIn;
         private System.Windows.Forms.Label UserName;
         private System.Windows.Forms.Label Password;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_username;
+        private System.Windows.Forms.TextBox txt_password;
         private System.Windows.Forms.Button buttonClose;
         private System.Windows.Forms.Label Admin;
+        private System.Windows.Forms.Button btnlogin_as;
     }
 }
