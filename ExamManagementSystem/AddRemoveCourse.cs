@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
+
 
 namespace ExamManagementSystem
 {
@@ -17,8 +18,8 @@ namespace ExamManagementSystem
         public AddRemoveCourse()
         {
             InitializeComponent();
-
         }
+
 
         #region Fill combobox with all courses
         private void FillCombo()
@@ -49,10 +50,6 @@ namespace ExamManagementSystem
         }
 
         #endregion
-        private void AddRemoveCourse_Load(object sender, EventArgs e)
-        {
-            FillCombo();
-        }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
@@ -67,6 +64,11 @@ namespace ExamManagementSystem
         private void buttonMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
+        }
+
+        private void AddRemoveCourse_Load(object sender, EventArgs e)
+        {
+            FillCombo();
         }
 
         private void buttonRemoveID_Click(object sender, EventArgs e)
@@ -100,6 +102,7 @@ namespace ExamManagementSystem
                     MessageBox.Show(ex.ToString());
                 }
             }
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -127,6 +130,7 @@ namespace ExamManagementSystem
                     MessageBox.Show(ex.ToString());
                 }
             }
+
         }
     }
 }

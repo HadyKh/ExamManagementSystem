@@ -17,20 +17,20 @@ namespace ExamManagementSystem
             InitializeComponent();
         }
 
-        private void buttonMaximize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Maximized;
-        }
+        //private void buttonMaximize_Click(object sender, EventArgs e)
+        //{
+        //    WindowState = FormWindowState.Maximized;
+        //}
 
-        private void buttonMinimize_Click(object sender, EventArgs e)
-        {
-            WindowState = FormWindowState.Minimized;
-        }
+        //private void buttonMinimize_Click(object sender, EventArgs e)
+        //{
+        //    WindowState = FormWindowState.Minimized;
+        //}
 
-        private void buttonClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void buttonClose_Click(object sender, EventArgs e)
+        //{
+        //    Application.Exit();
+        //}
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -40,6 +40,13 @@ namespace ExamManagementSystem
         private void label3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonBackward_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Form1 frm = new Form1();
+            frm.Show();
         }
     }
 }

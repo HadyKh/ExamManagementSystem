@@ -65,6 +65,36 @@
     <Compile Include="AddRemoveStudent.Designer.cs">
       <DependentUpon>AddRemoveStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminAddCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddCourse.Designer.cs">
+      <DependentUpon>AdminAddCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddInstructor.Designer.cs">
+      <DependentUpon>AdminAddInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAddStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAddStudent.Designer.cs">
+      <DependentUpon>AdminAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDisplayInstructor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDisplayInstructor.Designer.cs">
+      <DependentUpon>AdminDisplayInstructor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDisplayStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDisplayStudent.Designer.cs">
+      <DependentUpon>AdminDisplayStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +103,12 @@
     </Compile>
     <Compile Include="CircularPictureBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DisplayCourses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayCourses.Designer.cs">
+      <DependentUpon>DisplayCourses.cs</DependentUpon>
     </Compile>
     <Compile Include="ExamWindow.cs">
       <SubType>Form</SubType>
@@ -175,8 +211,26 @@
     <EmbeddedResource Include="AddRemoveStudent.resx">
       <DependentUpon>AddRemoveStudent.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddCourse.resx">
+      <DependentUpon>AdminAddCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddInstructor.resx">
+      <DependentUpon>AdminAddInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminAddStudent.resx">
+      <DependentUpon>AdminAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDisplayInstructor.resx">
+      <DependentUpon>AdminDisplayInstructor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDisplayStudent.resx">
+      <DependentUpon>AdminDisplayStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminWindow.resx">
       <DependentUpon>AdminWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayCourses.resx">
+      <DependentUpon>DisplayCourses.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ExamWindow.resx">
       <DependentUpon>ExamWindow.cs</DependentUpon>
@@ -251,6 +305,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CollapseArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collapse_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expand_Arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
