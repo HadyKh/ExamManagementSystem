@@ -20,7 +20,7 @@ namespace ExamManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String cs = "data source =DESKTOP-HI3M44K\\DEVSQL ; database = ExamManagmentSystem : integrated security = SSPI";
+            String cs = "data source =DESKTOP-HI3M44K\\DEVSQL ; database = ExamManagmentSystem ; integrated security = true";
             SqlConnection con = new SqlConnection(cs);
 
             timer1.Start(); 
