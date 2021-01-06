@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ExamManagementSystem
 {
-    public partial class InstructorStudentButton : UserControl
+    public partial class ListItemStudentFromInstrutor : UserControl
     {
-        public InstructorStudentButton()
+        public ListItemStudentFromInstrutor()
         {
             InitializeComponent();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -116,12 +116,6 @@
     <Compile Include="ExamWindow.Designer.cs">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="InstructorStudentButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="InstructorStudentButton.Designer.cs">
-      <DependentUpon>InstructorStudentButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="listItemAvailableExam.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -133,6 +127,12 @@
     </Compile>
     <Compile Include="ListItemExamGeneration.Designer.cs">
       <DependentUpon>ListItemExamGeneration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListItemStudentFromInstrutor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListItemStudentFromInstrutor.Designer.cs">
+      <DependentUpon>ListItemStudentFromInstrutor.cs</DependentUpon>
     </Compile>
     <Compile Include="SigninAsAdminMsgBox.cs">
       <SubType>Form</SubType>
@@ -235,9 +235,6 @@
     <EmbeddedResource Include="ExamWindow.resx">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InstructorStudentButton.resx">
-      <DependentUpon>InstructorStudentButton.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="listItemAvailableExam.resx">
       <DependentUpon>listItemAvailableExam.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListItemExamQuestion.resx">
       <DependentUpon>ListItemExamQuestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListItemStudentFromInstrutor.resx">
+      <DependentUpon>ListItemStudentFromInstrutor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListItemStudentGrade.resx">
       <DependentUpon>ListItemStudentGrade.cs</DependentUpon>

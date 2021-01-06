@@ -45,6 +45,9 @@ namespace ExamManagementSystem
 
         private void buttonStudents_Click(object sender, EventArgs e)
         {
+            ListItemStudentFromInstrutor listItem = new ListItemStudentFromInstrutor();
+            flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel1.Controls.Add(listItem);
             panelForButton.Height = buttonStudents.Height;
             panelForButton.Top = buttonStudents.Top;
         }

@@ -87,5 +87,7 @@ namespace ExamManagementSystem
             comboBoxTrial.Items.Add("Second Chance");
             comboBoxTrial.Items.Add("Last Chance");
         }
+
+        private void ListItemExamGeneration_Load(object sender, EventArgs e) { }
     }
 }

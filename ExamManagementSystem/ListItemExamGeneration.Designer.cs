@@ -61,15 +61,15 @@ namespace ExamManagementSystem
             this.lblCrsName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.lblCrsName.Location = new System.Drawing.Point(82, 40);
             this.lblCrsName.Name = "lblCrsName";
-            this.lblCrsName.Size = new System.Drawing.Size(119, 19);
+            this.lblCrsName.Size = new System.Drawing.Size(151, 23);
             this.lblCrsName.TabIndex = 1;
             this.lblCrsName.Text = "Course Name:";
             // 
             // textBoxCrsName
             // 
-            this.textBoxCrsName.Location = new System.Drawing.Point(207, 39);
+            this.textBoxCrsName.Location = new System.Drawing.Point(234, 38);
             this.textBoxCrsName.Name = "textBoxCrsName";
-            this.textBoxCrsName.Size = new System.Drawing.Size(175, 20);
+            this.textBoxCrsName.Size = new System.Drawing.Size(175, 22);
             this.textBoxCrsName.TabIndex = 2;
             // 
             // lblTpName
@@ -79,15 +79,15 @@ namespace ExamManagementSystem
             this.lblTpName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.lblTpName.Location = new System.Drawing.Point(82, 91);
             this.lblTpName.Name = "lblTpName";
-            this.lblTpName.Size = new System.Drawing.Size(108, 19);
+            this.lblTpName.Size = new System.Drawing.Size(134, 23);
             this.lblTpName.TabIndex = 3;
             this.lblTpName.Text = "Topic Name:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(207, 90);
+            this.textBox1.Location = new System.Drawing.Point(234, 89);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(175, 20);
+            this.textBox1.Size = new System.Drawing.Size(175, 22);
             this.textBox1.TabIndex = 4;
             // 
             // buttonCheck
@@ -96,7 +96,7 @@ namespace ExamManagementSystem
             this.buttonCheck.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonCheck.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCheck.ForeColor = System.Drawing.Color.White;
-            this.buttonCheck.Location = new System.Drawing.Point(415, 81);
+            this.buttonCheck.Location = new System.Drawing.Point(324, 128);
             this.buttonCheck.Name = "buttonCheck";
             this.buttonCheck.Size = new System.Drawing.Size(85, 33);
             this.buttonCheck.TabIndex = 5;
@@ -108,9 +108,9 @@ namespace ExamManagementSystem
             this.labelNoMCQ.AutoSize = true;
             this.labelNoMCQ.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNoMCQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.labelNoMCQ.Location = new System.Drawing.Point(576, 37);
+            this.labelNoMCQ.Location = new System.Drawing.Point(527, 32);
             this.labelNoMCQ.Name = "labelNoMCQ";
-            this.labelNoMCQ.Size = new System.Drawing.Size(215, 19);
+            this.labelNoMCQ.Size = new System.Drawing.Size(278, 23);
             this.labelNoMCQ.TabIndex = 6;
             this.labelNoMCQ.Text = "Number of MCQ Questions:";
             // 
@@ -118,9 +118,9 @@ namespace ExamManagementSystem
             // 
             this.comboBoxMCQ.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxMCQ.FormattingEnabled = true;
-            this.comboBoxMCQ.Location = new System.Drawing.Point(797, 35);
+            this.comboBoxMCQ.Location = new System.Drawing.Point(823, 35);
             this.comboBoxMCQ.Name = "comboBoxMCQ";
-            this.comboBoxMCQ.Size = new System.Drawing.Size(73, 21);
+            this.comboBoxMCQ.Size = new System.Drawing.Size(73, 24);
             this.comboBoxMCQ.TabIndex = 7;
             this.comboBoxMCQ.SelectedIndexChanged += new System.EventHandler(this.comboBoxMCQ_SelectedIndexChanged);
             // 
@@ -129,9 +129,9 @@ namespace ExamManagementSystem
             this.lblNoTF.AutoSize = true;
             this.lblNoTF.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoTF.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblNoTF.Location = new System.Drawing.Point(576, 84);
+            this.lblNoTF.Location = new System.Drawing.Point(527, 79);
             this.lblNoTF.Name = "lblNoTF";
-            this.lblNoTF.Size = new System.Drawing.Size(198, 19);
+            this.lblNoTF.Size = new System.Drawing.Size(254, 23);
             this.lblNoTF.TabIndex = 8;
             this.lblNoTF.Text = "Number of T/F Questions:";
             this.lblNoTF.Click += new System.EventHandler(this.label1_Click);
@@ -140,9 +140,9 @@ namespace ExamManagementSystem
             // 
             this.comboBoxTF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTF.FormattingEnabled = true;
-            this.comboBoxTF.Location = new System.Drawing.Point(797, 82);
+            this.comboBoxTF.Location = new System.Drawing.Point(823, 82);
             this.comboBoxTF.Name = "comboBoxTF";
-            this.comboBoxTF.Size = new System.Drawing.Size(73, 21);
+            this.comboBoxTF.Size = new System.Drawing.Size(73, 24);
             this.comboBoxTF.TabIndex = 9;
             this.comboBoxTF.SelectedIndexChanged += new System.EventHandler(this.comboBoxTF_SelectedIndexChanged);
             // 
@@ -151,9 +151,9 @@ namespace ExamManagementSystem
             this.lblTrial.AutoSize = true;
             this.lblTrial.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTrial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
-            this.lblTrial.Location = new System.Drawing.Point(576, 130);
+            this.lblTrial.Location = new System.Drawing.Point(527, 125);
             this.lblTrial.Name = "lblTrial";
-            this.lblTrial.Size = new System.Drawing.Size(116, 19);
+            this.lblTrial.Size = new System.Drawing.Size(143, 23);
             this.lblTrial.TabIndex = 10;
             this.lblTrial.Text = "Trial Number :";
             // 
@@ -161,9 +161,9 @@ namespace ExamManagementSystem
             // 
             this.comboBoxTrial.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxTrial.FormattingEnabled = true;
-            this.comboBoxTrial.Location = new System.Drawing.Point(797, 128);
+            this.comboBoxTrial.Location = new System.Drawing.Point(823, 128);
             this.comboBoxTrial.Name = "comboBoxTrial";
-            this.comboBoxTrial.Size = new System.Drawing.Size(73, 21);
+            this.comboBoxTrial.Size = new System.Drawing.Size(73, 24);
             this.comboBoxTrial.TabIndex = 11;
             this.comboBoxTrial.SelectedIndexChanged += new System.EventHandler(this.comboBoxTrial_SelectedIndexChanged);
             // 
@@ -173,9 +173,9 @@ namespace ExamManagementSystem
             this.buttonGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonGenerate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonGenerate.ForeColor = System.Drawing.Color.White;
-            this.buttonGenerate.Location = new System.Drawing.Point(908, 58);
+            this.buttonGenerate.Location = new System.Drawing.Point(936, 55);
             this.buttonGenerate.Name = "buttonGenerate";
-            this.buttonGenerate.Size = new System.Drawing.Size(101, 70);
+            this.buttonGenerate.Size = new System.Drawing.Size(112, 70);
             this.buttonGenerate.TabIndex = 12;
             this.buttonGenerate.Text = "Generate";
             this.buttonGenerate.UseVisualStyleBackColor = false;
@@ -200,6 +200,7 @@ namespace ExamManagementSystem
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListItemExamGeneration";
             this.Size = new System.Drawing.Size(1095, 183);
+            this.Load += new System.EventHandler(this.ListItemExamGeneration_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
