@@ -80,7 +80,7 @@
             this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(620, 230);
-            this.button1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(55, 68);
             this.button1.TabIndex = 7;
@@ -127,17 +127,18 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(650, 1);
-            this.button2.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.button2.Margin = new System.Windows.Forms.Padding(5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(39, 34);
             this.button2.TabIndex = 11;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnlogin_as
             // 
             this.btnlogin_as.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnlogin_as.Location = new System.Drawing.Point(31, 263);
-            this.btnlogin_as.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnlogin_as.Margin = new System.Windows.Forms.Padding(5);
             this.btnlogin_as.Name = "btnlogin_as";
             this.btnlogin_as.Size = new System.Drawing.Size(106, 34);
             this.btnlogin_as.TabIndex = 12;

@@ -116,6 +116,7 @@
     <Compile Include="ExamWindow.Designer.cs">
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="global.cs" />
     <Compile Include="InstructorStudentButton.cs">
       <SubType>UserControl</SubType>
     </Compile>

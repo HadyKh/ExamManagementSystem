@@ -36,7 +36,7 @@
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.buttonExam = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIns_ID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonMaximize = new System.Windows.Forms.Button();
@@ -141,22 +141,22 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panel3.Controls.Add(this.circularPictureBox1);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblIns_ID);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 0;
             // 
-            // label1
+            // lblIns_ID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Instructor Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblIns_ID.AutoSize = true;
+            this.lblIns_ID.Location = new System.Drawing.Point(42, 74);
+            this.lblIns_ID.Name = "lblIns_ID";
+            this.lblIns_ID.Size = new System.Drawing.Size(137, 21);
+            this.lblIns_ID.TabIndex = 0;
+            this.lblIns_ID.Text = "Instructor Name";
+            this.lblIns_ID.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -261,8 +261,8 @@
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InstructorWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -278,7 +278,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIns_ID;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonStudents;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ExamManagementSystem
 {
@@ -20,10 +21,26 @@ namespace ExamManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String cs = "data source =DESKTOP-HI3M44K\\DEVSQL ; database = ExamManagmentSystem ; integrated security = true";
-            SqlConnection con = new SqlConnection(cs);
 
-            timer1.Start(); 
+            timer1.Start();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    //Set student name under his pic
+                    con.Open();
+                    SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
+                    SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = "+global.StudentID ,con);
+                    string name = Convert.ToString(cmd.ExecuteScalar());
+                    lblSt_name.Text = name;
+                    
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
 
         }
 
@@ -50,22 +67,36 @@ namespace ExamManagementSystem
 
         private void populateExamItems()
         {
-            listItemAvailableExam[] listItems = new listItemAvailableExam[10];
-            for (int i = 0; i < listItems.Length; i++)
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
-                listItems[i] = new listItemAvailableExam();
-                listItems[i].At = "10:00 PM";
-                listItems[i].TopicName = "C#";
-                listItems[i].CrsName = "Programming";
-                listItems[i].Time = "1 hour";
-                listItems[i].ExamType = "First chance";
-
-                if (flowLayoutPanelwindowshow.Controls.Count < 0)
+                try
                 {
-                    flowLayoutPanelwindowshow.Controls.Clear();
+                    con.Open();
+                    SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
+
+                    listItemAvailableExam[] listExamItems = new listItemAvailableExam[10];
+                    for (int i = 0; listExamItems.Length > i; i++)
+                    {
+                        listExamItems[i] = new listItemAvailableExam();
+                        SqlCommand cmd = new SqlCommand("SP_AvailableExam", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@St_ID", SqlDbType.NVarChar, 50).Value =global.StudentID ;
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        while (dr.Read())
+                        {
+                            listExamItems[i].CrsName = dr["Crs_name"].ToString();
+                            listExamItems[i].TopicName = dr["Tp_name"].ToString();
+                            listExamItems[i].ExamType = dr["Ex_type"].ToString();
+                            listExamItems[i].Time = dr["Duration"].ToString();
+                            listExamItems[i].At = dr["Ex_Datetime"].ToString(); 
+                        }
+                    }
                 }
-                else
-                    flowLayoutPanelwindowshow.Controls.Add(listItems[i]);
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
             }
 
         }

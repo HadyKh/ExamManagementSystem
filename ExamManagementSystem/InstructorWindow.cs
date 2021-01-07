@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ExamManagementSystem
 {
@@ -21,6 +22,24 @@ namespace ExamManagementSystem
         private void Form1_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    //Set Instructor name under his pic
+                    con.Open();
+                    SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
+                    SqlCommand cmd = new SqlCommand("SELECT CONCAT(Ins_Fname,' ',Ins_Lname) FROM dbo.Instructor WHERE Ins_ID =" + global.InsID, con);
+                    string name = Convert.ToString(cmd.ExecuteScalar());
+                    lblIns_ID.Text = name;
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
