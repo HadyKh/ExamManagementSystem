@@ -117,12 +117,6 @@
       <DependentUpon>ExamWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="global.cs" />
-    <Compile Include="InstructorStudentButton.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="InstructorStudentButton.Designer.cs">
-      <DependentUpon>InstructorStudentButton.cs</DependentUpon>
-    </Compile>
     <Compile Include="listItemAvailableExam.cs">
       <SubType>UserControl</SubType>
     </Compile>
