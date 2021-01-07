@@ -109,64 +109,26 @@ namespace ExamManagementSystem
 
         private void populateGradeItems()
         {
-            //int result;
+            ListItemStudentGrade listItem = new ListItemStudentGrade();
+            flowLayoutPanelwindowshow.Controls.Clear();
+            flowLayoutPanelwindowshow.Controls.Add(listItem);
+            ////database Connection
             //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             //{
-
             //    try
             //    {
             //        con.Open();
-            //        //SqlCommand cmd =new SqlCommand("select COUNT(se.EX_ID) from Student_Exam se where se.St_ID = " + global.StudentID, con);
-            //        SqlCommand cmd = new SqlCommand("select COUNT(se.EX_ID) from Student_Exam se where se.St_ID = 10", con);
-            //        result = (int)cmd.ExecuteScalar();
+            //        SqlCommand cmd = new SqlCommand("SP_StudentScores", con);
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        //cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = global.StudentID;
+            //        cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = 8;
+            //        SqlDataReader dr = cmd.ExecuteReader();
+            //        DataTable dtbl = new DataTable();
+            //        dtbl.Load(dr);
+            //        listItem.GridSetGet = dtbl;
             //    }
             //    catch (Exception ex)
             //    {
-
-            //        throw ex;
-            //    }
-            //}
-            //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
-            //{
-
-            //    try
-            //    {
-            //        con.Open();
-            //        ListItemStudentGrade[] GradeItems = new ListItemStudentGrade[10];
-            //        for (int i = 0; i < GradeItems.Length; i++)
-            //        {
-                        
-            //            GradeItems[i] = new ListItemStudentGrade();
-            //            SqlCommand cmd = new SqlCommand("SP_StudentGrade", con);
-            //            cmd.CommandType = CommandType.StoredProcedure;
-            //            cmd.Parameters.Add("@St_ID", SqlDbType.NVarChar, 50).Value = global.StudentID;
-            //            SqlDataReader dr = cmd.ExecuteReader();
-            //            while (dr.Read())
-            //            {
-            //                GradeItems[i].CourseName = dr["Crs_name"].ToString();
-            //                GradeItems[i].TopicName = dr["Tp_name"].ToString();
-            //                GradeItems[i].ExamType = dr["Ex_type"].ToString();
-            //                GradeItems[i].Grade = dr["score"].ToString();
-                            
-            //            }
-            //            //----------------------
-                        
-            //            GradeItems[i].CourseName = "Web";
-            //            GradeItems[i].TopicName = "HTML";
-            //            GradeItems[i].ExamType = "First Chance";
-            //            GradeItems[i].Grade = 80.76M;
-
-            //            if (flowLayoutPanelwindowshow.Controls.Count < 0)
-            //            {
-            //                flowLayoutPanelwindowshow.Controls.Clear();
-            //            }
-            //            else
-            //                flowLayoutPanelwindowshow.Controls.Add(GradeItems[i]);
-            //        }
-            //    }
-            //    catch (Exception ex)
-            //    {
-
             //        MessageBox.Show(ex.ToString());
             //    }
             //}

@@ -74,7 +74,7 @@ namespace ExamManagementSystem
                     //SqlDataAdapter sqlDa = new SqlDataAdapter("SP_studentInfoForInstructor", con);
                     SqlCommand cmd = new SqlCommand("SP_studentInfoForInstructor", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Ins_ID", SqlDbType.NVarChar, 50).Value = global.InsID;
+                    cmd.Parameters.Add("@Ins_ID", SqlDbType.Int).Value = global.InsID;
                     SqlDataReader dr = cmd.ExecuteReader();
                     DataTable dtbl = new DataTable();
                     dtbl.Load(dr);

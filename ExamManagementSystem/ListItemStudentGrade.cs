@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,52 +18,17 @@ namespace ExamManagementSystem
         {
             InitializeComponent();
         }
-        #region PropertiesGradeListItems
 
-        private string _CourseName;
-        private string _TopicName;
-        private string _ExamType;
-        private decimal _Grade;
-        public string CourseName
+        private DataTable gridVD;
+
+        public DataTable GridSetGet
         {
-            get { return _CourseName; }
-            set { _CourseName = value; lblCourseName.Text = value; }
-        }
-
-        public string TopicName
-        {
-            get { return _TopicName; }
-            set { _TopicName = value; lblTopicName.Text = value; }
-        }
-
-        public string ExamType
-        {
-            get { return _ExamType; }
-            set { _ExamType = value; lblExamType.Text = value; }
-        }
-
-
-        public decimal Grade
-        {
-            get { return _Grade; }
-            set { _Grade = value; lblGrade.Text = value.ToString(); }
-        }
-
-        #endregion
-
-        private void lblTopicName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonDetail_Click(object sender, EventArgs e)
-        {
-
+            get { return gridVD; }
+            set
+            {
+                gridVD = value;
+                dataGridView1.DataSource = value;
+            }
         }
 
         private void ListItemStudentGrade_Load(object sender, EventArgs e)
@@ -71,12 +38,59 @@ namespace ExamManagementSystem
 
         private void ListItemStudentGrade_MouseEnter(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(41, 44, 51);
+           
         }
 
         private void ListItemStudentGrade_MouseHover(object sender, EventArgs e)
         {
-            this.BackColor = Color.FromArgb(19, 13, 0, 64);
+          
+        }
+
+        private void btnTpScore_Click(object sender, EventArgs e)
+        {
+            //database Connection
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_StudentScores", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = global.StudentID;
+                    cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = 8;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dtbl = new DataTable();
+                    dtbl.Load(dr);
+                    GridSetGet = dtbl;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void btnCrsGrade_Click(object sender, EventArgs e)
+        {
+            //database Connection
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SP_StudentGrade", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = 8;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dtbl = new DataTable();
+                    dtbl.Load(dr);
+                    GridSetGet = dtbl;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
     }
 }
