@@ -17,9 +17,9 @@ namespace ExamManagementSystem
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new SplashScreenWindow());
-            //Application.Run(new Form1());
+            Application.Run(new Form1());
             //Application.Run(new InstructorWindow());
-            Application.Run(new SigninWindow());
+            //Application.Run(new SigninWindow());
             //Application.Run(new AdminWindow());
             //Application.Run(new AddRemoveCourse());
         }

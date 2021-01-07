@@ -10,5 +10,6 @@ namespace ExamManagementSystem
     {
         public static int  StudentID;
         public static int  InsID;
+        public static int countAvailableExams;
     }
 }
