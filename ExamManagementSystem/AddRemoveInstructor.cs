@@ -24,7 +24,10 @@ namespace ExamManagementSystem
 
         private void buttonMaximize_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;
+            if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Normal;
+            else
+                WindowState = FormWindowState.Maximized;
         }
 
         private void buttonMinimize_Click(object sender, EventArgs e)
