@@ -72,7 +72,6 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-                    SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
 
                     listItemAvailableExam[] listExamItems = new listItemAvailableExam[10];
                     for (int i = 0; listExamItems.Length > i; i++)
@@ -80,7 +79,7 @@ namespace ExamManagementSystem
                         listExamItems[i] = new listItemAvailableExam();
                         SqlCommand cmd = new SqlCommand("SP_AvailableExam", con);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.Add("@St_ID", SqlDbType.NVarChar, 50).Value =global.StudentID ;
+                        cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = global.StudentID ;
                         SqlDataReader dr = cmd.ExecuteReader();
                         while (dr.Read())
                         {

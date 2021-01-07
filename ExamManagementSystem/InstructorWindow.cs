@@ -96,12 +96,6 @@ namespace ExamManagementSystem
         {
 
         }
-        private void button4_Click(object sender, EventArgs e) //buttonEdit
-        {
-            panelForButton.Height = buttonEdit.Height;
-            panelForButton.Top = buttonEdit.Top;
-        }
-
         private void buttonExitInstructor_Click(object sender, EventArgs e)
         {
             //do not forget to terminate the database connection
