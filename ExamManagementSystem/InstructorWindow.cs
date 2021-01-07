@@ -72,9 +72,12 @@ namespace ExamManagementSystem
                 {
                     con.Open();
                     //SqlDataAdapter sqlDa = new SqlDataAdapter("SP_studentInfoForInstructor", con);
-                    SqlDataAdapter sqlDa = new SqlDataAdapter("select CONCAT(s.St_Fname,' ',s.St_Lname) 'Student Name', c.Crs_Name as 'Course Name', t.Tp_name 'Topic Name', e.Ex_Type'Exam Type', se.Score 'Topic Score', sc.Crs_Grade 'Course Grade' from Student s, Std_Crs sc, Courses c, Topic t, Student_Exam se, Exam e where s.St_ID = sc.St_ID and c.Crs_ID = sc.Crs_ID and se.St_ID = s.St_ID and t.Ins_ID = 21 and se.EX_ID = e.Ex_ID", con);
+                    SqlCommand cmd = new SqlCommand("SP_studentInfoForInstructor", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@Ins_ID", SqlDbType.NVarChar, 50).Value = global.InsID;
+                    SqlDataReader dr = cmd.ExecuteReader();
                     DataTable dtbl = new DataTable();
-                    sqlDa.Fill(dtbl);
+                    dtbl.Load(dr);
                     listItem.GridSetGet = dtbl;
                 }
                 catch (Exception ex)

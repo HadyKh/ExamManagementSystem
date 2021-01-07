@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorWindow));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonStudents = new System.Windows.Forms.Button();
             this.buttonDashboard = new System.Windows.Forms.Button();
             this.buttonExam = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.circularPictureBox1 = new ExamManagementSystem.CircularPictureBox();
             this.lblIns_ID = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
@@ -45,16 +45,14 @@
             this.panelForButton = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.circularPictureBox1 = new ExamManagementSystem.CircularPictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.buttonEdit);
             this.panel1.Controls.Add(this.buttonStudents);
             this.panel1.Controls.Add(this.buttonDashboard);
             this.panel1.Controls.Add(this.buttonExam);
@@ -64,24 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 551);
             this.panel1.TabIndex = 0;
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonEdit.FlatAppearance.BorderSize = 0;
-            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonEdit.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEdit.ForeColor = System.Drawing.Color.White;
-            this.buttonEdit.Image = ((System.Drawing.Image)(resources.GetObject("buttonEdit.Image")));
-            this.buttonEdit.Location = new System.Drawing.Point(3, 442);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(200, 106);
-            this.buttonEdit.TabIndex = 1;
-            this.buttonEdit.Text = "Edit";
-            this.buttonEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.button4_Click);
             // 
             // buttonStudents
             // 
@@ -147,6 +127,17 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 100);
             this.panel3.TabIndex = 0;
+            // 
+            // circularPictureBox1
+            // 
+            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
+            this.circularPictureBox1.Location = new System.Drawing.Point(70, 8);
+            this.circularPictureBox1.Name = "circularPictureBox1";
+            this.circularPictureBox1.Size = new System.Drawing.Size(76, 63);
+            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.circularPictureBox1.TabIndex = 2;
+            this.circularPictureBox1.TabStop = false;
+            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
             // 
             // lblIns_ID
             // 
@@ -230,23 +221,12 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 66);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(200, 65);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1095, 485);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1095, 486);
             this.flowLayoutPanel1.TabIndex = 3;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
-            // 
-            // circularPictureBox1
-            // 
-            this.circularPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("circularPictureBox1.Image")));
-            this.circularPictureBox1.Location = new System.Drawing.Point(70, 8);
-            this.circularPictureBox1.Name = "circularPictureBox1";
-            this.circularPictureBox1.Size = new System.Drawing.Size(76, 63);
-            this.circularPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.circularPictureBox1.TabIndex = 2;
-            this.circularPictureBox1.TabStop = false;
-            this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
             // 
             // InstructorWindow
             // 
@@ -267,9 +247,9 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.circularPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,7 +260,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label lblIns_ID;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonStudents;
         private System.Windows.Forms.Button buttonDashboard;
         private System.Windows.Forms.Button buttonExam;
