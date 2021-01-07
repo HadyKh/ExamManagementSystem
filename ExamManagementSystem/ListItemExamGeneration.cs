@@ -111,14 +111,6 @@ namespace ExamManagementSystem
                         cmBxCrsName.Items.Add(dr2["Crs_name"]);
                     }
 
-                    //SqlCommand cmd = new SqlCommand("select Tp_name from Topic t,courses c where t.crs_ID = c.crs_ID and c.crs_Name = '" + cmBxCrsName.Text + " '", con);
-                    //SqlDataReader dr = cmd.ExecuteReader();
-
-                    //while (dr.Read())
-                    //{
-                    //    cmbBxTpName.Items.Add(dr["Tp_name"]);
-                    //}
-
                 }
                 catch (Exception ex)
                 {
