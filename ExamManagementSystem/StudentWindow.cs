@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace ExamManagementSystem
 {
@@ -20,80 +21,128 @@ namespace ExamManagementSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            String cs = "data source =DESKTOP-HI3M44K\\DEVSQL ; database = ExamManagmentSystem ; integrated security = true";
-            SqlConnection con = new SqlConnection(cs);
 
-            timer1.Start(); 
+            timer1.Start();
+            //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            //{
+            //    try
+            //    {
+            //        //Set student name under his pic
+            //        con.Open();
+            //        SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
+            //        SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = "+global.StudentID ,con);
+            //        string name = Convert.ToString(cmd.ExecuteScalar());
+            //        lblSt_name.Text = name;
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+
+            //        MessageBox.Show(ex.ToString());
+            //    }
+            //}
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void hoba()
         {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
 
-        }
+                try
+                {
+                    con.Open();
+                    //SqlCommand cmd =new SqlCommand("select COUNT(se.EX_ID) from Student_Exam se where se.St_ID = " + global.StudentID, con);
+                    SqlCommand cmd = new SqlCommand("SP_CountAvailableExam", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    //cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = global.StudentID;
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;
+                    MessageBox.Show(cmd.ExecuteScalar().ToString());
+                    global.countAvailableExams = (int)cmd.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
 
-        private void buttonExitStudent_Click(object sender, EventArgs e)
-        {
-            //do not forget to terminate the database connection
-            #region TerminationOfDataBase Connection
-            //Termination code goes Here
-            #endregion
-
-            #region CloseAndOpen
-            //this has to be the last code in this method
-            //open the signIn window and close the admin window
-            var m = new SigninWindow();
-            m.Show();
-            this.Close();
-            #endregion
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
 
         private void populateExamItems()
         {
-            listItemAvailableExam[] listItems = new listItemAvailableExam[10];
-            for (int i = 0; i < listItems.Length; i++)
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
-                listItems[i] = new listItemAvailableExam();
-                listItems[i].At = "10:00 PM";
-                listItems[i].TopicName = "C#";
-                listItems[i].CrsName = "Programming";
-                listItems[i].Time = "1 hour";
-                listItems[i].ExamType = "First chance";
 
-                if (flowLayoutPanelwindowshow.Controls.Count < 0)
+                try
                 {
-                    flowLayoutPanelwindowshow.Controls.Clear();
+                    con.Open();
+                    listItemAvailableExam[] listExamItems = new listItemAvailableExam[global.countAvailableExams];
+                    SqlCommand cmd = new SqlCommand("SP_AvailableExam", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    for (int i = 0; listExamItems.Length > i ; i++)
+                    {
+                        dr.Read();
+                        listExamItems[i] = new listItemAvailableExam();
+                        listExamItems[i].CrsName = dr["Crs_name"].ToString();
+                        listExamItems[i].TopicName = dr["Tp_name"].ToString();
+                        listExamItems[i].ExamType = dr["Ex_type"].ToString();
+                        listExamItems[i].Time = dr["Duration"].ToString();
+                        listExamItems[i].At = dr["Ex_Datetime"].ToString();
+                                            }
+                    for (int i = 0; i < listExamItems.Length; i++)
+                    {
+                        flowLayoutPanelwindowshow.Controls.Add(listExamItems[i]);
+                    }
+                    
+
                 }
-                else
-                    flowLayoutPanelwindowshow.Controls.Add(listItems[i]);
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
             }
 
         }
 
         private void populateGradeItems()
         {
-            ListItemStudentGrade[] GradeItems = new ListItemStudentGrade[10]; //<= number of exams that the student took
-
-            for (int i = 0; i < GradeItems.Length; i++)
-            {
-                GradeItems[i] = new ListItemStudentGrade();
-                GradeItems[i].CourseName = "Web";
-                GradeItems[i].TopicName = "HTML";
-                GradeItems[i].ExamType = "First Chance";
-                GradeItems[i].Grade = 80.76M;
-
-                if (flowLayoutPanelwindowshow.Controls.Count < 0)
-                {
-                    flowLayoutPanelwindowshow.Controls.Clear();
-                }
-                else
-                    flowLayoutPanelwindowshow.Controls.Add(GradeItems[i]);
-            }
+            ListItemStudentGrade listItem = new ListItemStudentGrade();
+            flowLayoutPanelwindowshow.Controls.Clear();
+            flowLayoutPanelwindowshow.Controls.Add(listItem);
+            ////database Connection
+            //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            //{
+            //    try
+            //    {
+            //        con.Open();
+            //        SqlCommand cmd = new SqlCommand("SP_StudentScores", con);
+            //        cmd.CommandType = CommandType.StoredProcedure;
+            //        //cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = global.StudentID;
+            //        cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = 8;
+            //        SqlDataReader dr = cmd.ExecuteReader();
+            //        DataTable dtbl = new DataTable();
+            //        dtbl.Load(dr);
+            //        listItem.GridSetGet = dtbl;
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show(ex.ToString());
+            //    }
+            //}
         }
+
+        #region buttons
+
         private void buttonAvailableExams_Click(object sender, EventArgs e)
         {
+            
             flowLayoutPanelwindowshow.Controls.Clear();
+            hoba();
             populateExamItems();
+            
             panelForButton.Height = buttonAvailableExams.Height;
             panelForButton.Top = buttonAvailableExams.Top;
         }
@@ -139,12 +188,28 @@ namespace ExamManagementSystem
 
         private void buttonMaximize_Click_1(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Maximized;
+            if (WindowState == FormWindowState.Maximized)
+                WindowState = FormWindowState.Normal;
+            else
+                WindowState = FormWindowState.Maximized;
         }
 
         private void buttonMinimize_Click_1(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonExitStudent_Click(object sender, EventArgs e)
+        {
+            var m = new SigninWindow();
+            m.Show();
+            this.Close();
+        }
+#endregion
     }
 }

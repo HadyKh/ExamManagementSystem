@@ -45,12 +45,22 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
+                    //login
                     SqlCommand cmd = new SqlCommand("SP_InstructorLogin", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@email", SqlDbType.NVarChar, 50).Value = txt_email.Text;
                     cmd.Parameters.Add("@password", SqlDbType.NVarChar, 50).Value = txt_password.Text;
                     int result = (int)cmd.ExecuteScalar();
+
+                    //get Ins ID
+                    SqlCommand cmd2 = new SqlCommand("SP_InstructorLoginGetID", con);
+                    cmd2.CommandType = CommandType.StoredProcedure;
+                    cmd2.Parameters.Add("@email", SqlDbType.NVarChar, 50).Value = txt_email.Text;
+                    cmd2.Parameters.Add("@password", SqlDbType.NVarChar, 50).Value = txt_password.Text;
+                    global.InsID = (int)cmd2.ExecuteScalar();
+
+                    //MessageBox.Show("Ins id is " + global.InsID);
+
                     if (result > 0)
                     {
                         InstructorWindow iw = new InstructorWindow();

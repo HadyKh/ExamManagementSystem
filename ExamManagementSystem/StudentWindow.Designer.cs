@@ -35,7 +35,7 @@
             this.buttonAvailableExams = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.circularPictureBox1 = new ExamManagementSystem.CircularPictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblSt_name = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.buttonMinimize = new System.Windows.Forms.Button();
             this.buttonMaximize = new System.Windows.Forms.Button();
@@ -95,7 +95,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panel3.Controls.Add(this.circularPictureBox1);
-            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.lblSt_name);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
@@ -113,15 +113,15 @@
             this.circularPictureBox1.TabStop = false;
             this.circularPictureBox1.Click += new System.EventHandler(this.circularPictureBox1_Click);
             // 
-            // label1
+            // lblSt_name
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Student Name";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblSt_name.AutoSize = true;
+            this.lblSt_name.Location = new System.Drawing.Point(47, 75);
+            this.lblSt_name.Name = "lblSt_name";
+            this.lblSt_name.Size = new System.Drawing.Size(125, 21);
+            this.lblSt_name.TabIndex = 0;
+            this.lblSt_name.Text = "Student Name";
+            this.lblSt_name.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -163,7 +163,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(53, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 23);
+            this.label2.Size = new System.Drawing.Size(108, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "dd/mm/yyyy";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -233,7 +233,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblSt_name;
         private System.Windows.Forms.Panel panel2;
         private CircularPictureBox circularPictureBox1;
         private System.Windows.Forms.Panel panelForButton;

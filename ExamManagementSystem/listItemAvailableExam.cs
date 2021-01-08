@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ExamManagementSystem
@@ -27,7 +21,7 @@ namespace ExamManagementSystem
         {
             get { return _topicName; }
             set
-            { 
+            {
                 _topicName = value;
                 lblTopicName.Text = value;
             }
@@ -36,7 +30,7 @@ namespace ExamManagementSystem
         public string ExamType
         {
             get { return _examType; }
-            set 
+            set
             {
                 _examType = value;
                 lblExamType.Text = value;
@@ -46,7 +40,7 @@ namespace ExamManagementSystem
         public string CrsName
         {
             get { return _crsName; }
-            set 
+            set
             {
                 _crsName = value;
                 lblCrsName.Text = value;
@@ -56,7 +50,7 @@ namespace ExamManagementSystem
         public string At
         {
             get { return _at; }
-            set 
+            set
             {
                 _at = value;
                 lblAtTime.Text = value;
@@ -66,7 +60,7 @@ namespace ExamManagementSystem
         public string Time
         {
             get { return _time; }
-            set 
+            set
             {
                 _time = value;
                 lblExamTime.Text = value;
