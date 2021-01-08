@@ -35,7 +35,6 @@ namespace ExamManagementSystem
             this.textBoxemail = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxBdate = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxSSN = new System.Windows.Forms.TextBox();
@@ -51,6 +50,8 @@ namespace ExamManagementSystem
             this.textBoxFname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.buttonBackward = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Admin
@@ -65,6 +66,7 @@ namespace ExamManagementSystem
             // 
             // buttonSubmit
             // 
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.Location = new System.Drawing.Point(915, 481);
             this.buttonSubmit.Name = "buttonSubmit";
@@ -72,11 +74,13 @@ namespace ExamManagementSystem
             this.buttonSubmit.TabIndex = 68;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(792, 247);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(212, 20);
             this.textBoxPassword.TabIndex = 67;
             // 
@@ -106,13 +110,6 @@ namespace ExamManagementSystem
             this.label11.Size = new System.Drawing.Size(63, 19);
             this.label11.TabIndex = 64;
             this.label11.Text = "E-mail:";
-            // 
-            // textBoxBdate
-            // 
-            this.textBoxBdate.Location = new System.Drawing.Point(339, 400);
-            this.textBoxBdate.Name = "textBoxBdate";
-            this.textBoxBdate.Size = new System.Drawing.Size(230, 20);
-            this.textBoxBdate.TabIndex = 63;
             // 
             // textBoxPhone
             // 
@@ -193,6 +190,7 @@ namespace ExamManagementSystem
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Female";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.Click += new System.EventHandler(this.radioButton2_Click);
             // 
             // radioButton1
             // 
@@ -205,6 +203,7 @@ namespace ExamManagementSystem
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Male";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.Click += new System.EventHandler(this.radioButton1_Click);
             // 
             // label6
             // 
@@ -253,18 +252,38 @@ namespace ExamManagementSystem
             this.label3.TabIndex = 48;
             this.label3.Text = "To add a new Instructor:";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(340, 401);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(230, 20);
+            this.dateTimePicker1.TabIndex = 69;
+            // 
+            // buttonBackward
+            // 
+            this.buttonBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonBackward.Image = global::ExamManagementSystem.Properties.Resources.icons8_export_30;
+            this.buttonBackward.Location = new System.Drawing.Point(1105, 12);
+            this.buttonBackward.Name = "buttonBackward";
+            this.buttonBackward.Size = new System.Drawing.Size(75, 57);
+            this.buttonBackward.TabIndex = 70;
+            this.buttonBackward.UseVisualStyleBackColor = true;
+            this.buttonBackward.Click += new System.EventHandler(this.buttonBackward_Click);
+            // 
             // AdminAddInstructor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1192, 671);
+            this.Controls.Add(this.buttonBackward);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxemail);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBoxBdate);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxSSN);
@@ -284,7 +303,9 @@ namespace ExamManagementSystem
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminAddInstructor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminAddInstructor";
+            this.Load += new System.EventHandler(this.AdminAddInstructor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +319,6 @@ namespace ExamManagementSystem
         private System.Windows.Forms.TextBox textBoxemail;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxBdate;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.TextBox textBoxSSN;
@@ -314,5 +334,7 @@ namespace ExamManagementSystem
         private System.Windows.Forms.TextBox textBoxFname;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button buttonBackward;
     }
 }

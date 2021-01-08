@@ -19,9 +19,12 @@ namespace ExamManagementSystem
             //Application.Run(new SplashScreenWindow());
             //Application.Run(new Form1());
             //Application.Run(new InstructorWindow());
-            Application.Run(new SigninWindow());
-            //Application.Run(new AdminWindow());
+            //Application.Run(new SigninWindow());
             //Application.Run(new AddRemoveCourse());
+            Application.Run(new AddRemoveInstructor());
+            //Application.Run(new AdminWindow());
+            //Application.Run(new DisplayCourses());
         }
+
     }
 }

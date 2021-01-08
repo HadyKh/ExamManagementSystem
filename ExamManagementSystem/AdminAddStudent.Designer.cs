@@ -35,7 +35,6 @@ namespace ExamManagementSystem
             this.textBoxemail = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBoxBdate = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxSSN = new System.Windows.Forms.TextBox();
@@ -43,13 +42,16 @@ namespace ExamManagementSystem
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxLname = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxFname = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton_Male = new System.Windows.Forms.RadioButton();
+            this.radioButton_Female = new System.Windows.Forms.RadioButton();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.buttonBackward = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Admin
@@ -64,6 +66,7 @@ namespace ExamManagementSystem
             // 
             // buttonSubmit
             // 
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.Location = new System.Drawing.Point(907, 481);
             this.buttonSubmit.Name = "buttonSubmit";
@@ -71,11 +74,13 @@ namespace ExamManagementSystem
             this.buttonSubmit.TabIndex = 52;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // textBoxPassword
             // 
             this.textBoxPassword.Location = new System.Drawing.Point(784, 247);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(212, 20);
             this.textBoxPassword.TabIndex = 51;
             // 
@@ -105,13 +110,6 @@ namespace ExamManagementSystem
             this.label11.Size = new System.Drawing.Size(63, 19);
             this.label11.TabIndex = 48;
             this.label11.Text = "E-mail:";
-            // 
-            // textBoxBdate
-            // 
-            this.textBoxBdate.Location = new System.Drawing.Point(319, 400);
-            this.textBoxBdate.Name = "textBoxBdate";
-            this.textBoxBdate.Size = new System.Drawing.Size(230, 20);
-            this.textBoxBdate.TabIndex = 47;
             // 
             // textBoxPhone
             // 
@@ -171,30 +169,6 @@ namespace ExamManagementSystem
             this.textBoxLname.Size = new System.Drawing.Size(229, 20);
             this.textBoxLname.TabIndex = 40;
             // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(417, 302);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(73, 21);
-            this.radioButton2.TabIndex = 39;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Female";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(320, 302);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 21);
-            this.radioButton1.TabIndex = 38;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Male";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -242,18 +216,77 @@ namespace ExamManagementSystem
             this.label3.TabIndex = 33;
             this.label3.Text = "To add a new Student:";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(219, 351);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 19);
+            this.label1.TabIndex = 53;
+            this.label1.Text = "SSN:";
+            // 
+            // radioButton_Male
+            // 
+            this.radioButton_Male.AutoSize = true;
+            this.radioButton_Male.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButton_Male.Location = new System.Drawing.Point(346, 299);
+            this.radioButton_Male.Name = "radioButton_Male";
+            this.radioButton_Male.Size = new System.Drawing.Size(61, 24);
+            this.radioButton_Male.TabIndex = 54;
+            this.radioButton_Male.TabStop = true;
+            this.radioButton_Male.Text = "Male";
+            this.radioButton_Male.UseVisualStyleBackColor = true;
+            this.radioButton_Male.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioButtonMale_Click);
+            // 
+            // radioButton_Female
+            // 
+            this.radioButton_Female.AutoSize = true;
+            this.radioButton_Female.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.radioButton_Female.Location = new System.Drawing.Point(445, 299);
+            this.radioButton_Female.Name = "radioButton_Female";
+            this.radioButton_Female.Size = new System.Drawing.Size(80, 24);
+            this.radioButton_Female.TabIndex = 55;
+            this.radioButton_Female.TabStop = true;
+            this.radioButton_Female.Text = "Female";
+            this.radioButton_Female.UseVisualStyleBackColor = true;
+            this.radioButton_Female.MouseClick += new System.Windows.Forms.MouseEventHandler(this.radioFemaleButton_click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(319, 400);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(230, 20);
+            this.dateTimePicker1.TabIndex = 56;
+            // 
+            // buttonBackward
+            // 
+            this.buttonBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonBackward.Image = global::ExamManagementSystem.Properties.Resources.icons8_export_30;
+            this.buttonBackward.Location = new System.Drawing.Point(1089, 12);
+            this.buttonBackward.Name = "buttonBackward";
+            this.buttonBackward.Size = new System.Drawing.Size(75, 57);
+            this.buttonBackward.TabIndex = 57;
+            this.buttonBackward.UseVisualStyleBackColor = true;
+            this.buttonBackward.Click += new System.EventHandler(this.buttonBackward_Click);
+            // 
             // AdminAddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1176, 671);
+            this.Controls.Add(this.buttonBackward);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.radioButton_Female);
+            this.Controls.Add(this.radioButton_Male);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.textBoxPassword);
             this.Controls.Add(this.textBoxemail);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBoxBdate);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxSSN);
@@ -261,8 +294,6 @@ namespace ExamManagementSystem
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBoxLname);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxFname);
@@ -272,7 +303,9 @@ namespace ExamManagementSystem
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminAddStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminAddStudent";
+            this.Load += new System.EventHandler(this.AdminAddStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -286,7 +319,6 @@ namespace ExamManagementSystem
         private System.Windows.Forms.TextBox textBoxemail;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBoxBdate;
         private System.Windows.Forms.TextBox textBoxPhone;
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.TextBox textBoxSSN;
@@ -294,12 +326,15 @@ namespace ExamManagementSystem
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxLname;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxFname;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton_Male;
+        private System.Windows.Forms.RadioButton radioButton_Female;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button buttonBackward;
     }
 }

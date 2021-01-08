@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace ExamManagementSystem
 {
@@ -17,9 +19,30 @@ namespace ExamManagementSystem
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void buttonBackward_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void buttonGetData_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+                    SqlDataAdapter sqlDa = new SqlDataAdapter("select ins_id, ssn, ins_fname, ins_lname, gender, bd_date, phone, email from instructor", con);
+                    DataTable dtb1 = new DataTable();
+                    sqlDa.Fill(dtb1);
+
+                    dataGridView1.DataSource = dtb1;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
         }
     }
 }
