@@ -76,7 +76,9 @@ namespace ExamManagementSystem
 
         private void buttonBackward_Click(object sender, EventArgs e)
         {
-            this.Close();
+            AdminWindow aw = new AdminWindow();
+            aw.Show();
+            this.Hide();
         }
     }
 }
