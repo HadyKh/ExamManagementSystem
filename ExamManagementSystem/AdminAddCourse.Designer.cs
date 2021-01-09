@@ -30,17 +30,17 @@ namespace ExamManagementSystem
         private void InitializeComponent()
         {
             this.Admin = new System.Windows.Forms.Label();
-            this.buttonAddmoreTopics = new System.Windows.Forms.Button();
             this.buttonSubmit = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.textBoxtpName = new System.Windows.Forms.TextBox();
             this.textBoxInsID = new System.Windows.Forms.TextBox();
-            this.textBoxInsName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxCrsDuration = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxCrsName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonBackward = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Admin
@@ -53,18 +53,9 @@ namespace ExamManagementSystem
             this.Admin.TabIndex = 15;
             this.Admin.Text = "Admin";
             // 
-            // buttonAddmoreTopics
-            // 
-            this.buttonAddmoreTopics.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddmoreTopics.Location = new System.Drawing.Point(403, 394);
-            this.buttonAddmoreTopics.Name = "buttonAddmoreTopics";
-            this.buttonAddmoreTopics.Size = new System.Drawing.Size(128, 29);
-            this.buttonAddmoreTopics.TabIndex = 60;
-            this.buttonAddmoreTopics.Text = "Add more Topics";
-            this.buttonAddmoreTopics.UseVisualStyleBackColor = true;
-            // 
             // buttonSubmit
             // 
+            this.buttonSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmit.Location = new System.Drawing.Point(865, 481);
             this.buttonSubmit.Name = "buttonSubmit";
@@ -72,6 +63,7 @@ namespace ExamManagementSystem
             this.buttonSubmit.TabIndex = 59;
             this.buttonSubmit.Text = "Submit";
             this.buttonSubmit.UseVisualStyleBackColor = true;
+            this.buttonSubmit.Click += new System.EventHandler(this.buttonSubmit_Click);
             // 
             // label7
             // 
@@ -83,19 +75,19 @@ namespace ExamManagementSystem
             this.label7.TabIndex = 58;
             this.label7.Text = "Topic Name:";
             // 
+            // textBoxtpName
+            // 
+            this.textBoxtpName.Location = new System.Drawing.Point(403, 350);
+            this.textBoxtpName.Name = "textBoxtpName";
+            this.textBoxtpName.Size = new System.Drawing.Size(268, 20);
+            this.textBoxtpName.TabIndex = 57;
+            // 
             // textBoxInsID
             // 
-            this.textBoxInsID.Location = new System.Drawing.Point(403, 350);
+            this.textBoxInsID.Location = new System.Drawing.Point(403, 300);
             this.textBoxInsID.Name = "textBoxInsID";
             this.textBoxInsID.Size = new System.Drawing.Size(268, 20);
-            this.textBoxInsID.TabIndex = 57;
-            // 
-            // textBoxInsName
-            // 
-            this.textBoxInsName.Location = new System.Drawing.Point(403, 300);
-            this.textBoxInsName.Name = "textBoxInsName";
-            this.textBoxInsName.Size = new System.Drawing.Size(268, 20);
-            this.textBoxInsName.TabIndex = 56;
+            this.textBoxInsID.TabIndex = 56;
             // 
             // label6
             // 
@@ -151,17 +143,29 @@ namespace ExamManagementSystem
             this.label3.TabIndex = 50;
             this.label3.Text = "To add a new Course:";
             // 
+            // buttonBackward
+            // 
+            this.buttonBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonBackward.Image = global::ExamManagementSystem.Properties.Resources.icons8_export_30;
+            this.buttonBackward.Location = new System.Drawing.Point(1105, 12);
+            this.buttonBackward.Name = "buttonBackward";
+            this.buttonBackward.Size = new System.Drawing.Size(75, 57);
+            this.buttonBackward.TabIndex = 60;
+            this.buttonBackward.UseVisualStyleBackColor = true;
+            this.buttonBackward.Click += new System.EventHandler(this.buttonBackward_Click);
+            // 
             // AdminAddCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(1192, 671);
-            this.Controls.Add(this.buttonAddmoreTopics);
+            this.Controls.Add(this.buttonBackward);
             this.Controls.Add(this.buttonSubmit);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBoxtpName);
             this.Controls.Add(this.textBoxInsID);
-            this.Controls.Add(this.textBoxInsName);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBoxCrsDuration);
             this.Controls.Add(this.label5);
@@ -172,7 +176,9 @@ namespace ExamManagementSystem
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminAddCourse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminAddCourse";
+            this.Load += new System.EventHandler(this.AdminAddCourse_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,16 +187,16 @@ namespace ExamManagementSystem
         #endregion
 
         private System.Windows.Forms.Label Admin;
-        private System.Windows.Forms.Button buttonAddmoreTopics;
         private System.Windows.Forms.Button buttonSubmit;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxtpName;
         private System.Windows.Forms.TextBox textBoxInsID;
-        private System.Windows.Forms.TextBox textBoxInsName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxCrsDuration;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxCrsName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonBackward;
     }
 }

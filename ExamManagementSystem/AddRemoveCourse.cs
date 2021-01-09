@@ -132,5 +132,44 @@ namespace ExamManagementSystem
             }
 
         }
+
+        private void buttonBackward_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("SP_Courses_Update", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@crs_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    
+                    cmd.Parameters.AddWithValue("@crs_name", txt_CourseName.Text);
+                    cmd.Parameters.AddWithValue("@crs_duration",int.Parse(txt_Duration.Text));
+                    cmd.Parameters.AddWithValue("@Mgr_ID", int.Parse(txt_Mgr_ID.Text));
+                    
+                    cmd.ExecuteNonQuery();
+                   
+                    MessageBox.Show("Course is Updated Successfully");
+                    
+
+                    
+                   
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
     }
+    
 }

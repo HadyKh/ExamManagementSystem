@@ -30,7 +30,8 @@ namespace ExamManagementSystem
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelStdInfo = new System.Windows.Forms.Label();
+            this.buttonBackward = new System.Windows.Forms.Button();
+            this.buttonGetData = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Std_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Std_fname = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -39,28 +40,45 @@ namespace ExamManagementSystem
             this.Bdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SSN = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.labelStdInfo);
+            this.panel1.Controls.Add(this.buttonBackward);
+            this.panel1.Controls.Add(this.buttonGetData);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1176, 86);
             this.panel1.TabIndex = 0;
             // 
-            // labelStdInfo
+            // buttonBackward
             // 
-            this.labelStdInfo.AutoSize = true;
-            this.labelStdInfo.Font = new System.Drawing.Font("Century Gothic", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStdInfo.Location = new System.Drawing.Point(481, 31);
-            this.labelStdInfo.Name = "labelStdInfo";
-            this.labelStdInfo.Size = new System.Drawing.Size(251, 25);
-            this.labelStdInfo.TabIndex = 52;
-            this.labelStdInfo.Text = "All Students Information";
+            this.buttonBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonBackward.Image = global::ExamManagementSystem.Properties.Resources.icons8_export_30;
+            this.buttonBackward.Location = new System.Drawing.Point(1089, 12);
+            this.buttonBackward.Name = "buttonBackward";
+            this.buttonBackward.Size = new System.Drawing.Size(75, 57);
+            this.buttonBackward.TabIndex = 54;
+            this.buttonBackward.UseVisualStyleBackColor = true;
+            this.buttonBackward.Click += new System.EventHandler(this.buttonBackward_Click);
+            // 
+            // buttonGetData
+            // 
+            this.buttonGetData.FlatAppearance.BorderSize = 2;
+            this.buttonGetData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGetData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGetData.Location = new System.Drawing.Point(514, 27);
+            this.buttonGetData.Name = "buttonGetData";
+            this.buttonGetData.Size = new System.Drawing.Size(205, 35);
+            this.buttonGetData.TabIndex = 53;
+            this.buttonGetData.Text = "Get All Students Data";
+            this.buttonGetData.UseVisualStyleBackColor = true;
+            this.buttonGetData.Click += new System.EventHandler(this.buttonGetData_Click);
             // 
             // dataGridView1
             // 
@@ -75,54 +93,68 @@ namespace ExamManagementSystem
             this.Gender,
             this.Bdate,
             this.Phone,
-            this.Address});
+            this.Address,
+            this.SSN});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(0, 86);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1176, 216);
+            this.dataGridView1.Size = new System.Drawing.Size(1176, 534);
             this.dataGridView1.TabIndex = 1;
             // 
             // Std_Id
             // 
             this.Std_Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Std_Id.DataPropertyName = "St_ID";
             this.Std_Id.HeaderText = "StdID";
             this.Std_Id.Name = "Std_Id";
             // 
             // Std_fname
             // 
             this.Std_fname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Std_fname.DataPropertyName = "St_Fname";
             this.Std_fname.HeaderText = "Std Fname";
             this.Std_fname.Name = "Std_fname";
             // 
             // Std_lname
             // 
             this.Std_lname.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Std_lname.DataPropertyName = "St_Lname";
             this.Std_lname.HeaderText = "Std Lname";
             this.Std_lname.Name = "Std_lname";
             // 
             // Gender
             // 
             this.Gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Gender.DataPropertyName = "Gender";
             this.Gender.HeaderText = "Gender";
             this.Gender.Name = "Gender";
             // 
             // Bdate
             // 
             this.Bdate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Bdate.DataPropertyName = "B_Date";
             this.Bdate.HeaderText = "Bdate";
             this.Bdate.Name = "Bdate";
             // 
             // Phone
             // 
             this.Phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Phone.DataPropertyName = "Phone";
             this.Phone.HeaderText = "Phone";
             this.Phone.Name = "Phone";
             // 
             // Address
             // 
             this.Address.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Address.DataPropertyName = "Address";
             this.Address.HeaderText = "Address";
             this.Address.Name = "Address";
+            // 
+            // SSN
+            // 
+            this.SSN.DataPropertyName = "ST_SSN";
+            this.SSN.HeaderText = "SSN";
+            this.SSN.Name = "SSN";
             // 
             // AdminDisplayStudent
             // 
@@ -135,9 +167,9 @@ namespace ExamManagementSystem
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AdminDisplayStudent";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDisplayStudent";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -146,8 +178,8 @@ namespace ExamManagementSystem
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label labelStdInfo;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonGetData;
         private System.Windows.Forms.DataGridViewTextBoxColumn Std_Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Std_fname;
         private System.Windows.Forms.DataGridViewTextBoxColumn Std_lname;
@@ -155,5 +187,7 @@ namespace ExamManagementSystem
         private System.Windows.Forms.DataGridViewTextBoxColumn Bdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SSN;
+        private System.Windows.Forms.Button buttonBackward;
     }
 }

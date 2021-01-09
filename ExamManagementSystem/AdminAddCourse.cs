@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace ExamManagementSystem
 {
@@ -17,9 +19,64 @@ namespace ExamManagementSystem
             InitializeComponent();
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void AdminAddCourse_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            CoursesRecord();
+        }
+
+        private void CoursesRecord()
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("select * from Courses", con);
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+        }
+
+        private void buttonSubmit_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("SP_Courses_Insert", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@crs_name", textBoxCrsName.Text );
+                    cmd.Parameters.AddWithValue("@crs_duration",int.Parse(textBoxCrsDuration.Text));
+                    cmd.Parameters.AddWithValue("@mgr_id", int.Parse(textBoxInsID.Text));
+                    cmd.Parameters.AddWithValue("@tp_name", textBoxtpName.Text);
+                    
+
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("New Course is added Successfully ", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+        }
+
+        private void buttonBackward_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
