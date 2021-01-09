@@ -44,7 +44,7 @@
             this.label2.Location = new System.Drawing.Point(107, 19);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(15, 21);
+            this.label2.Size = new System.Drawing.Size(17, 23);
             this.label2.TabIndex = 10;
             this.label2.Text = "-";
             // 
@@ -54,7 +54,7 @@
             this.radioBtnAns4.Location = new System.Drawing.Point(658, 127);
             this.radioBtnAns4.Margin = new System.Windows.Forms.Padding(4);
             this.radioBtnAns4.Name = "radioBtnAns4";
-            this.radioBtnAns4.Size = new System.Drawing.Size(95, 25);
+            this.radioBtnAns4.Size = new System.Drawing.Size(114, 27);
             this.radioBtnAns4.TabIndex = 6;
             this.radioBtnAns4.TabStop = true;
             this.radioBtnAns4.Text = "Answer4";
@@ -67,7 +67,7 @@
             this.radioBtnAns3.Location = new System.Drawing.Point(239, 127);
             this.radioBtnAns3.Margin = new System.Windows.Forms.Padding(4);
             this.radioBtnAns3.Name = "radioBtnAns3";
-            this.radioBtnAns3.Size = new System.Drawing.Size(95, 25);
+            this.radioBtnAns3.Size = new System.Drawing.Size(114, 27);
             this.radioBtnAns3.TabIndex = 7;
             this.radioBtnAns3.TabStop = true;
             this.radioBtnAns3.Text = "Answer3";
@@ -80,7 +80,7 @@
             this.radioBtnAns2.Location = new System.Drawing.Point(658, 78);
             this.radioBtnAns2.Margin = new System.Windows.Forms.Padding(4);
             this.radioBtnAns2.Name = "radioBtnAns2";
-            this.radioBtnAns2.Size = new System.Drawing.Size(95, 25);
+            this.radioBtnAns2.Size = new System.Drawing.Size(114, 27);
             this.radioBtnAns2.TabIndex = 8;
             this.radioBtnAns2.TabStop = true;
             this.radioBtnAns2.Text = "Answer2";
@@ -93,7 +93,7 @@
             this.radioBtnAns1.Location = new System.Drawing.Point(239, 78);
             this.radioBtnAns1.Margin = new System.Windows.Forms.Padding(4);
             this.radioBtnAns1.Name = "radioBtnAns1";
-            this.radioBtnAns1.Size = new System.Drawing.Size(95, 25);
+            this.radioBtnAns1.Size = new System.Drawing.Size(114, 27);
             this.radioBtnAns1.TabIndex = 9;
             this.radioBtnAns1.TabStop = true;
             this.radioBtnAns1.Text = "Answer1";
@@ -107,7 +107,7 @@
             this.lblQuestion.Location = new System.Drawing.Point(132, 19);
             this.lblQuestion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(316, 17);
+            this.lblQuestion.Size = new System.Drawing.Size(364, 20);
             this.lblQuestion.TabIndex = 5;
             this.lblQuestion.Text = "The question to be answered will be here?";
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -120,7 +120,7 @@
             this.lblQNumber.Location = new System.Drawing.Point(39, 19);
             this.lblQNumber.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblQNumber.Name = "lblQNumber";
-            this.lblQNumber.Size = new System.Drawing.Size(50, 17);
+            this.lblQNumber.Size = new System.Drawing.Size(60, 20);
             this.lblQNumber.TabIndex = 4;
             this.lblQNumber.Text = "QNUM";
             this.lblQNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -153,6 +153,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListItemExamQuestion";
             this.Size = new System.Drawing.Size(1070, 183);
+            this.Load += new System.EventHandler(this.ListItemExamQuestion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

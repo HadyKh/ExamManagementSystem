@@ -14,19 +14,19 @@ namespace ExamManagementSystem
     {
 
         #region fields
-        private string _qNum;
+        private int _qNum;
         private string _question;
         private string _answer1;
         private string _answer2;
         private string _answer3;
         private string _answer4;
-        public string QNum
+        public int QNum
         {
             get { return _qNum; }
             set 
             {
                 _qNum = value;
-                lblQNumber.Text = value;
+                lblQNumber.Text = value.ToString();
             }
         }
 
@@ -114,6 +114,15 @@ namespace ExamManagementSystem
         private void radioBtnAns4_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ListItemExamQuestion_Load(object sender, EventArgs e)
+        {
+            if (_answer1 == "FALSE" && _answer2 == "TRUE" || _answer1 == "TRUE" && _answer2 == "FALSE")
+            {
+                radioBtnAns3.Hide();
+                radioBtnAns4.Hide();
+            }
         }
     }
 }

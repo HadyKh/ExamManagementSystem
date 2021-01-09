@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -23,41 +24,24 @@ namespace ExamManagementSystem
 
         private void ExamWindow_Load(object sender, EventArgs e)
         {
-            populateItem();
-
-
-            int minuts = 10;//global.ExamDuration;
+            #region Timer
+            int minuts = global.ExamDuration;
             int seconds = 0;
-
             totalseconds = (minuts * 60) + seconds;
-
             this.timer1.Enabled = true;
+            #endregion
+
+            GetCountOfExamQuestions();
+            GetExamQuestions();
         }
-        private void GetQuestionID()
-        {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
-            {
-                try
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("GetQuestionID", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Qest", SqlDbType.NVarChar, 50).Value = " ";//global.ExamID;
-                    global.countExamQuestions = (int)cmd.ExecuteScalar();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-        }
+        //first logical method to count the questions in the exam (we start here)
         private void GetCountOfExamQuestions()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
                 try
                 {
-                    con.Open();                    
+                    con.Open();
                     SqlCommand cmd = new SqlCommand("SP_CountExamQuestion", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = 1;//global.ExamID;
@@ -70,50 +54,47 @@ namespace ExamManagementSystem
                 }
             }
         }
-        private void GetCountOfQuestionChoices()
+
+        private void GetExamQuestions()
         {
+            ListItemExamQuestion[] listItem = new ListItemExamQuestion[global.countExamQuestions];
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("SP_CountQuestionChoices", con);
+                    SqlCommand cmd = new SqlCommand("SP_GetExamQuestions", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Q_ID", SqlDbType.Int).Value = 1;//;
-                    global.countQuestionChoices = (int)cmd.ExecuteScalar();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString());
-                }
-            }
-        }
-        private void populateItem()
-        {
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
-            {
-                try
-                {
-                    con.Open();
-                    ListItemExamQuestion[] listQuestionItems = new ListItemExamQuestion[global.countExamQuestions];
-                    SqlCommand cmd = new SqlCommand("GetExamQuestions", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@EX_ID", SqlDbType.Int).Value = global.ExamID;
+                    cmd.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = 1;//global.ExamID;
                     SqlDataReader dr = cmd.ExecuteReader();
-                    for (int i = 0; i < listQuestionItems.Length; i++)
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    int i = 0;
+                    foreach (DataRow row in dt.Rows)
                     {
-                        dr.Read();
-                        listQuestionItems[i] = new ListItemExamQuestion();
-                        listQuestionItems[i].QNum = (i+1).ToString();
-                        listQuestionItems[i].Question = dr["Quest"].ToString();
-                        //listQuestionItems[i].Answer1 = dr["Ex_type"].ToString();
-                        //listQuestionItems[i].Answer2 = dr["Duration"].ToString();
-                        //listQuestionItems[i].Answer3 = dr["Ex_Datetime"].ToString();
-                        //listQuestionItems[i].Answer4 = dr["Ex_Datetime"].ToString();
-                    }
-                    for (int i = 0; i < listQuestionItems.Length; i++)
-                    {
-                        flowLayoutPanelExamQuestion.Controls.Add(listQuestionItems[i]);
+                        listItem[i] = new ListItemExamQuestion();
+                        listItem[i].QNum = i+1;
+                        listItem[i].Question = row["Quest"].ToString();
+                        int QID = (int)row["Q_ID"]; //get Question ID from above dr at SP_GetExamQuestions for each row
+                        SqlCommand cmd2 = new SqlCommand("SP_GetQuestionChoices", con);
+                        cmd2.CommandType = CommandType.StoredProcedure;
+                        cmd2.Parameters.Add("@Q_ID", SqlDbType.Int).Value = QID;
+                        SqlDataReader dr2 = cmd2.ExecuteReader();
+                        DataTable dt2 = new DataTable();
+                        dt2.Load(dr2);
+                        string[] arr = new string[5];
+                        int j = 0;
+                        foreach (DataRow item in dt2.Rows)
+                        {
+                            arr[j] = item["Choice"].ToString();
+                            j++;
+                        }
+                        listItem[i].Answer1 = arr[0];
+                        listItem[i].Answer2 = arr[1];
+                        listItem[i].Answer3 = arr[2];
+                        listItem[i].Answer4 = arr[3];
+                        flowLayoutPanelExamQuestion.Controls.Add(listItem[i]);
+                        i++;
                     }
                 }
                 catch (Exception ex)
@@ -123,6 +104,7 @@ namespace ExamManagementSystem
             }
         }
 
+        #region methods
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (totalseconds > 0)
@@ -153,5 +135,6 @@ namespace ExamManagementSystem
         {
             
         }
+        #endregion
     }
 }
