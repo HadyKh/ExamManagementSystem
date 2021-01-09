@@ -23,28 +23,28 @@ namespace ExamManagementSystem
         {
 
             timer1.Start();
-            //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
-            //{
-            //    try
-            //    {
-            //        //Set student name under his pic
-            //        con.Open();
-            //        SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
-            //        SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = "+global.StudentID ,con);
-            //        string name = Convert.ToString(cmd.ExecuteScalar());
-            //        lblSt_name.Text = name;
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
+            {
+                try
+                {
+                    //Set student name under his pic
+                    con.Open();
+                    SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
+                    SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = " + global.StudentID, con);
+                    string name = Convert.ToString(cmd.ExecuteScalar());
+                    lblSt_name.Text = name;
 
-            //    }
-            //    catch (Exception ex)
-            //    {
+                }
+                catch (Exception ex)
+                {
 
-            //        MessageBox.Show(ex.ToString());
-            //    }
-            //}
+                    MessageBox.Show(ex.ToString());
+                }
+            }
 
         }
 
-        private void hoba()
+        private void GetCountOfExams()
         {
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
@@ -79,7 +79,7 @@ namespace ExamManagementSystem
                     listItemAvailableExam[] listExamItems = new listItemAvailableExam[global.countAvailableExams];
                     SqlCommand cmd = new SqlCommand("SP_AvailableExam", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;//global.StudentID;
                     SqlDataReader dr = cmd.ExecuteReader();
                     for (int i = 0; listExamItems.Length > i ; i++)
                     {
@@ -90,7 +90,8 @@ namespace ExamManagementSystem
                         listExamItems[i].ExamType = dr["Ex_type"].ToString();
                         listExamItems[i].Time = dr["Duration"].ToString();
                         listExamItems[i].At = dr["Ex_Datetime"].ToString();
-                                            }
+                        listExamItems[i].Ex_ID = (int)dr["Ex_ID"];
+                    }
                     for (int i = 0; i < listExamItems.Length; i++)
                     {
                         flowLayoutPanelwindowshow.Controls.Add(listExamItems[i]);
@@ -140,7 +141,7 @@ namespace ExamManagementSystem
         {
             
             flowLayoutPanelwindowshow.Controls.Clear();
-            hoba();
+            GetCountOfExams();
             populateExamItems();
             
             panelForButton.Height = buttonAvailableExams.Height;

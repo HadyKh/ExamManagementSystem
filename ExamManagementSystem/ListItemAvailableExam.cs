@@ -16,6 +16,14 @@ namespace ExamManagementSystem
         private string _examType;
         private string _crsName;
         private string _at;
+        private int _Ex_ID;
+
+
+        public int Ex_ID
+        {
+            get { return _Ex_ID; }
+            set { _Ex_ID = value; }
+        }
 
         public string TopicName
         {
@@ -69,6 +77,8 @@ namespace ExamManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            global.ExamDuration = int.Parse(Time);
+            global.ExamID = Ex_ID;
             var m = new ExamWindow();
             m.Show();
         }
