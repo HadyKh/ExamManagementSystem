@@ -20,6 +20,58 @@ namespace ExamManagementSystem
         private string _answer2;
         private string _answer3;
         private string _answer4;
+        private int _answer1ID;
+        private int _answer2ID;
+        private int _answer3ID;
+        private int _answer4ID;
+        private int _stAnswerID;
+        private int _qID;
+
+        public int QID
+        {
+            get { return _qID; }
+            set { _qID = value; }
+        }
+
+        public int StAnswerID
+        {
+            get { return _stAnswerID; }
+        }
+
+        public int Answer1ID
+        {
+            get { return _answer1ID; }
+            set
+            {
+                _answer1ID = value;
+            }
+        }
+        public int Answer2ID
+        {
+            get { return _answer2ID; }
+            set
+            {
+                _answer2ID = value;
+            }
+        }
+
+        public int Answer3ID
+        {
+            get { return _answer3ID; }
+            set
+            {
+                _answer3ID = value;
+            }
+        }
+
+        public int Answer4ID
+        {
+            get { return _answer4ID; }
+            set
+            {
+                _answer4ID = value;
+            }
+        }
         public int QNum
         {
             get { return _qNum; }
@@ -96,6 +148,28 @@ namespace ExamManagementSystem
 
         }
 
+        private void radioBtnAns1_Click(object sender, EventArgs e)
+        {
+            _stAnswerID = _answer1ID;
+        }
+
+        private void radioBtnAns2_Click(object sender, EventArgs e)
+        {
+            _stAnswerID = _answer2ID;
+        }
+
+        private void radioBtnAns3_Click(object sender, EventArgs e)
+        {
+            _stAnswerID = _answer3ID;
+        }
+
+        private void radioBtnAns4_Click(object sender, EventArgs e)
+        {
+            _stAnswerID = _answer4ID;
+        }
+
+
+        #region not needed
         private void radioBtnAns1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -116,6 +190,8 @@ namespace ExamManagementSystem
 
         }
 
+
+        #endregion
         private void ListItemExamQuestion_Load(object sender, EventArgs e)
         {
             if (_answer1 == "FALSE" && _answer2 == "TRUE" || _answer1 == "TRUE" && _answer2 == "FALSE")
@@ -124,5 +200,6 @@ namespace ExamManagementSystem
                 radioBtnAns4.Hide();
             }
         }
+
     }
 }

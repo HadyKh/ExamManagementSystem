@@ -30,7 +30,7 @@ namespace ExamManagementSystem
                     //Set student name under his pic
                     con.Open();
                     SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
-                    SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = " + global.StudentID, con);
+                    SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = " + 10,con);// global.StudentID, con);
                     string name = Convert.ToString(cmd.ExecuteScalar());
                     lblSt_name.Text = name;
 
@@ -56,8 +56,7 @@ namespace ExamManagementSystem
                     SqlCommand cmd = new SqlCommand("SP_CountAvailableExam", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     //cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = global.StudentID;
-                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;
-                    MessageBox.Show(cmd.ExecuteScalar().ToString());
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;//global.StudentID;
                     global.countAvailableExams = (int)cmd.ExecuteScalar();
                 }
                 catch (Exception ex)
@@ -91,6 +90,7 @@ namespace ExamManagementSystem
                         listExamItems[i].Time = dr["Duration"].ToString();
                         listExamItems[i].At = dr["Ex_Datetime"].ToString();
                         listExamItems[i].Ex_ID = (int)dr["Ex_ID"];
+                        listExamItems[i].InsID = (int)dr["Ins_ID"];
                     }
                     for (int i = 0; i < listExamItems.Length; i++)
                     {

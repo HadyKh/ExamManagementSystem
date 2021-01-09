@@ -17,6 +17,13 @@ namespace ExamManagementSystem
         private string _crsName;
         private string _at;
         private int _Ex_ID;
+        private int _insID;
+
+        public int InsID
+        {
+            get { return _insID; }
+            set { _insID = value; }
+        }
 
 
         public int Ex_ID
@@ -79,6 +86,7 @@ namespace ExamManagementSystem
         {
             global.ExamDuration = int.Parse(Time);
             global.ExamID = Ex_ID;
+            global.InsID = _insID;
             var m = new ExamWindow();
             m.Show();
         }

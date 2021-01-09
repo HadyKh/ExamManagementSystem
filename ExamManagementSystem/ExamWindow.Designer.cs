@@ -35,11 +35,13 @@
             this.lblExamType = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.flowLayoutPanelExamQuestion = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnFinish = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnFinish);
             this.panel1.Controls.Add(this.lblTimer);
             this.panel1.Controls.Add(this.lblTopicName);
             this.panel1.Controls.Add(this.lblExamType);
@@ -55,7 +57,7 @@
             // 
             this.lblTimer.AutoSize = true;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.lblTimer.Location = new System.Drawing.Point(949, 30);
+            this.lblTimer.Location = new System.Drawing.Point(728, 30);
             this.lblTimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(104, 39);
@@ -98,6 +100,21 @@
             this.flowLayoutPanelExamQuestion.Size = new System.Drawing.Size(1095, 402);
             this.flowLayoutPanelExamQuestion.TabIndex = 1;
             // 
+            // btnFinish
+            // 
+            this.btnFinish.BackColor = System.Drawing.Color.Green;
+            this.btnFinish.FlatAppearance.BorderSize = 0;
+            this.btnFinish.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFinish.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinish.ForeColor = System.Drawing.Color.White;
+            this.btnFinish.Location = new System.Drawing.Point(979, 30);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(75, 38);
+            this.btnFinish.TabIndex = 2;
+            this.btnFinish.Text = "Finish";
+            this.btnFinish.UseVisualStyleBackColor = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            // 
             // ExamWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -129,5 +146,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelExamQuestion;
         private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Button btnFinish;
     }
 }

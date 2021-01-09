@@ -60,6 +60,7 @@
             this.radioBtnAns4.Text = "Answer4";
             this.radioBtnAns4.UseVisualStyleBackColor = true;
             this.radioBtnAns4.CheckedChanged += new System.EventHandler(this.radioBtnAns4_CheckedChanged);
+            this.radioBtnAns4.Click += new System.EventHandler(this.radioBtnAns4_Click);
             // 
             // radioBtnAns3
             // 
@@ -73,6 +74,7 @@
             this.radioBtnAns3.Text = "Answer3";
             this.radioBtnAns3.UseVisualStyleBackColor = true;
             this.radioBtnAns3.CheckedChanged += new System.EventHandler(this.radioBtnAns3_CheckedChanged);
+            this.radioBtnAns3.Click += new System.EventHandler(this.radioBtnAns3_Click);
             // 
             // radioBtnAns2
             // 
@@ -86,6 +88,7 @@
             this.radioBtnAns2.Text = "Answer2";
             this.radioBtnAns2.UseVisualStyleBackColor = true;
             this.radioBtnAns2.CheckedChanged += new System.EventHandler(this.radioBtnAns2_CheckedChanged);
+            this.radioBtnAns2.Click += new System.EventHandler(this.radioBtnAns2_Click);
             // 
             // radioBtnAns1
             // 
@@ -99,6 +102,7 @@
             this.radioBtnAns1.Text = "Answer1";
             this.radioBtnAns1.UseVisualStyleBackColor = true;
             this.radioBtnAns1.CheckedChanged += new System.EventHandler(this.radioBtnAns1_CheckedChanged);
+            this.radioBtnAns1.Click += new System.EventHandler(this.radioBtnAns1_Click);
             // 
             // lblQuestion
             // 

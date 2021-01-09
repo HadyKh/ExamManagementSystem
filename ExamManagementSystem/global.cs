@@ -13,8 +13,8 @@ namespace ExamManagementSystem
         public static int  ExamID;
         public static int countAvailableExams;
         public static int countExamQuestions;
-        //public static 
         public static int countQuestionChoices;
         public static int ExamDuration;
+        public static int QID;
     }
 }

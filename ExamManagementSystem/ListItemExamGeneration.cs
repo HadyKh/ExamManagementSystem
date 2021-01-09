@@ -240,7 +240,6 @@ namespace ExamManagementSystem
                     cmd.Parameters.Add("@MCQ_No", SqlDbType.BigInt).Value = int.Parse(cmbBxMCQ.Text);
                     cmd.Parameters.Add("@TF_No", SqlDbType.BigInt).Value = int.Parse(cmbBxTF.Text);
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show(dateTimePicker.Value.ToShortDateString().ToString());
                 }
                 catch (Exception ex)
                 {
