@@ -46,7 +46,7 @@ namespace ExamManagementSystem
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_CountExamQuestion", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = 1022;//global.ExamID;
+                    cmd.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = global.ExamID;
                     global.countExamQuestions = (int)cmd.ExecuteScalar();
                 }
                 catch (Exception ex)
@@ -68,7 +68,7 @@ namespace ExamManagementSystem
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_GetExamQuestions", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = 1022;//global.ExamID;
+                    cmd.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = global.ExamID;
                     SqlDataReader dr = cmd.ExecuteReader();
                     DataTable dt = new DataTable();
                     dt.Load(dr);
@@ -79,7 +79,7 @@ namespace ExamManagementSystem
                         listItemQuestion[i].QNum = i+1;
                         listItemQuestion[i].Question = row["Quest"].ToString();
                         listItemQuestion[i].QID = (int)row["Q_ID"];
-                        global.QID = (int)row["Q_ID"]; //get Question ID from above dr at SP_GetExamQuestions for each row
+                        //global.QID = (int)row["Q_ID"]; //get Question ID from above dr at SP_GetExamQuestions for each row
                         SqlCommand cmd2 = new SqlCommand("SP_GetQuestionChoices", con);
                         cmd2.CommandType = CommandType.StoredProcedure;
                         cmd2.Parameters.Add("@Q_ID", SqlDbType.Int).Value = listItemQuestion[i].QID;
@@ -95,6 +95,7 @@ namespace ExamManagementSystem
                             arr2[j] = (int)item["Ch_ID"];
                             j++;
                         }
+
                         listItemQuestion[i].Answer1 = arr[0];
                         listItemQuestion[i].Answer2 = arr[1];
                         listItemQuestion[i].Answer3 = arr[2];
@@ -107,6 +108,7 @@ namespace ExamManagementSystem
                         flowLayoutPanelExamQuestion.Controls.Add(listItemQuestion[i]);
                         i++;
                     }
+                    global.countExamQuestions = i;
                 }
                 catch (Exception ex)
                 {
@@ -177,24 +179,24 @@ namespace ExamManagementSystem
         private void btnFinish_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            dt.Columns.Add("St_ID");
-            dt.Columns.Add("Ex_ID");
-            dt.Columns.Add("Q_ID");
-            dt.Columns.Add("Ins_ID");
-            dt.Columns.Add("Answer");
-            DataRow row;
+            dt.Columns.Add(new DataColumn("St_ID",typeof(int)));
+            dt.Columns.Add(new DataColumn("Ex_ID", typeof(int)));
+            dt.Columns.Add(new DataColumn("Q_ID", typeof(int)));
+            dt.Columns.Add(new DataColumn("Ins_ID", typeof(int)));
+            dt.Columns.Add(new DataColumn("Answer", typeof(int)));
             int numberOfRows = global.countExamQuestions;
-            for (int i = 0; i < listItemQuestion.Length; i++)
+            //DataRow row;
+            for (int i = 0; i < numberOfRows; i++)
             {
-                row = dt.NewRow();
-                row["St_ID"] = 10;// global.StudentID;
-                row["Ex_ID"] = 1022;// global.ExamID;
-                row["Q_ID"] = listItemQuestion[i].QID;
-                //MessageBox.Show(listItemQuestion[i].QID.ToString());
-                row["Ins_ID"] = 28;// global.InsID;
-                row["Answer"] = listItemQuestion[i].StAnswerID;
-                //MessageBox.Show(listItemQuestion[i].StAnswerID.ToString());
+                //row = dt.NewRow();
+                //row["St_ID"] = global.StudentID;
+                //row["Ex_ID"] = global.ExamID;
+                //row["Q_ID"] = listItemQuestion[i].QID;
+                //row["Ins_ID"] = global.InsID;
+                //row["Answer"] = listItemQuestion[i].StAnswerID;
+                dt.Rows.Add(global.StudentID, global.ExamID, listItemQuestion[i].QID, global.InsID, listItemQuestion[i].StAnswerID);
             }
+
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
                 try
@@ -202,20 +204,17 @@ namespace ExamManagementSystem
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_StudentAnswerLoad", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@St_ID", 10);// global.StudentID);
-                    //cmd.Parameters.AddWithValue("@ex_id", 14);// global.ExamID);
-                    //cmd.Parameters.AddWithValue("@St_Ans", dt);
-                    cmd.Parameters.Add("@St_ID",SqlDbType.Int ).Value= 10;// global.StudentID);
-                    MessageBox.Show("3zma");
-                    cmd.Parameters.Add("@ex_id", SqlDbType.Int).Value = 1022;// global.ExamID);
+                    cmd.Parameters.Add("@St_ID",SqlDbType.Int ).Value= global.StudentID;
+                    MessageBox.Show(global.ExamID.ToString());
+                    cmd.Parameters.Add("@ex_id", SqlDbType.Int).Value = global.ExamID;
                     cmd.Parameters.Add("@St_Ans", SqlDbType.Structured).Value = dt;
                     cmd.ExecuteNonQuery();
                     SqlCommand cmd2 = new SqlCommand("SP_ExamCorrection", con);
                     cmd2.CommandType = CommandType.StoredProcedure;
-                    //MessageBox.Show(global.ExamID.ToString());
-                    cmd.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = 1022; //global.ExamID;
-                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 1;// global.StudentID;
-                    //cmd2.ExecuteNonQuery();
+                    cmd2.Parameters.Add("@Ex_ID", SqlDbType.Int).Value = global.ExamID;
+                    cmd2.Parameters.Add("@St_ID", SqlDbType.Int).Value = global.StudentID;
+                    cmd2.ExecuteNonQuery();
+                    this.Hide();
                 }
                 catch (Exception ex)
                 {

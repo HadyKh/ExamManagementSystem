@@ -39,6 +39,7 @@
             // 
             // buttonStudentSignIn
             // 
+            this.buttonStudentSignIn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonStudentSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonStudentSignIn.Location = new System.Drawing.Point(293, 329);
             this.buttonStudentSignIn.Name = "buttonStudentSignIn";
@@ -50,6 +51,7 @@
             // 
             // buttonInstructorSignIn
             // 
+            this.buttonInstructorSignIn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.buttonInstructorSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonInstructorSignIn.Location = new System.Drawing.Point(633, 329);
             this.buttonInstructorSignIn.Name = "buttonInstructorSignIn";
@@ -61,6 +63,7 @@
             // 
             // buttonMaximize
             // 
+            this.buttonMaximize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonMaximize.FlatAppearance.BorderSize = 0;
             this.buttonMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMaximize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMaximize.Image")));
@@ -73,6 +76,7 @@
             // 
             // buttonClose
             // 
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.FlatAppearance.BorderSize = 0;
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
@@ -85,6 +89,7 @@
             // 
             // buttonMinimize
             // 
+            this.buttonMinimize.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonMinimize.FlatAppearance.BorderSize = 0;
             this.buttonMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMinimize.Image = ((System.Drawing.Image)(resources.GetObject("buttonMinimize.Image")));
@@ -97,6 +102,7 @@
             // 
             // buttonAdmin
             // 
+            this.buttonAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdmin.Location = new System.Drawing.Point(13, 664);
             this.buttonAdmin.Name = "buttonAdmin";

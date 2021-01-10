@@ -30,7 +30,7 @@ namespace ExamManagementSystem
                     //Set student name under his pic
                     con.Open();
                     SigninAsStudentMsgBox s = new SigninAsStudentMsgBox();
-                    SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = " + 10,con);// global.StudentID, con);
+                    SqlCommand cmd = new SqlCommand("Select Concat(St_fname,' ' ,St_lname) 'Student Name' from Student where St_ID = " + global.StudentID, con);
                     string name = Convert.ToString(cmd.ExecuteScalar());
                     lblSt_name.Text = name;
 
@@ -51,12 +51,10 @@ namespace ExamManagementSystem
 
                 try
                 {
-                    con.Open();
-                    //SqlCommand cmd =new SqlCommand("select COUNT(se.EX_ID) from Student_Exam se where se.St_ID = " + global.StudentID, con);
+                    con.Open();                   
                     SqlCommand cmd = new SqlCommand("SP_CountAvailableExam", con);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = global.StudentID;
-                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;//global.StudentID;
+                    cmd.CommandType = CommandType.StoredProcedure;                   
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = global.StudentID;
                     global.countAvailableExams = (int)cmd.ExecuteScalar();
                 }
                 catch (Exception ex)
@@ -78,7 +76,7 @@ namespace ExamManagementSystem
                     listItemAvailableExam[] listExamItems = new listItemAvailableExam[global.countAvailableExams];
                     SqlCommand cmd = new SqlCommand("SP_AvailableExam", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = 10;//global.StudentID;
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = global.StudentID;
                     SqlDataReader dr = cmd.ExecuteReader();
                     for (int i = 0; listExamItems.Length > i ; i++)
                     {
