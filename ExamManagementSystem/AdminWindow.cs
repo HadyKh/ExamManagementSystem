@@ -162,54 +162,68 @@ namespace ExamManagementSystem
         {
             var m = new DisplayCourses();
             m.Show();
+            this.Hide();
         }
 
         private void buttonAddCourse_Click(object sender, EventArgs e)
         {
             var m = new AdminAddCourse();
             m.Show();
+            this.Hide();
         }
 
         private void buttonRemoveCourse_Click(object sender, EventArgs e)
         {
             var m = new AddRemoveCourse();
             m.Show();
+            this.Hide();
         }
 
         private void buttonDisplayInstructor_Click(object sender, EventArgs e)
         {
             var m = new AdminDisplayInstructor();
             m.Show();
+            this.Hide();
         }
 
         private void buttonAddInstructor_Click(object sender, EventArgs e)
         {
             var m = new AdminAddInstructor();
             m.Show();
+            this.Hide();
         }
 
         private void buttonRemoveInstructor_Click(object sender, EventArgs e)
         {
             var m = new AddRemoveInstructor();
             m.Show();
+            this.Hide();
         }
 
         private void buttonDisplayStudent_Click(object sender, EventArgs e)
         {
             var m = new AdminDisplayStudent();
             m.Show();
+            this.Hide();
         }
 
         private void buttonAddStudent_Click(object sender, EventArgs e)
         {
             var m = new AdminAddStudent();
             m.Show();
+            this.Hide();
         }
 
         private void buttonRemoveStudent_Click(object sender, EventArgs e)
         {
             var m = new AddRemoveStudent();
             m.Show();
+            this.Hide();
+        }
+
+        private void buttonStudent_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -140,6 +140,8 @@ namespace ExamManagementSystem
         private void buttonBackward_Click(object sender, EventArgs e)
         {
             this.Close();
+            var m = new AdminWindow();
+            m.Show();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)

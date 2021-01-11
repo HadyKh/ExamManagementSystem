@@ -87,7 +87,7 @@ namespace ExamManagementSystem
             global.ExamDuration = int.Parse(Time);
             global.ExamID = Ex_ID;
             global.InsID = _insID;
-            var m = new ExamWindow();
+            var m = new StartExamBtnMsgBox();
             m.Show();
         }
 
