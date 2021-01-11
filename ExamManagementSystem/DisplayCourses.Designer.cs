@@ -29,10 +29,11 @@ namespace ExamManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DisplayCourses));
             this.panelstudentInfo = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.buttonGetData = new System.Windows.Forms.Button();
             this.buttonBackward = new System.Windows.Forms.Button();
+            this.buttonGetData = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Crs_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Course_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ins_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +53,31 @@ namespace ExamManagementSystem
             this.panelstudentInfo.Size = new System.Drawing.Size(1176, 86);
             this.panelstudentInfo.TabIndex = 0;
             // 
+            // buttonBackward
+            // 
+            this.buttonBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBackward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
+            this.buttonBackward.Image = global::ExamManagementSystem.Properties.Resources.icons8_export_30;
+            this.buttonBackward.Location = new System.Drawing.Point(1089, 12);
+            this.buttonBackward.Name = "buttonBackward";
+            this.buttonBackward.Size = new System.Drawing.Size(75, 57);
+            this.buttonBackward.TabIndex = 58;
+            this.buttonBackward.UseVisualStyleBackColor = true;
+            this.buttonBackward.Click += new System.EventHandler(this.buttonBackward_Click);
+            // 
+            // buttonGetData
+            // 
+            this.buttonGetData.FlatAppearance.BorderSize = 2;
+            this.buttonGetData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGetData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGetData.Location = new System.Drawing.Point(537, 28);
+            this.buttonGetData.Name = "buttonGetData";
+            this.buttonGetData.Size = new System.Drawing.Size(227, 35);
+            this.buttonGetData.TabIndex = 55;
+            this.buttonGetData.Text = "Get All Courses Data";
+            this.buttonGetData.UseVisualStyleBackColor = true;
+            this.buttonGetData.Click += new System.EventHandler(this.buttonGetData_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
@@ -69,31 +95,6 @@ namespace ExamManagementSystem
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1176, 447);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // buttonGetData
-            // 
-            this.buttonGetData.FlatAppearance.BorderSize = 2;
-            this.buttonGetData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonGetData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGetData.Location = new System.Drawing.Point(537, 28);
-            this.buttonGetData.Name = "buttonGetData";
-            this.buttonGetData.Size = new System.Drawing.Size(227, 35);
-            this.buttonGetData.TabIndex = 55;
-            this.buttonGetData.Text = "Get All Courses Data";
-            this.buttonGetData.UseVisualStyleBackColor = true;
-            this.buttonGetData.Click += new System.EventHandler(this.buttonGetData_Click);
-            // 
-            // buttonBackward
-            // 
-            this.buttonBackward.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBackward.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
-            this.buttonBackward.Image = global::ExamManagementSystem.Properties.Resources.icons8_export_30;
-            this.buttonBackward.Location = new System.Drawing.Point(1089, 12);
-            this.buttonBackward.Name = "buttonBackward";
-            this.buttonBackward.Size = new System.Drawing.Size(75, 57);
-            this.buttonBackward.TabIndex = 58;
-            this.buttonBackward.UseVisualStyleBackColor = true;
-            this.buttonBackward.Click += new System.EventHandler(this.buttonBackward_Click);
             // 
             // Crs_ID
             // 
@@ -140,6 +141,7 @@ namespace ExamManagementSystem
             this.Controls.Add(this.panelstudentInfo);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DisplayCourses";
             this.Text = "DisplayCourses";
             this.panelstudentInfo.ResumeLayout(false);

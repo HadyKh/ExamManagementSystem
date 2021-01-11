@@ -29,6 +29,7 @@ namespace ExamManagementSystem
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminDisplayStudent));
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonBackward = new System.Windows.Forms.Button();
             this.buttonGetData = new System.Windows.Forms.Button();
@@ -166,6 +167,7 @@ namespace ExamManagementSystem
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminDisplayStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminDisplayStudent";
