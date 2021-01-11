@@ -34,15 +34,12 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("select * from Student", con);
-                    
-
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -66,16 +63,14 @@ namespace ExamManagementSystem
                     cmd.Parameters.AddWithValue("@Address", textBoxAddress.Text);
                     cmd.Parameters.AddWithValue("@email", textBoxemail.Text);
                     cmd.Parameters.AddWithValue("@Password", textBoxPassword.Text);
-
-                    
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("New Student is added Successfully ","Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Fill all the empty fields or Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }

@@ -114,8 +114,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
                 
             }
@@ -140,7 +140,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -243,7 +244,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! fill the empty fields or Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -291,15 +293,13 @@ namespace ExamManagementSystem
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.ToString());
+                        MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show(ex.ToString());
                     }
                 }
             }
             else
                 MessageBox.Show("Please Enter course name and topic name to be checked", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-            //courseName = txtBxCrsName.Text;
-            //topicName = txtBxTopicName.Text;
         }
     }
 }

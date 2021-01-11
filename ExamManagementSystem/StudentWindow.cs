@@ -37,8 +37,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    //MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -59,8 +59,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -99,8 +99,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -111,26 +111,7 @@ namespace ExamManagementSystem
             ListItemStudentGrade listItem = new ListItemStudentGrade();
             flowLayoutPanelwindowshow.Controls.Clear();
             flowLayoutPanelwindowshow.Controls.Add(listItem);
-            ////database Connection
-            //using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
-            //{
-            //    try
-            //    {
-            //        con.Open();
-            //        SqlCommand cmd = new SqlCommand("SP_StudentScores", con);
-            //        cmd.CommandType = CommandType.StoredProcedure;
-            //        //cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = global.StudentID;
-            //        cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = 8;
-            //        SqlDataReader dr = cmd.ExecuteReader();
-            //        DataTable dtbl = new DataTable();
-            //        dtbl.Load(dr);
-            //        listItem.GridSetGet = dtbl;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.ToString());
-            //    }
-            //}
+            
         }
 
         #region buttons

@@ -29,7 +29,6 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("select ins_ID from Instructor", con);
                     SqlDataReader dr = cmd.ExecuteReader();
 
@@ -37,12 +36,11 @@ namespace ExamManagementSystem
                     {
                         comboBox1.Items.Add(dr["ins_ID"]);
                     }
-
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -62,7 +60,6 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("SP_Instructor_Delete", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@ins_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
@@ -83,8 +80,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -100,14 +97,11 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("SP_Instructor_Details", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@ins_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
-
                     SqlDataReader dr = cmd.ExecuteReader();
                     dr.Read();
-
                     textBox_Phone.Text = dr["Phone"].ToString();
                     textBox_Address.Text = dr["Address"].ToString();
                     textBox_email.Text = dr["Email"].ToString();
@@ -115,8 +109,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -130,25 +124,21 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("SP_Instructor_Update", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.Add("@ins_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
                     cmd.Parameters.AddWithValue("@ins_ID", int.Parse(comboBox1.Text));
                     cmd.Parameters.AddWithValue("@phone", textBox_Phone.Text);
                     cmd.Parameters.AddWithValue("@Address", textBox_Address.Text);
                     cmd.Parameters.AddWithValue("@email", textBox_email.Text);
                     cmd.Parameters.AddWithValue("@dept_id", int.Parse(textBox4_DeptID.Text));
-                   
                     cmd.ExecuteNonQuery();
-                    
                     MessageBox.Show("Instructor Info is Updated Successfully");
                 
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }

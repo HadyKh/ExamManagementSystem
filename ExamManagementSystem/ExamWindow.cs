@@ -51,8 +51,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -60,7 +60,6 @@ namespace ExamManagementSystem
         
         private void GetExamQuestions()
         {
-            //ListItemExamQuestion[] listItem = new ListItemExamQuestion[global.countExamQuestions];
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Mycon"].ConnectionString))
             {
                 try
@@ -78,8 +77,7 @@ namespace ExamManagementSystem
                         listItemQuestion[i] = new ListItemExamQuestion();
                         listItemQuestion[i].QNum = i+1;
                         listItemQuestion[i].Question = row["Quest"].ToString();
-                        listItemQuestion[i].QID = (int)row["Q_ID"];
-                        //global.QID = (int)row["Q_ID"]; //get Question ID from above dr at SP_GetExamQuestions for each row
+                        listItemQuestion[i].QID = (int)row["Q_ID"]; //get Question ID from above dr at SP_GetExamQuestions for each row
                         SqlCommand cmd2 = new SqlCommand("SP_GetQuestionChoices", con);
                         cmd2.CommandType = CommandType.StoredProcedure;
                         cmd2.Parameters.Add("@Q_ID", SqlDbType.Int).Value = listItemQuestion[i].QID;
@@ -112,37 +110,12 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
         #endregion
-
-
-        #region set aswers to DB
-        //private void dataTableParameterForSP(int ans)
-        //{
-        //    DataTable dt = new DataTable();
-        //    dt.Columns.Add("St_ID");
-        //    dt.Columns.Add("Ex_ID");
-        //    dt.Columns.Add("Q_ID");
-        //    dt.Columns.Add("Ins_ID");
-        //    dt.Columns.Add("Answer");
-        //    DataRow row;
-        //    int numberOfRows = global.countExamQuestions;
-        //    for (int i = 0; i < numberOfRows; i++)
-        //    {
-        //        row = dt.NewRow();
-        //        row["St_ID"] = global.StudentID;
-        //        row["Ex_ID"] = global.ExamID;
-        //        row["Q_ID"] = global.QID;
-        //        row["Ins_ID"] = global.InsID;
-        //        row["Answer"] = ans;
-        //    }
-        //}
-        #endregion
-
-
         #region methods
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -188,12 +161,6 @@ namespace ExamManagementSystem
             //DataRow row;
             for (int i = 0; i < numberOfRows; i++)
             {
-                //row = dt.NewRow();
-                //row["St_ID"] = global.StudentID;
-                //row["Ex_ID"] = global.ExamID;
-                //row["Q_ID"] = listItemQuestion[i].QID;
-                //row["Ins_ID"] = global.InsID;
-                //row["Answer"] = listItemQuestion[i].StAnswerID;
                 dt.Rows.Add(global.StudentID, global.ExamID, listItemQuestion[i].QID, global.InsID, listItemQuestion[i].StAnswerID);
             }
 
@@ -205,7 +172,6 @@ namespace ExamManagementSystem
                     SqlCommand cmd = new SqlCommand("SP_StudentAnswerLoad", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@St_ID",SqlDbType.Int ).Value= global.StudentID;
-                    MessageBox.Show(global.ExamID.ToString());
                     cmd.Parameters.Add("@ex_id", SqlDbType.Int).Value = global.ExamID;
                     cmd.Parameters.Add("@St_Ans", SqlDbType.Structured).Value = dt;
                     cmd.ExecuteNonQuery();
@@ -218,7 +184,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    //MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

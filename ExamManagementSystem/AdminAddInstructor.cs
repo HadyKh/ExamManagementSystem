@@ -31,16 +31,13 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("select * from Instructor", con);
-
-
                 }
 
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   // MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -53,7 +50,6 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("SP_Instructor_Insert", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ssn", int.Parse(textBoxSSN.Text));
@@ -65,16 +61,13 @@ namespace ExamManagementSystem
                     cmd.Parameters.AddWithValue("@Address", textBoxAddress.Text);
                     cmd.Parameters.AddWithValue("@email", textBoxemail.Text);
                     cmd.Parameters.AddWithValue("@Password", textBoxPassword.Text);
-
-
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("New Instructor is added Successfully ", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Fill the empty Fields or Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   //MessageBox.Show(ex.ToString());
                 }
             }
         }

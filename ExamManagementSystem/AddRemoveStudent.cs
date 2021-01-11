@@ -29,7 +29,6 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("select St_ID from Student", con);
                     SqlDataReader dr = cmd.ExecuteReader();
 
@@ -41,8 +40,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -90,8 +89,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -105,14 +104,11 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("SP_Student_Details", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
-
                     SqlDataReader dr = cmd.ExecuteReader();
                     dr.Read();
-
                     textBox_Phone.Text = dr["Phone"].ToString();
                     textBox_Address.Text = dr["Address"].ToString();
                     textBox_email.Text = dr["Email"].ToString();
@@ -120,8 +116,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Fill al the empty fields or Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -134,7 +130,6 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-
                     SqlCommand cmd = new SqlCommand("SP_Student_Update", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     //cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
@@ -143,16 +138,13 @@ namespace ExamManagementSystem
                     cmd.Parameters.AddWithValue("@Address", textBox_Address.Text);
                     cmd.Parameters.AddWithValue("@email", textBox_email.Text);
                     cmd.Parameters.AddWithValue("@dept_id", int.Parse(textBox4_DeptID.Text));
-                    
                     cmd.ExecuteNonQuery();
-
                     MessageBox.Show("Student info is Updated Succesfuly");
-                   
                 }
                 catch (Exception ex)
                 {
-
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }

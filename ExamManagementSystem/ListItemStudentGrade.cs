@@ -56,8 +56,7 @@ namespace ExamManagementSystem
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_StudentScores", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = global.StudentID;
-                    cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = 8;
+                    cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = global.StudentID;
                     SqlDataReader dr = cmd.ExecuteReader();
                     DataTable dtbl = new DataTable();
                     dtbl.Load(dr);
@@ -65,7 +64,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
@@ -80,7 +80,7 @@ namespace ExamManagementSystem
                     con.Open();
                     SqlCommand cmd = new SqlCommand("SP_StudentGrade", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = 8;
+                    cmd.Parameters.Add("@ST_ID", SqlDbType.Int).Value = global.StudentID;
                     SqlDataReader dr = cmd.ExecuteReader();
                     DataTable dtbl = new DataTable();
                     dtbl.Load(dr);
@@ -88,7 +88,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //MessageBox.Show(ex.ToString());
                 }
             }
         }
