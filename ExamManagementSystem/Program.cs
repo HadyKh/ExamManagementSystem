@@ -23,6 +23,7 @@ namespace ExamManagementSystem
             //Application.Run(new SigninWindow());
             //Application.Run(new AdminWindow());
             //Application.Run(new AddRemoveCourse());
+            //Application.Run(new AddRemoveInstructor());
         }
     }
 }
