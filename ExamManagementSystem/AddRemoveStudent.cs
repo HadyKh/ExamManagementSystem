@@ -72,7 +72,6 @@ namespace ExamManagementSystem
                     SqlCommand cmd = new SqlCommand("SP_Student_Delete", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
-
                     int row = cmd.ExecuteNonQuery();
                     if (row > 0)
                     {
@@ -89,8 +88,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //MessageBox.Show(ex.ToString());
+                    //MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString());
                 }
             }
 
@@ -143,8 +142,8 @@ namespace ExamManagementSystem
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //MessageBox.Show(ex.ToString());
+                    //MessageBox.Show("Please! Contact your adminstrator", "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.ToString());
                 }
             }
         }

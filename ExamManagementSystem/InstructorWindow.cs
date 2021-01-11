@@ -98,7 +98,9 @@ namespace ExamManagementSystem
         }
         private void buttonExitInstructor_Click(object sender, EventArgs e)
         {
-           
+            var m = new SigninWindow();
+            m.Show();
+            this.Close();
         }
 
        
