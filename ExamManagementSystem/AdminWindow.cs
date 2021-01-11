@@ -31,6 +31,9 @@ namespace ExamManagementSystem
 
         private void buttonExitAdmin_Click(object sender, EventArgs e)
         {
+            this.Close();
+            var f = new SigninWindow();
+            f.Show();
         }
 
       
