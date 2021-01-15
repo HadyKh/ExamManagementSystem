@@ -24,6 +24,9 @@ namespace ExamManagementSystem
             //Application.Run(new AdminWindow());
             //Application.Run(new AddRemoveCourse());
             //Application.Run(new AddRemoveInstructor());
+            //Application.Run(new AddRemoveStudent());
+            //Application.Run(new AdminAddStudent());
+            //Application.Run(new AdminAddInstructor());
         }
     }
 }

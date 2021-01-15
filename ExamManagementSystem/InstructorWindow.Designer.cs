@@ -71,7 +71,7 @@
             this.buttonStudents.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonStudents.ForeColor = System.Drawing.Color.White;
             this.buttonStudents.Image = ((System.Drawing.Image)(resources.GetObject("buttonStudents.Image")));
-            this.buttonStudents.Location = new System.Drawing.Point(0, 330);
+            this.buttonStudents.Location = new System.Drawing.Point(0, 218);
             this.buttonStudents.Name = "buttonStudents";
             this.buttonStudents.Size = new System.Drawing.Size(200, 106);
             this.buttonStudents.TabIndex = 1;
@@ -88,15 +88,14 @@
             this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDashboard.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonDashboard.ForeColor = System.Drawing.Color.White;
-            this.buttonDashboard.Image = ((System.Drawing.Image)(resources.GetObject("buttonDashboard.Image")));
-            this.buttonDashboard.Location = new System.Drawing.Point(3, 218);
+            this.buttonDashboard.Location = new System.Drawing.Point(3, 445);
             this.buttonDashboard.Name = "buttonDashboard";
             this.buttonDashboard.Size = new System.Drawing.Size(200, 106);
             this.buttonDashboard.TabIndex = 1;
-            this.buttonDashboard.Text = "Dashboard";
             this.buttonDashboard.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.buttonDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonDashboard.UseVisualStyleBackColor = true;
+            this.buttonDashboard.Visible = false;
             this.buttonDashboard.Click += new System.EventHandler(this.buttonDashboard_Click);
             // 
             // buttonExam
@@ -144,7 +143,7 @@
             this.lblIns_ID.AutoSize = true;
             this.lblIns_ID.Location = new System.Drawing.Point(42, 74);
             this.lblIns_ID.Name = "lblIns_ID";
-            this.lblIns_ID.Size = new System.Drawing.Size(137, 21);
+            this.lblIns_ID.Size = new System.Drawing.Size(166, 23);
             this.lblIns_ID.TabIndex = 0;
             this.lblIns_ID.Text = "Instructor Name";
             this.lblIns_ID.Click += new System.EventHandler(this.label1_Click);
@@ -190,7 +189,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(53, 18);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 21);
+            this.label2.Size = new System.Drawing.Size(138, 23);
             this.label2.TabIndex = 0;
             this.label2.Text = "dd/mm/yyyy";
             // 

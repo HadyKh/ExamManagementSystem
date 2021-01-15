@@ -29,12 +29,12 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select ins_ID from Instructor", con);
+                    SqlCommand cmd = new SqlCommand("select Concat(Ins_Fname, ' ', Ins_Lname) as InsName from Instructor", con);
                     SqlDataReader dr = cmd.ExecuteReader();
 
                     while (dr.Read())
                     {
-                        comboBox1.Items.Add(dr["ins_ID"]);
+                        comboBox1.Items.Add(dr["InsName"]);
                     }
                 }
                 catch (Exception ex)
@@ -60,9 +60,15 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    string[] s = comboBox1.Text.Split();
+                    SqlCommand cmd1 = new SqlCommand("select ins_ID from Instructor where Ins_Fname ='" + s[0] + "' and Ins_Lname = '" + s[1] + "'", con);
+                    int ins_ID = (int)cmd1.ExecuteScalar();
+
+
+
                     SqlCommand cmd = new SqlCommand("SP_Instructor_Delete", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@ins_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    cmd.Parameters.Add("@ins_ID", SqlDbType.Int).Value = ins_ID;// int.Parse(comboBox1.Text);
 
                     int row = cmd.ExecuteNonQuery();
                     if (row > 0)
@@ -97,9 +103,14 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    string[] s = comboBox1.Text.Split();
+                    SqlCommand cmd1 = new SqlCommand("select ins_ID from Instructor where Ins_Fname ='" + s[0] + "' and Ins_Lname = '" + s[1] + "'", con);
+                    int ins_ID = (int)cmd1.ExecuteScalar();
+
+
                     SqlCommand cmd = new SqlCommand("SP_Instructor_Details", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@ins_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    cmd.Parameters.Add("@ins_ID", SqlDbType.Int).Value = ins_ID;// int.Parse(comboBox1.Text);
                     SqlDataReader dr = cmd.ExecuteReader();
                     dr.Read();
                     textBox_Phone.Text = dr["Phone"].ToString();
@@ -124,9 +135,12 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    string[] s = comboBox1.Text.Split();
+                    SqlCommand cmd1 = new SqlCommand("select ins_ID from Instructor where Ins_Fname ='" + s[0] + "' and Ins_Lname = '" + s[1] + "'", con);
+                    int ins_ID = (int)cmd1.ExecuteScalar();
                     SqlCommand cmd = new SqlCommand("SP_Instructor_Update", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ins_ID", int.Parse(comboBox1.Text));
+                    cmd.Parameters.AddWithValue("@ins_ID", ins_ID);// int.Parse(comboBox1.Text));
                     cmd.Parameters.AddWithValue("@phone", textBox_Phone.Text);
                     cmd.Parameters.AddWithValue("@Address", textBox_Address.Text);
                     cmd.Parameters.AddWithValue("@email", textBox_email.Text);

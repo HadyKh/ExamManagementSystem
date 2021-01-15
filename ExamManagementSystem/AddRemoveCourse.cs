@@ -32,12 +32,12 @@ namespace ExamManagementSystem
                 {
                     con.Open();
 
-                    SqlCommand cmd = new SqlCommand("select Crs_ID from Courses", con);
+                    SqlCommand cmd = new SqlCommand("select c.Crs_Name from Courses c", con);
                     SqlDataReader dr = cmd.ExecuteReader();
 
                     while (dr.Read())
                     {
-                        comboBox1.Items.Add(dr["Crs_ID"]);
+                        comboBox1.Items.Add(dr["Crs_Name"]);
                     }
 
                 }
@@ -82,9 +82,15 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    //string[] s = comboBox1.Text.Split();
+                    SqlCommand cmd1 = new SqlCommand("select c.Crs_ID from Courses c where Crs_Name ='"+ comboBox1.Text+"'", con);
+                    int st_ID = (int)cmd1.ExecuteScalar();
+
+
+
                     SqlCommand cmd = new SqlCommand("SP_Course_Delete", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Crs_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    cmd.Parameters.Add("@Crs_ID", SqlDbType.Int).Value = st_ID;// int.Parse(comboBox1.Text);
                     int row = cmd.ExecuteNonQuery();
                     if (row > 0)
                     {
@@ -112,9 +118,12 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    SqlCommand cmd1 = new SqlCommand("select c.Crs_ID from Courses c where Crs_Name ='" + comboBox1.Text + "'", con);
+                    int st_ID = (int)cmd1.ExecuteScalar();
+
                     SqlCommand cmd = new SqlCommand("SP_Course_Details", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@Crs_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    cmd.Parameters.Add("@Crs_ID", SqlDbType.Int).Value = st_ID;// int.Parse(comboBox1.Text);
                     SqlDataReader dr = cmd.ExecuteReader();
                     dr.Read();
                     txt_CourseName.Text = dr["Crs_Name"].ToString();
@@ -144,9 +153,12 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    SqlCommand cmd1 = new SqlCommand("select c.Crs_ID from Courses c where Crs_Name ='" + comboBox1.Text + "'", con);
+                    int st_ID = (int)cmd1.ExecuteScalar();
+
                     SqlCommand cmd = new SqlCommand("SP_Courses_Update", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@crs_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    cmd.Parameters.Add("@crs_ID", SqlDbType.Int).Value = st_ID;// int.Parse(comboBox1.Text);
                     cmd.Parameters.AddWithValue("@crs_name", txt_CourseName.Text);
                     cmd.Parameters.AddWithValue("@crs_duration",int.Parse(txt_Duration.Text));
                     cmd.Parameters.AddWithValue("@Mgr_ID", int.Parse(txt_Mgr_ID.Text));

@@ -14,6 +14,7 @@ namespace ExamManagementSystem
 {
     public partial class AddRemoveStudent : Form
     {
+        private int studentID;
         public AddRemoveStudent()
         {
             InitializeComponent();
@@ -29,12 +30,12 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("select St_ID from Student", con);
+                    SqlCommand cmd = new SqlCommand("select CONCAT(s.St_Fname,' ' ,s.St_Lname) as st_Name, St_ID from Student s", con);
                     SqlDataReader dr = cmd.ExecuteReader();
 
                     while (dr.Read())
                     {
-                        comboBox1.Items.Add(dr["ST_ID"]);
+                        comboBox1.Items.Add(dr["st_Name"]);
                     }
 
                 }
@@ -68,10 +69,14 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    string[] s = comboBox1.Text.Split();
+                    SqlCommand cmd1 = new SqlCommand("select St_ID from Student where St_Fname ='" + s[0] + "' and St_Lname = '"+ s[1] + "'", con);
+                    int st_ID = (int)cmd1.ExecuteScalar();
+
 
                     SqlCommand cmd = new SqlCommand("SP_Student_Delete", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = st_ID;// int.Parse(comboBox1.Text);
                     int row = cmd.ExecuteNonQuery();
                     if (row > 0)
                     {
@@ -103,9 +108,14 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    string[] s = comboBox1.Text.Split();
+                    SqlCommand cmd1 = new SqlCommand("select St_ID from Student where St_Fname ='" + s[0] + "' and St_Lname = '" + s[1] + "'", con);
+                    int st_ID = (int)cmd1.ExecuteScalar();
+
+
                     SqlCommand cmd = new SqlCommand("SP_Student_Details", con);
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
+                    cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value =st_ID ;// int.Parse(comboBox1.Text);
                     SqlDataReader dr = cmd.ExecuteReader();
                     dr.Read();
                     textBox_Phone.Text = dr["Phone"].ToString();
@@ -129,10 +139,15 @@ namespace ExamManagementSystem
                 try
                 {
                     con.Open();
+                    string[] s = comboBox1.Text.Split();
+                    SqlCommand cmd1 = new SqlCommand("select St_ID from Student where St_Fname ='" + s[0] + "' and St_Lname = '" + s[1] + "'", con);
+                    int st_ID = (int)cmd1.ExecuteScalar();
+
+
                     SqlCommand cmd = new SqlCommand("SP_Student_Update", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     //cmd.Parameters.Add("@St_ID", SqlDbType.Int).Value = int.Parse(comboBox1.Text);
-                    cmd.Parameters.AddWithValue("@St_ID", int.Parse(comboBox1.Text));
+                    cmd.Parameters.AddWithValue("@St_ID", st_ID);// int.Parse(comboBox1.Text));
                     cmd.Parameters.AddWithValue("@Phone", textBox_Phone.Text);
                     cmd.Parameters.AddWithValue("@Address", textBox_Address.Text);
                     cmd.Parameters.AddWithValue("@email", textBox_email.Text);
